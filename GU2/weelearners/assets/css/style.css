@@ -1,0 +1,700 @@
+*::before,
+*::after,
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --background-color: #E0E0F3;
+    --color: #000000;
+    --darken-colour: #7474cf;
+    --p-text: #EE10B0;
+    --font-size: 24px;
+    --second-font-size: 16px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: var(--background-color); */
+}  
+   
+header {
+    background-color: rgba(121, 120, 120);
+    
+}  
+
+/*Buttons  */
+button{
+    background-color: var(--darken-colour);
+    color: var(--color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px; 
+    margin: 2px;
+    font-size: var(--second-font-size); 
+    cursor: pointer; 
+}
+
+/* Img */
+img{
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+}
+
+/* ul has li it's child */
+ul > li{
+    list-style-type: none;
+}
+
+/* login and register buttons*/
+.input-login-btn{
+    background-color: var(--darken-colour); 
+    color: var(--color);
+    border: none;
+    gap: 2%;
+    border-radius: 8px;
+    padding: 3%;
+    margin: 3%;
+    font-size: var(--second-font-size); 
+    cursor: pointer; 
+}
+
+.input-register-btn{
+    background-color: var(--darken-colour); 
+    color: var(--color);
+    border: none;
+    gap: 2%;
+    border-radius: 8px;
+    padding: 3%;
+    margin: 3%;
+    font-size: var(--second-font-size); 
+    cursor: pointer; 
+}
+
+/* Search */
+.form-search-bar {
+    background-color: var(--background-color);
+    color: var(--color);
+    max-width: 100%; 
+}
+.input-search-bar{
+    height: 35px;
+    width: 90px;
+    border-radius: 5px;
+    border: none;
+    padding: 6px;
+    margin: 6px;
+}
+
+.input-search-btn{
+    background-color: var(--darken-colour);
+    color: var(--color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: var(--second-font-size);
+    cursor: pointer;
+    height: 35px;
+}
+
+/* Nav */
+.nav-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: var(--colour);
+    background-color: var(--background-color);
+}
+.div-logo a {
+    color: var(--color);
+    text-decoration: none;
+    font-size: var(--font-size);
+}
+
+.ul-nav-links {
+    list-style: none;
+    display: none; 
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+
+.ul-nav-links li {
+    text-align: center;
+    margin: 0;
+}
+
+.main-heading{
+    font-size: 18px;
+    font-weight: 400;
+    width:100%;
+    text-align: center;
+    margin: 8px;
+    padding: 0 15px;
+
+}
+
+.ul-nav-links a {
+    color: var(--color);
+    text-decoration: none;
+    padding: 14px;
+    display: block;
+
+}
+
+.ul-nav-links a:hover {
+    background-color: var(--background-color);
+    border-radius: 0;
+}
+
+/* Hamburger Menu */
+.div-hamburger-menu{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.div-hamburger-menu span {
+    background-color: var(--darken-colour);
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+/*  Section */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+section > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 1 250px;
+    margin: 30px;
+    /* height: 100%; */
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding:20px;
+}
+
+section > div:hover {
+    transform: translateY(-5px);
+}
+
+section > div img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+section > div h2 {
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    margin: 8px;
+    padding: 0 15px;
+}
+
+section > div span {
+    margin: 10px 0;
+}
+
+section > div a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: var(--darken-colour);
+    color: var(--color);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section > div a:hover {
+    background-color: var(--darken-colour);
+}
+
+section div img {
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+}
+
+/* Fonts/Paragraph Settings */
+.h1-heading-center{
+    color: var(--p-text);
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.paragraph-album-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px; 
+}
+
+.section-album-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  
+}
+
+.paragraph-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px; 
+}
+
+.status-message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;  
+}
+
+.paragraph-copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px; 
+    padding: 15px;
+    margin-top: 8%;
+    background-color: var(--background-color); 
+}
+
+.table-spacing{
+    padding: 5px;
+}
+
+.h2-secondary-colour{
+    color: var(--p-text);
+    margin: 2px;
+    align-items: center;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Login-Form */
+.section-login-form {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.section-login-form:hover {
+    transform: translateY(-5px);
+}
+
+.section-login-form Input,
+.section-login-form label {
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+.form-login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3%;
+    height: 100%;
+    background-color: var(--background-color); 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Login-Options */
+.section-login-options {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+} 
+
+/* Register-Options */
+.section-register-options {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* Register-Form */
+.section-register-form {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;  
+}
+
+.section-register-form:hover {
+    transform: translateY(-5px);
+}
+
+.section-register-form Input,
+.section-register-form label {
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+.form-register-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3%;
+    height: 100%;
+    background-color: var(--background-color); 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Vinyl Section */
+.section-vinyl{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Albums */
+.div-album { 
+    margin-bottom: 30px;
+}
+
+.div-album-item { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 1 300px;
+    margin: 30px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.div-album-item img { 
+    max-width: 200px; 
+    height: auto; 
+}
+
+/* Upload Vinyl's */
+.uploadVinyl{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3%;
+    margin: 3%;
+}
+
+.uploadVinyl label {
+    display: flex;
+    margin-bottom: 8px;
+    font-weight: normal;
+    color: var(--color);
+}
+
+.uploadVinyl Input,
+.uploadVinyl textarea,
+.uploadVinyl select {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.upload-btn{
+    background-color: var(--darken-colour); 
+    color: var(--color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px; 
+    font-size: var(--second-font-size); 
+    cursor: pointer; 
+}
+
+/* Section Uploads */
+.section-uploads{ 
+    margin-bottom: 30px;
+}
+
+/* .user class */
+.section-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    
+}
+/* .Users */
+.section-users{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px; 
+    padding: 15px;
+    margin: 30px;
+}
+
+/* section personal class */
+.section-personal-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3%;
+    margin: 5%;
+    height: 50vh;
+    border: 2px solid var(--darken-colour);
+    border-radius: 5px; 
+    background-color: var(--background-colour); 
+}
+
+.section-personal-account:hover {
+    transform: translateY(-5px);
+}
+
+/* profile-picture form for uploading images */
+.section-profile-picture{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    margin: 2px;
+}
+
+
+/* .div-user item */
+.div-user-item{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 1 300px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.div-user-item img { 
+    width: 100%; 
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+.nav-navbar {
+    padding: 10px 20px;
+}
+
+.ul-nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: transparent;
+}
+
+.ul-nav-links li {
+    margin: 0 10px;
+}
+
+.div-hamburger-menu {
+    display: none;
+}
+
+.ul-nav-links a {
+    padding: 14px 20px;
+    border-radius: 4px;
+}
+
+.ul-nav-links a:hover {
+    background-color: var(--darken-colour);
+}
+
+.paragraph-copyright {
+    margin-top: 30%;
+    background-color: var(--background-color);
+}
+
+.section-album-info{
+    min-width: 5%;
+} 
+}
+
+@media (max-width: 768px) {
+.ul-nav-links {
+    display: none;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.div-hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.div-hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    border-radius: 2px;
+    background-color: var(--darken-colour);
+}
+
+.ul-nav-links.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3%;
+}
+
+.ul-nav-links li {
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.ul-nav-links a {
+    color: var(--color);
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+.ul-nav-links a:hover {
+    background-color: var(--background-color);
+    border-radius: 0;
+}
+
+.paragraph-copyright {
+    margin-top: 120%;
+    background-color: var(--background-color);
+}
+
+.section-album-info{
+    min-width: 8%;
+} 
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+.nav-navbar {
+    padding: 10px 20px;
+    width: 1000px;
+    background-color: var(--background-color);
+}
+
+.ul-nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: var(--background-color);
+}
+.ul-nav-links li {
+    margin: 0 10px;
+}
+.div-hamburger-menu {
+    display: none;
+}
+.ul-nav-links a {
+    padding: 14px 20px;
+    border-radius: 4px;
+}
+
+.ul-nav-links a:hover {
+    background-color: var(--darken-colour);
+}
+.paragraph-copyright {
+    margin-top: 30%;
+    width: 1000px;
+    background-color: var(--background-color);
+}
+}
+
+@media (min-width: 1024px) {
+.nav-navbar {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ul-nav-links {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ul-nav-links li {
+    margin: 0 15px;
+}
+
+.section-album-info{
+    min-width: 5%;
+} 
+}
+
+@media (max-width: 800px) {
+.nav-navbar {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.ul-nav-links {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ul-nav-links li {
+    margin: 0 15px;
+}
+
+.section-album-info{
+    min-width: 5%;
+} 
+}
