@@ -15,7 +15,7 @@ $video->store_result();
 $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 
 // Fetching badge details
-$badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id FROM badge LIMIT 5");
+$badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id FROM badge ORDER BY RAND() LIMIT 5");
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID);
@@ -28,38 +28,38 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID);
 
 <h2 class="h2-secondary-colour">5 Star Photos</h2>
 <section>
-    <?php while($photo->fetch()): ?>
-    <div>
-        <h2 class="main-heading"><?= htmlspecialchars($pName ?? '') ?></h2>
-        <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Album Cover">
-        <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? '') ?></h2>
-        <span><?= htmlspecialchars($release ?? '') ?></span>
-        <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
-    </div>
+    <?php while ($photo->fetch()) : ?>
+        <div>
+            <h2 class="main-heading"><?= htmlspecialchars($pName ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Album Cover">
+            <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? '') ?></h2>
+            <span><?= htmlspecialchars($release ?? '') ?></span>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
+        </div>
     <?php endwhile ?>
 </section>
 
 <h2 class="h2-secondary-colour">Featured Videos</h2>
 <section>
-    <?php while($video->fetch()): ?>
-    <div>
-        <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
-        <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
-        <p><?= htmlspecialchars($vDesc ?? '') ?></p>
-        <span><?= htmlspecialchars($vRelease ?? '') ?></span>
-        <a href="<?= htmlspecialchars($vVideoURL ?? '') ?>" target="_blank">Watch Video</a>
-    </div>
+    <?php while ($video->fetch()) : ?>
+        <div>
+            <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
+            <p><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <span><?= htmlspecialchars($vRelease ?? '') ?></span>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
+        </div>
     <?php endwhile ?>
 </section>
 
 <h2 class="h2-secondary-colour">Top Badges</h2>
 <section>
-    <?php while($badge->fetch()): ?>
-    <div>
-        <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
-        <p><?= htmlspecialchars($bDesc ?? '') ?></p>
-        <span>User ID: <?= htmlspecialchars($bUserID ?? '') ?></span>
-    </div>
+    <?php while ($badge->fetch()) : ?>
+        <div>
+            <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
+            <p><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <span>User ID: <?= htmlspecialchars($bUserID ?? '') ?></span>
+        </div>
     <?php endwhile ?>
 </section>
 
