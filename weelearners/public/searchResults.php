@@ -5,40 +5,64 @@ include 'includes/header.php';
 $search = $_POST['search'] ?? '';
 $searchResults = "%" . $search . "%";
 
-// Bringing In Album Details
-$album = $conn->prepare("SELECT 
-album.id,
-album.albName,
-album.albDescription,
-album.release_date,
-album.image,
-artist.artName,
-genre.genreName,
-record_label.rlName
-FROM album 
-INNER JOIN artist ON album.fk_artist_id = artist.id
-INNER JOIN genre ON album.fk_genre_id = genre.id
-INNER JOIN record_label ON album.fk_record_label_id = record_label.id
-WHERE album.albName LIKE ? OR album.albDescription LIKE ? OR genre.genreName LIKE ?");
-$album->bind_param("sss", $searchResults, $searchResults, $searchResults);
-$album->execute();
-$album->store_result();
-$album->bind_result($aID, $albName, $albDescription, $release, $image, $artName, $genreName, $rlName);
+// Bringing In Photo Details
+$photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE albName LIKE ? OR albDescription LIKE ?");
+$photo->bind_param("ss", $searchResults, $searchResults);
+$photo->execute();
+$photo->store_result();
+$photo->bind_result($pID, $pName, $pDesc, $pRelease, $pImage);
+
+// Bringing In Video Details
+$videos = $conn->prepare("SELECT id, title, description, release_date, image FROM videos WHERE title LIKE ? OR description LIKE ?");
+$videos->bind_param("ss", $searchResults, $searchResults);
+$videos->execute();
+$videos->store_result();
+$videos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage);
+
+// Bringing In Badge Details
+$badge = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE badge_name LIKE ? OR description LIKE ?");
+$badge->bind_param("ss", $searchResults, $searchResults);
+$badge->execute();
+$badge->store_result();
+$badge->bind_result($bID, $bName, $bDesc, $bImage);
 ?>
 
 <h1 class="h1-heading-center">Home Page</h1>
 <h2 class="h2-secondary-colour">Search</h2>
 <section>
-    <?php while ($album->fetch()) : ?>
-    <div>
-        <h2 class="main-heading"><?= htmlspecialchars($albName ?? '') ?></h2>
-        <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $image ?? '') ?>" alt="Album Cover">
-        <h2 class="main-heading"><?= htmlspecialchars($albDescription ?? '') ?></h2>
-        <span><?= htmlspecialchars($release ?? '') ?></span> 
-        <span><?= htmlspecialchars($genreName ?? '') ?></span> 
-        <span><?= htmlspecialchars($rlName ?? '') ?></span> 
-        <a href="<?= ROOT_DIR ?>public/moreinfo.php?aid=<?= htmlspecialchars($aID ?? '') ?>">More Information</a>
-    </div>
+    <?php
+    // Display Photo Results
+    while ($photo->fetch()) : ?>
+        <div>
+            <h2 class="main-heading">Photo: <?= htmlspecialchars($pName ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? '') ?>" alt="Photo Image">
+            <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? '') ?></h2>
+            <span><?= htmlspecialchars($pRelease ?? '') ?></span>
+            <a href="<?= ROOT_DIR ?>public/moreinfo.php?aid=<?= htmlspecialchars($pID ?? '') ?>">More Information</a>
+        </div>
+    <?php endwhile; ?>
+
+    <?php
+    // Display Video Results
+    while ($videos->fetch()) : ?>
+        <div>
+            <h2 class="main-heading">Video: <?= htmlspecialchars($vTitle ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $vImage ?? '') ?>" alt="Video Image">
+            <h2 class="main-heading"><?= htmlspecialchars($vDesc ?? '') ?></h2>
+            <span><?= htmlspecialchars($vRelease ?? '') ?></span>
+            <a href="<?= ROOT_DIR ?>public/moreinfo.php?vid=<?= htmlspecialchars($vID ?? '') ?>">More Information</a>
+        </div>
+    <?php endwhile; ?>
+
+    <?php
+    // Display Badge Results
+    while ($badge->fetch()) : ?>
+        <div>
+            <h2 class="main-heading">Badge: <?= htmlspecialchars($bName ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage ?? '') ?>" alt="Badge Image">
+            <p><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <a href="<?= ROOT_DIR ?>public/moreinfo.php?bid=<?= htmlspecialchars($bID ?? '') ?>">More Information</a>
+        </div>
     <?php endwhile; ?>
 </section>
 

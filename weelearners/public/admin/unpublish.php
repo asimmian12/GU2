@@ -1,5 +1,6 @@
 <?php
-include '../../config/config.php';
+include "../../config/config.php";
+include "../../includes/header.php";
 
 if (isset($_GET['aid'])) {
     $aid = $_GET['aid'];
