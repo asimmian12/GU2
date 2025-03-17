@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 08:04 PM
+-- Generation Time: Mar 17, 2025 at 09:46 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -41,8 +41,8 @@ CREATE TABLE `badge` (
 --
 
 INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img`, `is_active`) VALUES
-(1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg', 0),
-(2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg', 0);
+(1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg', 1),
+(2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg', 1);
 
 -- --------------------------------------------------------
 
