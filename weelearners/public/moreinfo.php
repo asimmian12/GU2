@@ -41,13 +41,12 @@ if ($videoID !== null) {
     $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 }
 
-// Fetching Badge Details (Corrected)
 if ($badgeID !== null) {
-    $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id FROM badge WHERE id = ? LIMIT 1"); // Assuming badge ID is 'id'
+    $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE id = ? LIMIT 1"); // Added badge_img
     $badge->bind_param("i", $badgeID);
     $badge->execute();
     $badge->store_result();
-    $badge->bind_result($bID, $bName, $bDesc, $bUserID);
+    $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 }
 ?>
 
@@ -80,10 +79,12 @@ if ($badgeID !== null) {
 <section class="section-badge">
     <?php if ($badgeID !== null && isset($badge) && $badge->num_rows > 0) : while ($badge->fetch()) : ?>
         <div>
-            <h2 class="main-heading"><?= htmlspecialchars($bName ?? 'No Badge name available') ?></h2>
-            <p class="paragraph-album-text"><?= htmlspecialchars($bDesc ?? 'No description available') ?></p>
             <span>User ID: <?= htmlspecialchars($bUserID ?? 'Not available') ?></span>
-            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $badgeID ?? '') ?>">Look Badges</a>
+            <h2 class="main-heading"><?= htmlspecialchars($bName ?? 'No Badge name available') ?></h2>
+            <?php if (!empty($bImage)) : ?>
+                <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage) ?>" alt="<?= htmlspecialchars($bName) ?> Badge">
+            <?php endif; ?>
+            <p class="paragraph-album-text"><?= htmlspecialchars($bDesc ?? 'No description available') ?></p>
         </div>
     <?php endwhile; endif; ?>
 </section>

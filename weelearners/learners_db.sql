@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 08:16 AM
+-- Generation Time: Mar 17, 2025 at 07:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -31,16 +31,17 @@ CREATE TABLE `badge` (
   `id` int(11) NOT NULL,
   `badge_name` varchar(64) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `fk_user_id` int(11) DEFAULT NULL
+  `fk_user_id` int(11) DEFAULT NULL,
+  `badge_img` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `badge`
 --
 
-INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`) VALUES
-(1, 'Video Creator', 'Awarded for creating a video.', 27),
-(2, 'Photo Expert', 'Awarded for uploading photos.', 27);
+INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img`) VALUES
+(1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg'),
+(2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg');
 
 -- --------------------------------------------------------
 
@@ -93,10 +94,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `username`, `pw`, `name`, `profile_picture`) VALUES
-(26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@musiconline.com', 1, 'admin', NULL, 'Admin', NULL),
-(27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 0, 'karen@musiconline.com', 1, 'Karen', NULL, 'Karen', NULL),
-(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@musiconline.com', 1, 'asim1', NULL, 'asim1', NULL),
-(49, '$2y$10$h8ejMnilcLbfgkM5iusSu.OVKzEUdVB8nB3kHmwisFVmYDjVyAAB.', 0, 'KarenS@musiconline.com', 1, 'KarenS', NULL, 'KarenS', NULL);
+(26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'admin', NULL, 'Admin', NULL),
+(27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 0, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen', NULL),
+(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'asim1', NULL),
+(49, '$2y$10$h8ejMnilcLbfgkM5iusSu.OVKzEUdVB8nB3kHmwisFVmYDjVyAAB.', 0, 'KarenS@weelearners.com', 1, 'KarenS', NULL, 'KarenS', NULL);
 
 -- --------------------------------------------------------
 
