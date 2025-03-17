@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 12:39 AM
+-- Generation Time: Mar 17, 2025 at 01:11 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -11,13 +11,14 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wee_learners_db`
+-- Database: `learners_db`
 --
 
 -- --------------------------------------------------------
@@ -113,7 +114,7 @@ CREATE TABLE `videos` (
   `is_active` tinyint(4) NOT NULL DEFAULT 0,
   `video_url` varchar(255) DEFAULT NULL,
   `fk_user_id` int(11) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL  -- Added image column here
+  `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -124,9 +125,9 @@ INSERT INTO `videos` (`id`, `title`, `description`, `release_date`, `is_active`,
 (1, 'My First Video', 'This is a test video description.', '2024-03-16', 1, 'https://example.com/video1.mp4', 27, 'myfirstvideo_thumbnail.jpg'),
 (2, 'Summer Vacation Vlog', 'A fun vlog from my summer vacation.', '2024-03-15', 1, 'https://example.com/video2.mp4', 27, 'summervacationvlog_thumbnail.jpg');
 
--- --------------------------------------------------------
-
+--
 -- Indexes for dumped tables
+--
 
 --
 -- Indexes for table `badge`
@@ -155,9 +156,9 @@ ALTER TABLE `videos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_user_id` (`fk_user_id`);
 
--- --------------------------------------------------------
-
+--
 -- AUTO_INCREMENT for dumped tables
+--
 
 --
 -- AUTO_INCREMENT for table `badge`
@@ -183,9 +184,9 @@ ALTER TABLE `user`
 ALTER TABLE `videos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
--- --------------------------------------------------------
-
+--
 -- Constraints for dumped tables
+--
 
 --
 -- Constraints for table `badge`

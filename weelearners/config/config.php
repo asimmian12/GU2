@@ -3,7 +3,7 @@
 $hn = "localhost";
 $un = "admin";
 $pw = "password";
-$db = "wee_learners_db";
+$db = "learners_db";
 
 $conn = new mysqli($hn, $un, $pw, $db);
 

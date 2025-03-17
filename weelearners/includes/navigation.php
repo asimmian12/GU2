@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <nav class="nav-navbar">
     <div class="div-logo">
-        <a href="<?= ROOT_DIR ?>">MusicOnline</a>
+        <a href="<?= ROOT_DIR ?>">Wee Learners</a>
     </div>
     <ul class="ul-nav-links" id="ul-nav-links">
         <?php if (!isset($_SESSION['loggedin'])) : ?>
