@@ -26,7 +26,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
     <p class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs and to Normal Kids. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where users can explore a vide range of badge records, for their children, and apply for being a helper, etc.</p>
 </section>
 
-<h2 class="h2-secondary-colour">5 Star Photos</h2>
+<h2 class="h2-secondary-colour">All Photos</h2>
 <section>
     <?php while ($photo->fetch()) : ?>
         <div>
@@ -39,7 +39,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
     <?php endwhile ?>
 </section>
 
-<h2 class="h2-secondary-colour">Featured Videos</h2>
+<h2 class="h2-secondary-colour">All Videos</h2>
 <section>
     <?php while ($video->fetch()) : ?>
         <div>
@@ -52,7 +52,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
     <?php endwhile ?>
 </section>
 
-<h2 class="h2-secondary-colour">Top Badges</h2>
+<h2 class="h2-secondary-colour">All Badges</h2>
 <section>
     <?php while ($badge->fetch()) : ?>
         <div>
