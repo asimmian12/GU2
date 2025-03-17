@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 01:11 AM
+-- Generation Time: Mar 17, 2025 at 07:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -66,11 +66,9 @@ CREATE TABLE `photo` (
 --
 
 INSERT INTO `photo` (`id`, `albName`, `albDescription`, `release_date`, `fk_photo_id`, `fk_person_id`, `fk_record_label_id`, `is_active`, `image`, `fk_user_id`) VALUES
-(121, 'Things I like to do', 'Ben Kweller', '2009-02-27', NULL, NULL, NULL, 1, 'benkweller_changinhorses.jpg', 27),
-(130, 'The Big Rock Candy Mountains', 'Harry McClintock', '1928-11-16', NULL, NULL, NULL, 1, 'The Big Rock Candy Mountains.jpg', 27),
-(131, 'Birds of a Feather', 'Billie Eillish', '2024-07-02', NULL, NULL, NULL, 1, 'birdsofthefeather.jpg', 27),
-(132, 'Circles', 'Post Malone', '2019-08-30', NULL, NULL, NULL, 1, 'circles.jpg', 27),
-(133, 'Attention', 'Charile Puth', '2017-04-21', NULL, NULL, NULL, 1, 'attention.jpg', 27);
+(121, 'Class Drawings', 'By Sarah McDonald', '2018-08-21', NULL, NULL, NULL, 1, 'wee_learners_activites.jpeg', 27),
+(130, 'Class Storytime ', 'By Iain Shaw', '2019-09-03', NULL, NULL, NULL, 1, 'wee_learners_storytime.jpeg', 27),
+(131, 'Class Handpainting', 'By Sana Zahid', '2022-01-03', NULL, NULL, NULL, 1, 'wee_learners_handpainting.jpeg', 27);
 
 -- --------------------------------------------------------
 
@@ -122,8 +120,8 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`id`, `title`, `description`, `release_date`, `is_active`, `video_url`, `fk_user_id`, `image`) VALUES
-(1, 'My First Video', 'This is a test video description.', '2024-03-16', 1, 'https://example.com/video1.mp4', 27, 'myfirstvideo_thumbnail.jpg'),
-(2, 'Summer Vacation Vlog', 'A fun vlog from my summer vacation.', '2024-03-15', 1, 'https://example.com/video2.mp4', 27, 'summervacationvlog_thumbnail.jpg');
+(1, 'Monkey Puzzel Day', 'Come to Monkey Puzzle Day in Glasgow Day Nursery and Preschool is a beautiful Early Years education and childcare setting for children aged 3 months to 5 years old. ', '2020-08-04', 1, 'https://www.youtube.com/watch?v=f3lompkS96I', 27, 'monkey_puzzle.jpg'),
+(2, 'Beloved Nursary In Glasgow ', 'Meet Sarah McDonald, the childcare teacher in the heart of the South Side helping students to help reach their potiential.', '2018-06-19', 1, 'https://www.youtube.com/watch?v=se1wu3iH_mw', 27, 'wee_learners.jpeg');
 
 --
 -- Indexes for dumped tables
