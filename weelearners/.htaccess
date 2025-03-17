@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /Web-Development-Dynamically-Generated-Content/musiconline/
+RewriteBase /GU2/weelearners/
 
 # If the file or directory exists, skip rewriting
 RewriteCond %{REQUEST_FILENAME} !-f
