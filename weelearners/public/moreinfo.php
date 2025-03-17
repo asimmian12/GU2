@@ -25,7 +25,7 @@ if (isset($_GET['bid'])) {
 
 // Fetching Photo Details (Corrected)
 if ($photoID !== null) {
-    $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE id = ? AND is_active = 1 LIMIT 1");
+    $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE id = ? AND is_active = 1 LIMIT 3");
     $photo->bind_param("i", $photoID);
     $photo->execute();
     $photo->store_result();
@@ -34,7 +34,7 @@ if ($photoID !== null) {
 
 // Fetching Video Details (Corrected)
 if ($videoID !== null) {
-    $video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE id = ? AND is_active = 1 LIMIT 1");
+    $video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE id = ? AND is_active = 1 LIMIT 3");
     $video->bind_param("i", $videoID);
     $video->execute();
     $video->store_result();
@@ -42,7 +42,7 @@ if ($videoID !== null) {
 }
 
 if ($badgeID !== null) {
-    $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE id = ? LIMIT 1"); // Added badge_img
+    $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE id = ? LIMIT 3"); 
     $badge->bind_param("i", $badgeID);
     $badge->execute();
     $badge->store_result();
@@ -75,7 +75,7 @@ if ($badgeID !== null) {
     <?php endwhile; endif; ?>
 </section>
 
-<h2 class="h2-secondary-colour">Top Badges</h2>
+<h2 class="h2-secondary-colour">More Badges</h2>
 <section class="section-badge">
     <?php if ($badgeID !== null && isset($badge) && $badge->num_rows > 0) : while ($badge->fetch()) : ?>
         <div>
