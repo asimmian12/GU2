@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2025 at 07:02 PM
+-- Generation Time: Mar 17, 2025 at 08:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -32,16 +32,17 @@ CREATE TABLE `badge` (
   `badge_name` varchar(64) DEFAULT NULL,
   `description` text DEFAULT NULL,
   `fk_user_id` int(11) DEFAULT NULL,
-  `badge_img` varchar(255) DEFAULT NULL
+  `badge_img` varchar(255) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `badge`
 --
 
-INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img`) VALUES
-(1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg'),
-(2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg');
+INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img`, `is_active`) VALUES
+(1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg', 0),
+(2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg', 0);
 
 -- --------------------------------------------------------
 
