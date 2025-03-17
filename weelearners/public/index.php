@@ -57,9 +57,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
     <?php while ($badge->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
-            <?php if (!empty($bImage)) : ?>
-                <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage) ?>" alt="<?= htmlspecialchars($bName) ?> Badge">
-            <?php endif; ?>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image" style="max-width: 200px; height: auto;">
             <p><?= htmlspecialchars($bDesc ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
         </div>
