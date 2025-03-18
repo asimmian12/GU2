@@ -21,7 +21,7 @@
                 <li><a href="<?= ROOT_DIR ?>allUsers">Users</a></li>
             <?php else : ?>
                 <li><a href="<?= ROOT_DIR ?>user">User Dash</a></li>
-                <li><a href="<?= ROOT_DIR ?>uploads">Upload Vinyl</a></li>
+                <li><a href="<?= ROOT_DIR ?>uploads">Upload Badge</a></li>
                 <li><a href="<?= ROOT_DIR ?>account">Account Details</a></li>
             <?php endif; ?>
             <li><a href="<?= ROOT_DIR ?>logout">Logout</a></li>
