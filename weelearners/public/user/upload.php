@@ -8,76 +8,28 @@ if (!isset($_SESSION['loggedin'])) {
     exit();
 }
 
-
-// Bringing in Genre Details
-$genre = $conn->prepare('SELECT id, genreName FROM genre');
-$genre->execute();
-$genre->store_result();
-$genre->bind_result($genID, $genreName);
-
-// Bringing in Record Label Details
-$rl = $conn->prepare('SELECT id, rlName FROM record_label');
-$rl->execute();
-$rl->store_result();
-$rl->bind_result($rlID, $rlName);
-
-// Bringing in Uploads Details
-$uploads = $conn->prepare("SELECT 
-album.id, 
-album.albName, 
-album.albDescription,
-album.release_date,
-album.image, 
-artist.artName,
-genre.genreName, 
-record_label.rlName 
-FROM album 
-INNER JOIN artist ON album.fk_artist_id = artist.id
-INNER JOIN genre ON album.fk_genre_id = genre.id
-INNER JOIN record_label ON album.fk_record_label_id = record_label.id
-WHERE album.fk_user_id = ?");
+// Bringing in Uploads Details (Badges)
+$uploads = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE fk_user_id = ?");
 $uploads->bind_param("i", $_SESSION['id']);
 $uploads->execute();
 $uploads->store_result();
-$uploads->bind_result($aID, $albName, $albDescription, $release, $image, $artName, $genreName, $rlName);
+$uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 ?>
 
-<h1 class="h1-heading-center">Uploading Vinyl Page</h1>
+<h1 class="h1-heading-center">Uploading Badge Page</h1>
 <h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an album for sale?</h2>
 <section class="uploadVinyl">
     <form action="<?= ROOT_DIR ?>uploadConfig" method="post" enctype="multipart/form-data">
-        <label for="imgUpload">Select Album Image</label>
+        <label for="badgeName">Badge Name</label>
+        <input type="text" name="badgeName" id="badgeName" required>
+
+        <label for="imgUpload">Select Badge Image</label>
         <input type="file" name="file" id="imgUpload" required>
-        
-        <label for="albumName">Album Name</label>
-        <input type="text" name="albName" id="albumName" required>
-            
-        <label for="albumDescription">Album Description</label>
-        <textarea name="albDescription" id="albumDescription" required></textarea>
-            
-        <label for="artistName">Artist Name</label>
-        <input type="text" name="artName" id="artistName" required>
-            
-        <label for="artistDescription">Artist Description</label>
-        <textarea name="artDescription" id="artistDescription" required></textarea>
-        
-        <label for="fk_genre_id">Select Genre</label>
-        <select name="fk_genre_id" id="fk_genre_id" required>
-            <option value="">Select Genre</option>
-            <?php while ($genre->fetch()): ?>
-                <option value="<?= htmlspecialchars($genID ?? '') ?>"><?= htmlspecialchars($genreName ?? '') ?></option>
-                <?php endwhile; ?>
-            </select>
-            
-            
-        <label for="fk_record_label_id">Select Record Label</label>
-        <select name="fk_record_label_id" id="fk_record_label_id" required>
-            <option value="">Select Record Label</option>
-            <?php while ($rl->fetch()): ?>
-                <option value="<?= htmlspecialchars($rlID ?? '') ?>"><?= htmlspecialchars($rlName ?? '') ?></option>
-                <?php endwhile; ?>
-            </select>
-            
+
+
+        <label for="badgeDescription">Badge Description</label>
+        <textarea name="badgeDescription" id="badgeDescription" required></textarea>
+
         <input type="submit" name="submit" value="Upload" class="upload-btn">
     </form>
 </section>
@@ -87,13 +39,12 @@ $uploads->bind_result($aID, $albName, $albDescription, $release, $image, $artNam
     <section>
         <?php while($uploads->fetch()): ?>
             <div class="div-user-item">
-                <p class="paragraph-album-text"><?= htmlspecialchars($albName ?? '') ?></p>
-                <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $image ?? '') ?>" alt="Album Cover">
-                <p class="paragraph-album-text"><?= htmlspecialchars($albDescription ?? '') ?></p>
-                <p class="paragraph-album-text"><?= htmlspecialchars($release ?? '') ?></p>
-                <p class="paragraph-album-text"><?= htmlspecialchars($genreName ?? '') ?></p>
-                <p class="paragraph-album-text"><?= htmlspecialchars($rlName ?? '') ?></p>
-                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $aID ?? '') ?>">More Information</a>
+                <p class="paragraph-album-text"><?= htmlspecialchars($badgeID ?? '') ?></p>
+                <p class="paragraph-album-text"><?= htmlspecialchars($badgeName ?? '') ?></p>
+                <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $badgeImage ?? '') ?>" alt="Album Cover">
+                <p class="paragraph-album-text"><?= htmlspecialchars($badgeDescription ?? '') ?></p>
+                <!-- <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $badgeID ?? '') ?>">More Information</a>
+                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a> -->
             </div>
             <?php endwhile; ?>
         </section>
