@@ -14,13 +14,14 @@
     $sql = "SELECT 
     id, 
     username, 
-    email 
+    email,
+    role 
     FROM user 
     WHERE id = ?";
     $account = $conn->prepare($sql);
     $account->bind_param("i", $userId);
     $account->execute();
-    $account->bind_result($id, $username, $email);
+    $account->bind_result($id, $username, $email, $role);
     $account->fetch();
     $account->close();
     
@@ -29,13 +30,14 @@
     username, 
     email, 
     is_active, 
-    is_admin 
+    is_admin,
+    role 
     FROM user 
     WHERE id = ?";
     $user = $conn->prepare($sql);
     $user->bind_param("i", $userId);
     $user->execute();
-    $user->bind_result($name, $email, $stat, $userType);
+    $user->bind_result($name, $email, $stat, $userType, $role);
     $user->store_result();
 ?>
 <h1 class="h1-heading-center">User Dashboard Page</h1>
@@ -57,8 +59,8 @@
             <div> 
                 <p class="paragraph-text">Username: <?= htmlspecialchars($name ?? '') ?></p>
                 <p class="paragraph-text">Email: <?= htmlspecialchars($email ?? '') ?></p>
-                <p class="paragraph-text">Account Status: <?= htmlspecialchars($stat == 1 ? 'Active' : 'Inactive') ?></p>
-                <p class="paragraph-text">Admin Status: <?= htmlspecialchars($userType == 1 ? 'Admin' : 'User') ?></p>
+                <p class="paragraph-text">Status: <?= htmlspecialchars($stat == 1 ? 'Active' : 'Inactive') ?></p>
+                <p class="paragraph-text">Job Role: <?= htmlspecialchars($role ?? '') ?></p>
             </div>
         <?php endwhile; ?>
 </section>
