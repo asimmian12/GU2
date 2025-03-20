@@ -54,10 +54,10 @@ if ($badgeID == true) {
 <section>
     <?php if ($photoID == true) : while ($photo->fetch()) : ?>
         <div>
-            <p><?= htmlspecialchars($pID ?? 'No description available') ?></p>
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? 'No Album name available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? 'default.jpg') ?>" alt="Photo Image">
             <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? 'No description available') ?></h2>
+            <p><?= htmlspecialchars($pID ?? ' ') ?></p>
             <span><?= htmlspecialchars($release ?? 'Release date not available') ?></span>
         </div>
     <?php endwhile; endif; ?>
@@ -67,10 +67,10 @@ if ($badgeID == true) {
 <section>
     <?php if ($videoID == true) : while ($video->fetch()) : ?>
         <div>
-            <p><?= htmlspecialchars($vID ?? 'No description available') ?></p>
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? 'No Video title available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $vImage ?? 'default-video.jpg') ?>" alt="Video Thumbnail">
             <p><?= htmlspecialchars($vDesc ?? 'No description available') ?></p>
+            <p><?= htmlspecialchars($vID ?? ' ') ?></p>
             <span><?= htmlspecialchars($vRelease ?? 'Release date not available') ?></span>
         </div>
     <?php endwhile; endif; ?>
