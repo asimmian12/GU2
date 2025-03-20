@@ -17,7 +17,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 ?>
 
 <h1 class="h1-heading-center">Uploading Badge Page</h1>
-<h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an album for sale?</h2>
+<h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an badge for sale?</h2>
 <section class="uploadVinyl">
     <form action="<?= ROOT_DIR ?>uploadConfig" method="post" enctype="multipart/form-data">
         <label for="badgeName">Badge Name</label>
