@@ -57,7 +57,7 @@ if ($badgeID == true) {
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? 'No Album name available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? 'default.jpg') ?>" alt="Photo Image">
             <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? 'No description available') ?></h2>
-            <p><?= htmlspecialchars($pID ?? ' ') ?></p>
+            <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($pID ?? ' ') ?></p>
             <span><?= htmlspecialchars($release ?? 'Release date not available') ?></span>
         </div>
     <?php endwhile; endif; ?>
@@ -70,7 +70,7 @@ if ($badgeID == true) {
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? 'No Video title available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $vImage ?? 'default-video.jpg') ?>" alt="Video Thumbnail">
             <p><?= htmlspecialchars($vDesc ?? 'No description available') ?></p>
-            <p><?= htmlspecialchars($vID ?? ' ') ?></p>
+            <p> Uploaded by Anonymus User ID: <?= htmlspecialchars($vID ?? ' ') ?></p>
             <span><?= htmlspecialchars($vRelease ?? 'Release date not available') ?></span>
         </div>
     <?php endwhile; endif; ?>
