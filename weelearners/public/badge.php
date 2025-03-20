@@ -22,10 +22,10 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 <section class="section-vinyl">
     <?php while ($badge->fetch()) : ?>
         <div>
-            <span>User ID: <?= htmlspecialchars($bUserID ?? '') ?></span>
             <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
             <p><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($bID ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>

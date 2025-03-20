@@ -54,6 +54,7 @@ if ($badgeID == true) {
 <section>
     <?php if ($photoID == true) : while ($photo->fetch()) : ?>
         <div>
+            <p><?= htmlspecialchars($pID ?? 'No description available') ?></p>
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? 'No Album name available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? 'default.jpg') ?>" alt="Photo Image">
             <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? 'No description available') ?></h2>
@@ -66,6 +67,7 @@ if ($badgeID == true) {
 <section>
     <?php if ($videoID == true) : while ($video->fetch()) : ?>
         <div>
+            <p><?= htmlspecialchars($vID ?? 'No description available') ?></p>
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? 'No Video title available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $vImage ?? 'default-video.jpg') ?>" alt="Video Thumbnail">
             <p><?= htmlspecialchars($vDesc ?? 'No description available') ?></p>
@@ -78,9 +80,10 @@ if ($badgeID == true) {
 <section>
     <?php if ($badgeID == true) : while ($badge->fetch()) : ?>
         <div>
-            <h2 class="main-heading"><?= htmlspecialchars($bName ?? 'No Badge name available') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image" style="max-width: 200px; height: auto;">
-            <p><?= htmlspecialchars($bDesc ?? 'No description available') ?></p>
+            <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
+            <p><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($bID ?? '') ?></p>
         </div>
     <?php endwhile; endif; ?>
 </section>
