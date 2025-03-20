@@ -43,7 +43,7 @@ CREATE TABLE `badge` (
 INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img`, `is_active`) VALUES
 (1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg', 1),
 (2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg', 1);
-(3, 'Bronze Medal', 'Bronze Medal achievement, is for great attendance.', 47, 'badge3.jpg', 0);
+(3, 'Bronze Medal', 'This Bronze Medal achievement, is for great attendance.', 47, 'badge3.jpg', 0);
 (4, 'Silver Medal', 'This Silver Medal achievement, is for social communication.', 47, 'badge4.jpg', 0);
 
 -- --------------------------------------------------------
