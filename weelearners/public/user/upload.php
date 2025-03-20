@@ -43,8 +43,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
                 <p class="paragraph-album-text"><?= htmlspecialchars($badgeName ?? '') ?></p>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $badgeImage ?? '') ?>" alt="Album Cover">
                 <p class="paragraph-album-text"><?= htmlspecialchars($badgeDescription ?? '') ?></p>
-                <!-- <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $badgeID ?? '') ?>">More Information</a>
-                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a> -->
+                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $badgeID ?? '') ?>">More Information</a>
             </div>
             <?php endwhile; ?>
         </section>
