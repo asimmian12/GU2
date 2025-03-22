@@ -39,4 +39,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES["file"]["name"])) {
 
 header("Location: uploads");
 ?>
-
