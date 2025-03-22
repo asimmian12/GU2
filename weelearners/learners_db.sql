@@ -110,7 +110,6 @@ INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `usernam
 -- Table structure for table `videos`
 --
 
-
 CREATE TABLE `videos` (
   `id` int NOT NULL,
   `title` varchar(128) DEFAULT NULL,
