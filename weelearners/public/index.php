@@ -15,7 +15,7 @@ $video->store_result();
 $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 
 // Fetching badge details
-$badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge ORDER BY RAND() LIMIT 5");
+$badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE is_active = 1 ORDER BY RAND() LIMIT 5");
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);

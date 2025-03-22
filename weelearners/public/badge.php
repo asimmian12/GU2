@@ -10,6 +10,7 @@ $badge = $conn->prepare("SELECT
     fk_user_id,
     badge_img
     FROM badge
+    WHERE is_active = 1
     ORDER BY RAND() 
     LIMIT 20"); 
 $badge->execute();
@@ -17,7 +18,7 @@ $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 ?>
 
-<h1 class="h1-heading-center">User Badges</h1>
+<h1 class="h1-heading-center">All Badges</h1>
 
 <section class="section-vinyl">
     <?php while ($badge->fetch()) : ?>

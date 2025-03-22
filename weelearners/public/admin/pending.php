@@ -27,7 +27,7 @@ $publishedBadges->store_result();
 $publishedBadges->bind_result($bID, $bName, $bDesc, $bImage);
 ?>
 
-<h1 class="h1-heading-center">Pending Photos</h1>
+<h1 class="h1-heading-center">Unpublished Photos</h1>
 <div class="div-album">
     <section>
         <?php while ($unpublishedPhotos->fetch()) : ?>
@@ -59,7 +59,7 @@ $publishedBadges->bind_result($bID, $bName, $bDesc, $bImage);
     </section>
 </div>
 
-<h1 class="h1-heading-center">Pending Badges</h1>
+<h1 class="h1-heading-center">Unpublished Badges</h1>
 <div class="div-album">
     <section>
         <?php while ($unpublishedBadges->fetch()) : ?>
