@@ -1,12 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 18, 2025 at 02:21 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
-
+-- Host: localhost:3306
+-- Generation Time: Mar 22, 2025 at 02:53 AM
+-- Server version: 8.4.3
+-- PHP Version: 8.3.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -23,19 +22,19 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
---
 
+--
 -- Table structure for table `badge`
 --
 
 CREATE TABLE `badge` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `badge_name` varchar(64) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `fk_user_id` int(11) DEFAULT NULL,
+  `description` text,
+  `fk_user_id` int DEFAULT NULL,
   `badge_img` varchar(255) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `is_active` tinyint(1) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `badge`
@@ -43,9 +42,10 @@ CREATE TABLE `badge` (
 
 INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img`, `is_active`) VALUES
 (1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg', 1),
-(2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg', 1);
-(3, 'Bronze Medal', 'This Bronze Medal achievement, is for great attendance.', 47, 'badge3.jpg', 0);
-(4, 'Silver Medal', 'This Silver Medal achievement, is for social communication.', 47, 'badge4.jpg', 0);
+(2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg', 1),
+(3, 'Bronze Medal', 'Bronze Medal achievement, for great attendance', 47, 'badge3.jpg', 0),
+(4, 'Silver Medal', 'This achievement is for social communication.', 47, 'badge4.jpg', 0),
+(5, 'TestUser', 'This is a test!!!', 47, 'test_pic.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -54,17 +54,17 @@ INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img
 --
 
 CREATE TABLE `photo` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `albName` varchar(64) DEFAULT NULL,
-  `albDescription` tinytext DEFAULT NULL,
+  `albDescription` tinytext,
   `release_date` date DEFAULT NULL,
-  `fk_photo_id` int(11) DEFAULT NULL,
-  `fk_person_id` int(11) DEFAULT NULL,
-  `fk_record_label_id` int(11) DEFAULT NULL,
-  `is_active` tinyint(4) NOT NULL DEFAULT 0,
+  `fk_photo_id` int DEFAULT NULL,
+  `fk_person_id` int DEFAULT NULL,
+  `fk_record_label_id` int DEFAULT NULL,
+  `is_active` tinyint NOT NULL DEFAULT '0',
   `image` varchar(64) DEFAULT NULL,
-  `fk_user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `fk_user_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `photo`
@@ -72,7 +72,7 @@ CREATE TABLE `photo` (
 
 INSERT INTO `photo` (`id`, `albName`, `albDescription`, `release_date`, `fk_photo_id`, `fk_person_id`, `fk_record_label_id`, `is_active`, `image`, `fk_user_id`) VALUES
 (121, 'Class Drawings', 'By Sarah McDonald', '2018-08-21', NULL, NULL, NULL, 1, 'wee_learners_activites.jpeg', 27),
-(130, 'Class Storytime ', 'By Iain Shaw', '2019-09-03', NULL, NULL, NULL, 1, 'wee_learners_storytime.jpeg', 27),
+(130, 'Class Storytime ', 'By Iain Shaw', '2019-09-03', NULL, NULL, NULL, 0, 'wee_learners_storytime.jpeg', 27),
 (131, 'Class Handpainting', 'By Sana Zahid', '2022-01-03', NULL, NULL, NULL, 1, 'wee_learners_handpainting.jpeg', 27);
 
 -- --------------------------------------------------------
@@ -82,17 +82,17 @@ INSERT INTO `photo` (`id`, `albName`, `albDescription`, `release_date`, `fk_phot
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `password` varchar(132) DEFAULT NULL,
-  `is_admin` tinyint(4) DEFAULT NULL,
+  `is_admin` tinyint DEFAULT NULL,
   `email` varchar(132) DEFAULT NULL,
-  `is_active` tinyint(4) DEFAULT NULL,
+  `is_active` tinyint DEFAULT NULL,
   `username` varchar(32) DEFAULT NULL,
   `pw` varchar(132) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `profile_picture` varchar(255) DEFAULT NULL,
   `role` enum('Student','Staff','Parent Helper') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `user`
@@ -101,8 +101,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `username`, `pw`, `name`, `profile_picture`, `role`) VALUES
 (26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'admin', NULL, 'Admin', NULL, 'Staff'),
 (27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 1, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen', NULL, 'Parent Helper'),
-(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'asim1', NULL, 'Student'),
-(50, '$2y$10$yo.SPd./ta.vMQXnCoRaoutpzMc1ajkB10b2FTCC23skIQcM0hoEm', 1, 'malSabah@weelearners.com', 1, 'MAL', NULL, 'Mahmood', NULL, 'Parent Helper');
+(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'asim1', 'test_pic.jpg', 'Student'),
+(50, '$2y$10$yo.SPd./ta.vMQXnCoRaoutpzMc1ajkB10b2FTCC23skIQcM0hoEm', 1, 'malSabah@weelearners.com', 1, 'MAL', NULL, 'Mahmood', 'test_pic.jpg', 'Parent Helper');
 
 -- --------------------------------------------------------
 
@@ -110,16 +110,17 @@ INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `usernam
 -- Table structure for table `videos`
 --
 
+
 CREATE TABLE `videos` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `title` varchar(128) DEFAULT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `release_date` date DEFAULT NULL,
-  `is_active` tinyint(4) NOT NULL DEFAULT 0,
+  `is_active` tinyint NOT NULL DEFAULT '0',
   `video_url` varchar(255) DEFAULT NULL,
-  `fk_user_id` int(11) DEFAULT NULL,
+  `fk_user_id` int DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `videos`
@@ -168,25 +169,25 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `badge`
 --
 ALTER TABLE `badge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `photo`
 --
 ALTER TABLE `photo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
