@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2025 at 04:19 PM
+-- Generation Time: Mar 23, 2025 at 06:04 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -150,7 +150,17 @@ CREATE TABLE `videos` (
 INSERT INTO `videos` (`id`, `title`, `description`, `release_date`, `is_active`, `video_url`, `fk_user_id`, `image`) VALUES
 (1, 'Monkey Puzzel Day', 'Come to Monkey Puzzle Day in Glasgow Day Nursery and Preschool is a beautiful Early Years education and childcare setting for children aged 3 months to 5 years old. ', '2020-08-04', 1, 'https://www.youtube.com/watch?v=f3lompkS96I', 27, 'monkey_puzzle.jpg'),
 (2, 'Beloved Nursary In Glasgow ', 'Meet Sarah McDonald, the childcare teacher in the heart of the South Side helping students to help reach their potiential.', '2018-06-19', 1, 'https://www.youtube.com/watch?v=se1wu3iH_mw', 27, 'wee_learners.jpeg'),
-(3, ' Transition from Nursery to Primary ', 'Meet all of our gradutes that have completed their all of their years in nursary.', '2019-12-19', 1, 'https://www.youtube.com/watch?v=ZDrM_F-A0AM', 27, 'wee_learners_transition.jpg');
+(3, ' Transition from Nursery to Primary ', 'Meet all of our gradutes that have completed their all of their years in nursary.', '2019-12-19', 1, 'https://www.youtube.com/watch?v=ZDrM_F-A0AM', 27, 'wee_learners_transition.jpg'),
+(4, ' Gym Activties ', 'Watch all of our students doing gym excersies.', '2018-06-18', 1, 'https://www.youtube.com/watch?v=7WCFb22jnRk', 27, 'weelearners_gym_activities.jpeg'),
+(5, 'Wee Learners Expansion', 'Learn More about how we are going to expand wee learners nursery.', '2023-03-29', 1, 'https://www.youtube.com/watch?v=FAKE_VIDEO_1', 27, 'weelearners_expansion.jpeg'),
+(6, 'Nursery School in Glasgow', 'See our Nursery', '2023-02-01', 1, 'https://www.youtube.com/watch?v=uW1b7uLW0DU', 27, 'weelearners_location.jpeg'),
+(7, 'Welcome to Wee Learners Nursery', 'Come and Meet us at our Nursery!', '2023-02-15', 1, 'https://www.youtube.com/watch?v=EqC2zeA0-6c', 27, 'weelearners_locarion2.jpeg'),
+(8, 'Wee Learners Zoo Visit', 'Come and see what animals are in the jungle that the students get to explore', '2023-03-01', 1, 'https://www.youtube.com/watch?v=WSXZ7BnVOvI', 27, 'weelearners_zoo.jpeg'),
+(9, 'Wee Learners Painting', 'See what our students has painted.', '2023-03-15', 1, 'https://www.youtube.com/watch?v=iVWnThMFR74', 27, 'weelearners_painting.jpeg'),
+(10, 'Wee Learners Storytime', 'See our Storytime with our imaagaine students.', '2023-04-01', 1, 'https://www.youtube.com/watch?v=cc7CAm6CKwM', 27, 'weelearners_storytime.jpeg'),
+(11, 'Wee Learners Natures Calling', 'Watch our Students learn about eco, and nature', '2023-04-15', 1, 'https://www.youtube.com/watch?v=jJAhVCPK1_w', 27, 'weelearners_planting.jpeg'),
+(12, 'MUST WATCH Wee Learners students learns plants', 'Students will be exploring different forms of plants.', '2023-05-01', 1, 'https://www.youtube.com/watch?v=29iRiYi_c9k', 27, 'weelearners_planting2.jpeg'),
+(13, 'Wee Learners Navaity', 'Watch our natavlity by our students.', '2023-05-15', 1, 'https://www.youtube.com/watch?v=VmFc-5_mRKg', 27, 'weelearners_nativity.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -209,7 +219,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
