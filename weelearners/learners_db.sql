@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2025 at 02:34 PM
+-- Generation Time: Mar 23, 2025 at 04:19 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -41,10 +41,31 @@ CREATE TABLE `badge` (
 --
 
 INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img`, `is_active`) VALUES
+(1, 'Nusary Gradute', 'Awarded for completed first year of nursary.', 27, 'badge1.jpg', 1),
 (2, 'Care Expert', 'Awarded for taking care of someone who is injured.', 27, 'badge2.jpg', 1),
 (3, 'Bronze Medal', 'Bronze Medal achievement, for great attendance', 47, 'badge3.jpg', 1),
 (4, 'Silver Medal', 'This achievement is for social communication.', 47, 'badge4.jpg', 1),
-(6, 'TestUser', 'testy', 47, 'test_pic.jpg', 0);
+(5, 'Creative Artist', 'For outstanding artistic expression.', 47, 'badge5.jpeg', 1),
+(6, 'TestUser', 'testy', 47, 'test_pic.jpg', 0),
+(7, 'Science Star', 'For excelling in science experiments.', 47, 'badge7.jpeg', 1),
+(8, 'Storyteller', 'For creating imaginative stories.', 27, 'badge8.jpeg', 1),
+(9, 'Sports Champ', 'For demonstrating great athletic skill.', 47, 'badge9.jpeg', 1),
+(10, 'Music Maker', 'For creating beautiful music.', 27, 'badge10.jpeg', 1),
+(11, 'Tech Whiz', 'For mastering computer skills.', 47, 'badge11.jpeg', 1),
+(12, 'Kind Helper', 'For always being kind and helpful.', 27, 'badge12.jpeg', 1),
+(13, 'Team Leader', 'For leading the team to success.', 47, 'badge13.jpeg', 1),
+(14, 'Playground Solver', 'For finding clever solutions within the playground.', 27, 'badge14.jpeg', 1),
+(15, 'Language Lover', 'For learning new languages.', 47, 'badge15.jpeg', 1),
+(16, 'History Hero', 'For knowing lots about history.', 27, 'badge16.jpeg', 1),
+(17, 'Geography Guru', 'For mastering geography.', 47, 'badge17.jpeg', 1),
+(18, 'Drama Star', 'For shining in theater.', 27, 'badge18.jpeg', 1),
+(19, 'Reading Rockstar', 'For reading many books.', 47, 'badge19.jpeg', 1),
+(20, 'Puzzle Pro', 'For solving tricky puzzles.', 27, 'badge20.jpeg', 1),
+(21, 'Building Buddy', 'For being great at building things.', 47, 'badge21.jpeg', 1),
+(22, 'Echo Enthusiast ', 'For loving and learning about nature.', 27, 'badge22.jpeg', 1),
+(23, 'Cooking Champ', 'For making yummy food.', 47, 'badge23.jpeg', 1),
+(24, 'Drawing Dynamo', 'For creating amazing drawings.', 27, 'badge24.jpeg', 1),
+(25, 'Singing Star', 'For singing beautifully.', 47, 'badge25.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -170,7 +191,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `badge`
 --
 ALTER TABLE `badge`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `photo`

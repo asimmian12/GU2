@@ -12,7 +12,7 @@ $badge = $conn->prepare("SELECT
     FROM badge
     WHERE is_active = 1
     ORDER BY RAND() 
-    LIMIT 20"); 
+    LIMIT 30"); 
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);

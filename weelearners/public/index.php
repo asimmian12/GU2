@@ -3,19 +3,19 @@ include 'config/config.php';
 include 'includes/header.php';
 
 // Fetching photo details
-$photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE is_active = 1 ORDER BY RAND() LIMIT 5");
+$photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $photo->execute();
 $photo->store_result();
 $photo->bind_result($pID, $pName, $pDesc, $release, $pImage);
 
 // Fetching video details
-$video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 1 ORDER BY RAND() LIMIT 5");
+$video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $video->execute();
 $video->store_result();
 $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 
 // Fetching badge details
-$badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE is_active = 1 ORDER BY RAND() LIMIT 5");
+$badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
