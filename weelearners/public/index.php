@@ -23,7 +23,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 
 <h1 class="h1-heading-center">Home Page</h1>
 <section class="section-intro">
-    <p class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where users can explore a vide range of badge records, for their children, and apply for being a helper, etc.</p>
+    <p class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where parents and carers can explore a wide range of badge records, for their children, and apply for being a helper, etc.</p>
 </section>
 
 <h2 class="h2-secondary-colour">All Photos</h2>
