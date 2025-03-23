@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2025 at 06:04 PM
+-- Generation Time: Mar 23, 2025 at 11:56 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -46,7 +46,6 @@ INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img
 (3, 'Bronze Medal', 'Bronze Medal achievement, for great attendance', 47, 'badge3.jpg', 1),
 (4, 'Silver Medal', 'This achievement is for social communication.', 47, 'badge4.jpg', 1),
 (5, 'Creative Artist', 'For outstanding artistic expression.', 47, 'badge5.jpeg', 1),
-(6, 'TestUser', 'testy', 47, 'test_pic.jpg', 0),
 (7, 'Science Star', 'For excelling in science experiments.', 47, 'badge7.jpeg', 1),
 (8, 'Storyteller', 'For creating imaginative stories.', 27, 'badge8.jpeg', 1),
 (9, 'Sports Champ', 'For demonstrating great athletic skill.', 47, 'badge9.jpeg', 1),
@@ -59,7 +58,6 @@ INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img
 (16, 'History Hero', 'For knowing lots about history.', 27, 'badge16.jpeg', 1),
 (17, 'Geography Guru', 'For mastering geography.', 47, 'badge17.jpeg', 1),
 (18, 'Drama Star', 'For shining in theater.', 27, 'badge18.jpeg', 1),
-(19, 'Reading Rockstar', 'For reading many books.', 47, 'badge19.jpeg', 1),
 (20, 'Puzzle Pro', 'For solving tricky puzzles.', 27, 'badge20.jpeg', 1),
 (21, 'Building Buddy', 'For being great at building things.', 47, 'badge21.jpeg', 1),
 (22, 'Echo Enthusiast ', 'For loving and learning about nature.', 27, 'badge22.jpeg', 1),
@@ -160,7 +158,17 @@ INSERT INTO `videos` (`id`, `title`, `description`, `release_date`, `is_active`,
 (10, 'Wee Learners Storytime', 'See our Storytime with our imaagaine students.', '2023-04-01', 1, 'https://www.youtube.com/watch?v=cc7CAm6CKwM', 27, 'weelearners_storytime.jpeg'),
 (11, 'Wee Learners Natures Calling', 'Watch our Students learn about eco, and nature', '2023-04-15', 1, 'https://www.youtube.com/watch?v=jJAhVCPK1_w', 27, 'weelearners_planting.jpeg'),
 (12, 'MUST WATCH Wee Learners students learns plants', 'Students will be exploring different forms of plants.', '2023-05-01', 1, 'https://www.youtube.com/watch?v=29iRiYi_c9k', 27, 'weelearners_planting2.jpeg'),
-(13, 'Wee Learners Navaity', 'Watch our natavlity by our students.', '2023-05-15', 1, 'https://www.youtube.com/watch?v=VmFc-5_mRKg', 27, 'weelearners_nativity.jpeg');
+(13, 'Wee Learners Navaity', 'Watch our natavlity by our students.', '2023-05-15', 1, 'https://www.youtube.com/watch?v=VmFc-5_mRKg', 27, 'weelearners_nativity.jpeg'),
+(14, 'Wee Learners Dance Day', 'Come to Dance Day in Glasgow at Wee Learners Nursery and Preschool is a beautiful Early Years education and childcare setting for children aged 3 months to 5 years old. ', '2016-04-12', 1, 'https://www.youtube.com/watch?v=TfSx50Cnk0U', 27, 'weelearners_dance.jpeg'),
+(15, 'Wee Learners Festive Day', 'Come to Festive Day in Glasgow at Wee Learners Nursery for students aged 3 months to 5 years old. ', '2018-08-24', 1, 'https://www.youtube.com/shorts/7NVs_GNa2Ww', 27, 'weelearners_festive_day.jpeg'),
+(16, 'Wee Learners Play Day', 'Come to Wee Learners in Glasgow at Wee Learners Nursery for students aged 3 months to 5 years old, and watch them having fun. ', '2018-11-21', 1, 'https://www.youtube.com/watch?v=JYauIqy67Cs', 27, 'wee_learners_outside.jpeg'),
+(17, 'Wee Learners Catching Monster', 'Come to students catching those pesky little pests in Glasgow Day Nursery. ', '2025-05-14', 1, 'https://www.youtube.com/watch?v=PnXA4Ecc4aY', 27, 'weelearners_bugs.jpeg'),
+(18, 'Wee Learners Tour', 'Come to our Glasgow Nursery. ', '2025-03-04', 1, 'https://www.youtube.com/watch?v=PnXA4Ecc4aY', 27, 'weelearners_tour.jpeg'),
+(19, 'Wee Learners Libary', 'Come to our libary thats located in Glasgow right beside the Nursery. ', '2020-08-04', 1, 'https://www.youtube.com/watch?v=dxvZZDW4DvM', 27, 'wee_learners._libary.jpeg'),
+(20, 'Wee Learners First Aid Kit', 'Come to our nursery thats located in Glasgow to learn about first aid treatment, for parentsgurdiains and carers. ', '2020-05-20', 1, 'https://www.youtube.com/watch?v=XueXFqEPzqM', 27, 'weelearners_course.jpeg'),
+(21, 'Wee Learners Sign Lanauge', 'Come to our nursery thats located in Glasgow to learn about sign languge, for parentsgurdiains and carers. ', '2020-05-20', 1, 'https://www.youtube.com/watch?v=hcOUb5NJxog', 27, 'wee_learners._sl.jpeg'),
+(22, 'Wee Learners Book Day', 'Come to our nursery thats located in Glasgow to lto celebrate international book day. ', '2025-04-02', 1, 'https://www.youtube.com/watch?v=kruVlGL7wU0', 27, 'wee_learners._ib.jpeg'),
+(23, 'Wee Learners Learning Disablity Day', 'Come to our nursery thats located in Glasgow to lto celebrate our neurodiverse students, for all they have accomplished. ', '2025-06-16', 1, 'https://www.youtube.com/watch?v=D6VG1eW9ERY', 27, 'wee_learners._ld.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -219,7 +227,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
