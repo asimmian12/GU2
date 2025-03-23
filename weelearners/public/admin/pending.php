@@ -134,5 +134,5 @@ $publishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideo
     </section>
 </div>
 
-
+<script src="../../assets/js/script.js"></script>
 <?php include '../../includes/footer.php'; ?>

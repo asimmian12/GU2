@@ -15,7 +15,6 @@ $user->bind_result($userID, $username, $email, $role, $isAdmin);
         <div>
             <h1 class="paragraph-text">Username: <?= htmlspecialchars($username ?? '') ?></h1>
             <h2 class="main-heading">Email: <?= htmlspecialchars($email ?? '') ?></h2>
-            <h2 class="main-heading">Account Type: <?= htmlspecialchars($isAdmin ? 'Admin' : 'User') ?></h2>
             <h2 class="main-heading">Job Role: <?= htmlspecialchars($role ?? '') ?></h2>
         </div>         
     <?php endwhile; ?>
