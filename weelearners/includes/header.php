@@ -15,8 +15,8 @@
     <meta name="keywords" content="Education, Nursary, Kindergarden, Wee Learners">
     <meta name="description" content="Wee Learner has been the go-to platform for parents, carers, and children love coming to us. Our website connects Parents and Carers of their kids, ranging from Special Needs and to Normal Kids. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearnersAM.com provide an easy-to-use platform where users can explore a diverse range of badge records, apply for being a helper, etc.">
     <meta name="author" content="Asim Main">
-    <title>Wee Learners</title>
     <link rel="stylesheet" href="<?= ROOT_DIR ?>assets/css/style.css">
+    <title>Wee Learners</title>
 </head>
 <body>
     
