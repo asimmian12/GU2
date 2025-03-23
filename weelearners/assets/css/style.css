@@ -43,7 +43,7 @@ img{
     object-fit: contain;
 }
 
-/* ul has li it's child */
+/* ul has li as it's child */
 ul > li{
     list-style-type: none;
 }
