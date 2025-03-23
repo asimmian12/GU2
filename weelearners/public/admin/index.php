@@ -18,15 +18,15 @@ if (isset($_POST['toggle_active'])) {
     $user->close();
 }
 
-// Delete user and their related albums that they uploaded
+// Delete user and their related badges that they uploaded
 if (isset($_POST['deleteUser'])) {
     $user_id = intval($_POST['user_id']);
-    $deleteAlbums = $conn->prepare("DELETE FROM album WHERE fk_user_id = ?");
+    $deleteBadge = $conn->prepare("DELETE FROM badge WHERE fk_user_id = ?");
     $deleteUser = $conn->prepare("DELETE FROM user WHERE id = ?");
-    $deleteAlbums->bind_param("i", $user_id);
+    $deleteBadge->bind_param("i", $user_id);
     $deleteUser->bind_param("i", $user_id);
-    $deleteAlbums->execute();
-    $deleteAlbums->close();
+    $deleteBadge->execute();
+    $deleteBadge->close();
     $deleteUser->execute();
     $deleteUser->close();
 }

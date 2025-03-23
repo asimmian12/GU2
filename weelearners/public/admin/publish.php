@@ -11,7 +11,7 @@ if (isset($_GET['aid'])) {
         header("Location: pending.php");
         exit;
     } else {
-        echo "Error publishing photo.";
+        echo "Error unpublishing photo.";
     }
 } elseif (isset($_GET['bid'])) {
     $bid = $_GET['bid'];
@@ -22,9 +22,20 @@ if (isset($_GET['aid'])) {
         header("Location: pending.php");
         exit;
     } else {
-        echo "Error publishing badge.";
+        echo "Error unpublishing badge.";
     }
-} else {
-    echo "Photo or badge ID not provided.";
+} elseif (isset($_GET['vid'])) {
+    $vid = $_GET['vid'];
+    $stmt = $conn->prepare("UPDATE videos SET is_active = 1 WHERE id = ?");
+    $stmt->bind_param("i", $vid);
+
+    if ($stmt->execute()) {
+        header("Location: pending.php");
+        exit;
+    } else {
+        echo "Error unpublishing videos.";
+    }
+} else{
+    echo("Video is not provided");
 }
 ?>

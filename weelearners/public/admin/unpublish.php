@@ -24,7 +24,18 @@ if (isset($_GET['aid'])) {
     } else {
         echo "Error unpublishing badge.";
     }
-} else {
-    echo "Photo or badge ID not provided.";
+} elseif (isset($_GET['vid'])) {
+    $vid = $_GET['vid'];
+    $stmt = $conn->prepare("UPDATE videos SET is_active = 0 WHERE id = ?");
+    $stmt->bind_param("i", $vid);
+
+    if ($stmt->execute()) {
+        header("Location: pending.php");
+        exit;
+    } else {
+        echo "Error unpublishing videos.";
+    }
+} else{
+    echo("Video is not provided");
 }
 ?>

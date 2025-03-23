@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 22, 2025 at 03:48 AM
+-- Generation Time: Mar 23, 2025 at 03:42 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -102,7 +102,7 @@ INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `usernam
 (26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'admin', NULL, 'Admin', NULL, 'Staff'),
 (27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 1, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen', NULL, 'Parent Helper'),
 (47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'asim1', 'test_pic.jpg', 'Student'),
-(50, '$2y$10$yo.SPd./ta.vMQXnCoRaoutpzMc1ajkB10b2FTCC23skIQcM0hoEm', 1, 'malSabah@weelearners.com', 1, 'MAL', NULL, 'Mahmood', 'test_pic.jpg', 'Parent Helper');
+(51, '$2y$10$B.STsff0WKb5mbjUCF.0F.eEKjLQtSNNbz1sZ20IH/bsRCAc7xAYS', 0, 'mal@weelearners.com', 1, 'MAL', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `badge`
 --
 ALTER TABLE `badge`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `photo`
@@ -180,7 +180,7 @@ ALTER TABLE `photo`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `videos`

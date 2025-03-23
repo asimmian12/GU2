@@ -25,6 +25,18 @@ $publishedBadges = $conn->prepare("SELECT id, badge_name, description, badge_img
 $publishedBadges->execute();
 $publishedBadges->store_result();
 $publishedBadges->bind_result($bID, $bName, $bDesc, $bImage);
+
+// Bringing in Unpublished video details
+$unpublishedVideos = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 0 ORDER BY RAND() LIMIT 5");
+$unpublishedVideos->execute();
+$unpublishedVideos->store_result();
+$unpublishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
+
+// Bringing in Published video details
+$publishedVideos = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 1 ORDER BY RAND() LIMIT 5");
+$publishedVideos->execute();
+$publishedVideos->store_result();
+$publishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 ?>
 
 <h1 class="h1-heading-center">Unpublished Photos</h1>
@@ -88,5 +100,39 @@ $publishedBadges->bind_result($bID, $bName, $bDesc, $bImage);
         <?php endwhile; ?>
     </section>
 </div>
+
+<h1 class="h1-heading-center">Unpublished Videos</h1>
+<div class="div-album">
+    <section>
+        <?php while ($unpublishedVideos->fetch()) : ?>
+            <div class="div-album-item">
+            <div>
+            <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
+            <p><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <span><?= htmlspecialchars($vRelease ?? '') ?></span>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/admin/publish.php?vid=' . $vID) ?>">Publish Video</a>
+        </div>
+        <?php endwhile; ?>
+    </section>
+</div>
+
+<h1 class="h1-heading-center">Published Videos</h1>
+<div class="div-album">
+    <section>
+        <?php while ($publishedVideos->fetch()) : ?>
+            <div>
+            <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
+            <p><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <span><?= htmlspecialchars($vRelease ?? '') ?></span>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/admin/unpublish.php?vid=' . $vID) ?>">Unpublish Video</a>
+            </div>
+        <?php endwhile; ?>
+    </section>
+</div>
+
 
 <?php include '../../includes/footer.php'; ?>
