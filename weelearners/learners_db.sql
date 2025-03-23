@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2025 at 05:33 AM
+-- Generation Time: Mar 23, 2025 at 05:35 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -104,8 +104,7 @@ INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `usernam
 (47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'asim1', 'test_pic.jpg', 'Student'),
 (55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, NULL, NULL, 'Parent Helper'),
 (56, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'iain.shaw@weelearners.com', 1, 'Iain3', NULL, 'Iain', NULL, 'Student'),
-(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 0, 'natailie.stark@weelearners.com', 1, 'Natailie', NULL, 'Natailie', NULL, 'Staff'),
-(61, '$2y$10$lWN74hF3XI7fEV8jDnNukeJD.pCKBbiJ7HvDzA9wUA.FlTQruQGO2', 0, 'gerry@weelearners.com', 1, 'Gerry2', NULL, NULL, NULL, NULL);
+(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 0, 'natailie.stark@weelearners.com', 1, 'Natailie', NULL, 'Natailie', NULL, 'Staff');
 
 -- --------------------------------------------------------
 
