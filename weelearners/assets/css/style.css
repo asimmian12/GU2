@@ -7,8 +7,8 @@
 }
 :root{
     --background-color: #f4f4f8;
-    --color: #000000;
-    --darken-colour: #7474cf;
+    --color: #dddddd;
+    --darken-colour: #704FE6;
     --p-text: #EE10B0;
     --font-size: 24px;
     --second-font-size: 16px;
@@ -75,7 +75,6 @@ ul > li{
 
 /* Search */
 .form-search-bar {
-    background-color: var(--background-color);
     color: var(--color);
     max-width: 100%; 
 }
@@ -106,7 +105,6 @@ ul > li{
     align-items: center;
     padding: 0 20px;
     color: var(--colour);
-    background-color: var(--background-color);
 }
 .div-logo a {
     color: var(--color);
@@ -289,7 +287,6 @@ section div img {
     gap: 20px; 
     padding: 15px;
     margin-top: 8%;
-    background-color: var(--background-color); 
 }
 
 .table-spacing{
@@ -548,7 +545,6 @@ section div img {
 
 .paragraph-copyright {
     margin-top: 30%;
-    background-color: var(--background-color);
 }
 
 .section-album-info{
@@ -611,7 +607,6 @@ section div img {
 
 .paragraph-copyright {
     margin-top: 120%;
-    background-color: var(--background-color);
 }
 
 .section-album-info{
@@ -623,7 +618,6 @@ section div img {
 .nav-navbar {
     padding: 10px 20px;
     width: 1000px;
-    background-color: var(--background-color);
 }
 
 .ul-nav-links {
@@ -631,7 +625,6 @@ section div img {
     flex-direction: row;
     position: static;
     width: auto;
-    background-color: var(--background-color);
 }
 .ul-nav-links li {
     margin: 0 10px;
@@ -650,7 +643,6 @@ section div img {
 .paragraph-copyright {
     margin-top: 30%;
     width: 1000px;
-    background-color: var(--background-color);
 }
 }
 
