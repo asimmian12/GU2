@@ -2,7 +2,6 @@
 
 include 'config/config.php';
 include 'includes/header.php';
-
 ?>
     <h1 class="h1-heading-center">Register Page</h1>
     <section class="section-register-form">
@@ -15,7 +14,7 @@ include 'includes/header.php';
         <label for="email">Email</label>
         <input type="email" class="section-register-form" name="email" id="email" placeholder="Enter Your Email Address"> 
         <label for="pswd">Password</label>
-        <input type="password" class="section-register-form" name="password" id="pswd" placeholder="Enter Your Password">    
+        <input type="password" class="section-register-form" name="password" id="pswd" placeholder="Enter Your Password">        
         <input type="submit" class="input-register-btn">
     
         <section class="section-register-options">
