@@ -2,7 +2,6 @@
     session_start();
     define("ROOT_DIR", "/GU2/weelearners/");
     // define("ROOT_DIR", "/Asim/GU2/weelearners/");
-
 ?>
 
 
