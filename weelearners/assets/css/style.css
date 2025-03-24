@@ -410,7 +410,7 @@ section div img {
 }
 
 /* Upload Vinyl's */
-.uploadVinyl{
+.uploadBadge{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -418,16 +418,16 @@ section div img {
     margin: 3%;
 }
 
-.uploadVinyl label {
+.uploadBadge label {
     display: flex;
     margin-bottom: 8px;
     font-weight: normal;
     color: var(--color);
 }
 
-.uploadVinyl Input,
-.uploadVinyl textarea,
-.uploadVinyl select {
+.uploadBadge Input,
+.uploadBadge textarea,
+.uploadBadge select {
     display: flex;
     width: 100%;
     padding: 10px;

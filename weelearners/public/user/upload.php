@@ -9,7 +9,7 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 // Bringing in Uploads Details (Badges)
-$uploads = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE fk_user_id = ?");
+$uploads = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE fk_user_id = ? ORDER BY RAND() LIMIT 3");
 $uploads->bind_param("i", $_SESSION['id']);
 $uploads->execute();
 $uploads->store_result();
@@ -18,7 +18,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 
 <h1 class="h1-heading-center">Uploading Badge Page</h1>
 <h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an badge for sale?</h2>
-<section class="uploadVinyl">
+<section class="uploadBadge">
     <form action="<?= ROOT_DIR ?>uploadConfig" method="post" enctype="multipart/form-data">
         <label for="badgeName">Badge Name</label>
         <input type="text" name="badgeName" id="badgeName" required>
@@ -41,7 +41,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
             <div class="div-user-item">
                 <p class="paragraph-album-text"><?= htmlspecialchars($badgeID ?? '') ?></p>
                 <p class="paragraph-album-text"><?= htmlspecialchars($badgeName ?? '') ?></p>
-                <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $badgeImage ?? '') ?>" alt="Album Cover">
+                <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $badgeImage ?? '') ?>" alt="Badge Cover">
                 <p class="paragraph-album-text"><?= htmlspecialchars($badgeDescription ?? '') ?></p>
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $badgeID ?? '') ?>">More Information</a>
             </div>

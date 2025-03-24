@@ -31,7 +31,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
     <?php while ($photo->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? '') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Album Cover">
+            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Photo Cover">
             <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? '') ?></h2>
             <span><?= htmlspecialchars($release ?? '') ?></span>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
