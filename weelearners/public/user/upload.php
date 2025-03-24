@@ -39,10 +39,10 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
     <section>
         <?php while($uploads->fetch()): ?>
             <div class="div-user-item">
-                <p class="paragraph-album-text"><?= htmlspecialchars($badgeID ?? '') ?></p>
-                <p class="paragraph-album-text"><?= htmlspecialchars($badgeName ?? '') ?></p>
+                <p class="paragraph-badge-text"><?= htmlspecialchars($badgeID ?? '') ?></p>
+                <p class="paragraph-badge-text"><?= htmlspecialchars($badgeName ?? '') ?></p>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $badgeImage ?? '') ?>" alt="Badge Cover">
-                <p class="paragraph-album-text"><?= htmlspecialchars($badgeDescription ?? '') ?></p>
+                <p class="paragraph-badge-text"><?= htmlspecialchars($badgeDescription ?? '') ?></p>
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $badgeID ?? '') ?>">More Information</a>
             </div>
             <?php endwhile; ?>
