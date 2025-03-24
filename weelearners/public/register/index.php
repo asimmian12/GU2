@@ -4,7 +4,6 @@ include 'includes/header.php';
 ?>
     <h1 class="h1-heading-center">Register Page</h1>
     <section class="section-register-form">
- 
         <form action="<?= ROOT_DIR ?>registerConfig" method="post" class="form-register-form">
         <input type="hidden" name="is_active" value="1">           
         <input type="hidden" name="is_admin" value="1">
