@@ -27,13 +27,13 @@ $publishedBadges->store_result();
 $publishedBadges->bind_result($bID, $bName, $bDesc, $bImage);
 
 // Bringing in Unpublished video details
-$unpublishedVideos = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 0 ORDER BY RAND() LIMIT 5");
+$unpublishedVideos = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 0 ORDER BY RAND()");
 $unpublishedVideos->execute();
 $unpublishedVideos->store_result();
 $unpublishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 
 // Bringing in Published video details
-$publishedVideos = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 1 ORDER BY RAND() LIMIT 5");
+$publishedVideos = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 1 ORDER BY RAND()");
 $publishedVideos->execute();
 $publishedVideos->store_result();
 $publishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
