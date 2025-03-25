@@ -16,7 +16,7 @@ $uploads->store_result();
 $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 ?>
 
-<h1 class="h1-heading-center">Uploading Badge Page</h1>
+<h1 class="h1-heading-center">Upload Badge Page</h1>
 <h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an badge for sale?</h2>
 <section class="uploadBadge">
     <form action="<?= ROOT_DIR ?>uploadConfig" method="post" enctype="multipart/form-data">
