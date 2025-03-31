@@ -23,6 +23,13 @@ if (isset($_GET['bid'])) {
     $badgeID = null;
 }
 
+// Fetch Testimonals ID
+if (isset($_GET['tid'])) {
+    $testimonalsID = $_GET['tid'];
+} else {
+    $testimonalsID = null;
+}
+
 // Fetching Photo Details
 if ($photoID == true) {
     $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE id = ? AND is_active = 1 LIMIT 3");
@@ -47,6 +54,14 @@ if ($badgeID == true) {
     $badge->execute();
     $badge->store_result();
     $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
+}
+
+if ($testimonalsID == true) {
+    $testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE id = ? LIMIT 3");
+    $testimonals->bind_param("i", $testimonalsID);
+    $testimonals->execute();
+    $testimonals->store_result();
+    $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 }
 ?>
 
@@ -84,6 +99,17 @@ if ($badgeID == true) {
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
             <p><?= htmlspecialchars($bDesc ?? '') ?></p>
             <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($bID ?? '') ?></p>
+        </div>
+    <?php endwhile; endif; ?>
+</section>
+
+<h2 class="h2-secondary-colour">More Testimonals</h2>
+<section>
+    <?php if ($testimonalsID == true) : while ($testimonals->fetch()) : ?>
+        <div>
+            <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($tID ?? '') ?></p>
         </div>
     <?php endwhile; endif; ?>
 </section>

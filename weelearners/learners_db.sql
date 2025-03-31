@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 23, 2025 at 11:56 PM
+-- Generation Time: Mar 31, 2025 at 09:17 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -96,6 +96,29 @@ INSERT INTO `photo` (`id`, `albName`, `albDescription`, `release_date`, `fk_phot
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `testimonals`
+--
+
+CREATE TABLE `testimonals` (
+  `id` int NOT NULL,
+  `testimonals_name` varchar(255) DEFAULT NULL,
+  `description` text,
+  `fk_user_id` int DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `testimonals`
+--
+
+INSERT INTO `testimonals` (`id`, `testimonals_name`, `description`, `fk_user_id`, `is_active`) VALUES
+(1, 'Mahmood Sabagah', '\"Great Staff. The teaching is nice, and the students are encouraging their students very well because my daughter used to be non-verbal and now she starts to speak\".', 55, 1),
+(2, 'Natalie Stark', '\"The nursery provides such a warm and caring environment. The staff are incredibly attentive, and my child loves spending time there. Its wonderful to see how much my little one has developed socially and cognitively in such a short time. I couldnt be happier with the nurturing atmosphere.\"', 55, 1),
+(3, 'Ian McDonald', '\"I am so grateful for the excellent care and support my child receives at this nursery. The staff are not only professional but also genuinely care about the childrens well-being. Every day, my child comes home excited to share what they\ve learned, and it\s clear they are thriving in this positive, engaging environment.\"', 55, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -120,7 +143,7 @@ INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `usernam
 (26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'admin', NULL, 'Admin', NULL, 'Staff'),
 (27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 1, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen', NULL, 'Parent Helper'),
 (47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'asim1', NULL, 'Student'),
-(55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, NULL, NULL, 'Parent Helper'),
+(55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, 'MAL', NULL, 'Parent Helper'),
 (56, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'iain@weelearners.com', 1, 'Iain3', NULL, 'Iain', NULL, 'Student'),
 (57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'natailie@weelearners.com', 1, 'Natailie', NULL, 'Natailie', NULL, 'Staff');
 
@@ -189,6 +212,12 @@ ALTER TABLE `photo`
   ADD KEY `fk_user_id` (`fk_user_id`);
 
 --
+-- Indexes for table `testimonals`
+--
+ALTER TABLE `testimonals`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -216,6 +245,12 @@ ALTER TABLE `badge`
 --
 ALTER TABLE `photo`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+
+--
+-- AUTO_INCREMENT for table `testimonals`
+--
+ALTER TABLE `testimonals`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`

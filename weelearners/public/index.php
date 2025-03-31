@@ -19,6 +19,12 @@ $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_i
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
+
+// Fetching testimonals details
+$testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
+$testimonals->execute();
+$testimonals->store_result();
+$testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 
 <h1 class="h1-heading-center">Home Page</h1>
@@ -60,6 +66,17 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image" style="max-width: 200px; height: auto;">
             <p><?= htmlspecialchars($bDesc ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
+        </div>
+    <?php endwhile ?>
+</section>
+
+<h2 class="h2-secondary-colour">All Reviews</h2>
+<section>
+    <?php while ($testimonals->fetch()) : ?>
+        <div>
+            <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>

@@ -35,7 +35,18 @@ if (isset($_GET['aid'])) {
     } else {
         echo "Error unpublishing videos.";
     }
+} elseif (isset($_GET['tid'])) {
+    $tid = $_GET['tid'];
+    $stmt = $conn->prepare("UPDATE testimonals SET is_active = 1 WHERE id = ?");
+    $stmt->bind_param("i", $tid);
+
+    if ($stmt->execute()) {
+        header("Location: pending.php");
+        exit;
+    } else {
+        echo "Error unpublishing reviews.";
+    }
 } else{
-    echo("Video is not provided");
+    echo("Nothing is being is not provided");
 }
 ?>

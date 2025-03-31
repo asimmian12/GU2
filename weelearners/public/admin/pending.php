@@ -37,6 +37,18 @@ $publishedVideos = $conn->prepare("SELECT id, title, description, release_date, 
 $publishedVideos->execute();
 $publishedVideos->store_result();
 $publishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
+
+// Bringing in Unpublished Badge Details
+$unpublishedReviews = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE is_active = 0 ORDER BY RAND()");
+$unpublishedReviews->execute();
+$unpublishedReviews->store_result();
+$unpublishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
+
+// Bringing in Published Badge Details
+$publishedReviews = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE is_active = 1 ORDER BY RAND()");
+$publishedReviews->execute();
+$publishedReviews->store_result();
+$publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 
 <h1 class="h1-heading-center">Unpublished Photos</h1>
@@ -105,8 +117,7 @@ $publishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideo
 <div class="div-album">
     <section>
         <?php while ($unpublishedVideos->fetch()) : ?>
-            <div class="div-album-item">
-            <div>
+        <div class="div-album-item">
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
             <p><?= htmlspecialchars($vDesc ?? '') ?></p>
@@ -122,14 +133,42 @@ $publishedVideos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideo
 <div class="div-album">
     <section>
         <?php while ($publishedVideos->fetch()) : ?>
-            <div>
-            <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
-            <p><?= htmlspecialchars($vDesc ?? '') ?></p>
-            <span><?= htmlspecialchars($vRelease ?? '') ?></span>
-            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
-            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/admin/unpublish.php?vid=' . $vID) ?>">Unpublish Video</a>
+            <div class="div-album-item"> 
+                <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+                <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
+                <p><?= htmlspecialchars($vDesc ?? '') ?></p>
+                <span><?= htmlspecialchars($vRelease ?? '') ?></span>
+                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
+                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/admin/unpublish.php?vid=' . $vID) ?>">Unpublish Video</a>
             </div>
+        <?php endwhile; ?>
+    </section>
+</div>
+
+<h1 class="h1-heading-center">Unpublished Reviews</h1>
+<div class="div-album">
+    <section>
+        <?php while ($unpublishedReviews->fetch()) : ?>
+            <div class="div-album-item"> 
+                <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
+                <span><?= htmlspecialchars($tDesc ?? '') ?></span>
+                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
+                <a href="<?= htmlspecialchars(ROOT_DIR . 'public/admin/publish.php?tid=' . $tID) ?>">Publish Review</a>
+            </div>
+        <?php endwhile; ?>
+    </section>
+</div>
+
+<h1 class="h1-heading-center">Published Reviews</h1>
+<div class="div-album">
+    <section>
+        <?php while ($publishedReviews->fetch()) : ?>
+        <div class="div-album-item">
+            <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/admin/unpublish.php?tid=' . $tID) ?>">Unpublish Review</a>
+        </div>
         <?php endwhile; ?>
     </section>
 </div>

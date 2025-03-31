@@ -25,11 +25,17 @@ $badge->bind_param("ss", $searchResults, $searchResults);
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bImage);
+
+$testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE testimonals_name LIKE ? OR description LIKE ?");
+$testimonals->bind_param("ss", $searchResults, $searchResults);
+$testimonals->execute();
+$testimonals->store_result();
+$testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 
 <h1 class="h1-heading-center">Home Page</h1>
 <h2 class="h2-secondary-colour">Search</h2>
-<section>
+    <section>
     <?php
     // Display Photo Results
     while ($photo->fetch()) : ?>
@@ -41,7 +47,9 @@ $badge->bind_result($bID, $bName, $bDesc, $bImage);
             <a href="<?= ROOT_DIR ?>public/moreinfo.php?aid=<?= htmlspecialchars($pID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile; ?>
+    </section>
 
+    <section>
     <?php
     // Display Video Results
     while ($videos->fetch()) : ?>
@@ -53,7 +61,9 @@ $badge->bind_result($bID, $bName, $bDesc, $bImage);
             <a href="<?= ROOT_DIR ?>public/moreinfo.php?vid=<?= htmlspecialchars($vID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile; ?>
-
+    </section>
+    
+    <section>
     <?php
     // Display Badge Results
     while ($badge->fetch()) : ?>
@@ -64,6 +74,19 @@ $badge->bind_result($bID, $bName, $bDesc, $bImage);
             <a href="<?= ROOT_DIR ?>public/moreinfo.php?bid=<?= htmlspecialchars($bID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile; ?>
-</section>
+    </section>
+    
+    <section>
+    <?php 
+    // Displaying testimonals which i didn't add to requirement spec to make it more dynamic
+    while ($testimonals->fetch()) : ?>
+        <div>
+            <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
+        </div>
+    </section>
+    <?php endwhile ?>
 
-<?php include 'includes/footer.php'; ?>
+    
+    <?php include 'includes/footer.php'; ?>
