@@ -7,7 +7,10 @@
 }
 :root{
     --background-color: #f4f4f8;
-    --color: #b4b2b2;
+    --nav-background-color: #ffffff;
+    --footer-background-color: #ffffff;
+    --color: #000000;
+    --font-color: #ffffff;
     --darken-colour: #704FE6;
     --p-text: #EE10B0;
     --font-size: 24px;
@@ -27,8 +30,8 @@ header {
 /*Buttons  */
 button{
     background-color: var(--darken-colour);
-    color: var(--color);
-    border: none;
+    color: var(--font-color);
+    border: 2px solid var(--color);
     border-radius: 8px;
     padding: 10px 20px; 
     margin: 2px;
@@ -51,7 +54,7 @@ ul > li{
 /* login and register buttons*/
 .input-login-btn{
     background-color: var(--darken-colour); 
-    color: var(--color);
+    color: var(--font-color);
     border: none;
     gap: 2%;
     border-radius: 8px;
@@ -63,7 +66,7 @@ ul > li{
 
 .input-register-btn{
     background-color: var(--darken-colour); 
-    color: var(--color);
+    color: var(--font-color);
     border: none;
     gap: 2%;
     border-radius: 8px;
@@ -75,9 +78,10 @@ ul > li{
 
 /* Search */
 .form-search-bar {
-    background-color: var(--background-color);
+    background-color: var(--nav-background-color);
     color: var(--color);
     max-width: 100%; 
+    border: 2px solid #b4b2b2;
 }
 .input-search-bar{
     height: 35px;
@@ -86,12 +90,13 @@ ul > li{
     border: none;
     padding: 6px;
     margin: 6px;
+    border: 2px solid #b4b2b2;
 }
 
 .input-search-btn{
     background-color: var(--darken-colour);
-    color: var(--color);
-    border: none;
+    color: var(--font-color);
+    border: 2px solid var(--color);
     border-radius: 5px;
     padding: 8px 16px;
     font-size: var(--second-font-size);
@@ -106,7 +111,7 @@ ul > li{
     align-items: center;
     padding: 0 20px;
     color: var(--colour);
-    background-color: var(--background-color);
+    background-color: var(--nav-background-color);
 }
 .div-logo a {
     color: var(--color);
@@ -221,9 +226,10 @@ section > div a {
     margin-bottom: 15px;
     padding: 10px 15px;
     background-color: var(--darken-colour);
-    color: var(--color);
+    color: var(--font-color);
     text-decoration: none;
     border-radius: 5px;
+    border: 2px solid var(--color);
 }
 
 section > div a:hover {
@@ -289,12 +295,14 @@ section div img {
     gap: 20px; 
     padding: 15px;
     margin-top: 8%;
-    background-color: var(--background-color); 
+    border: 2px solid #b4b2b2;
+    background-color: var(--footer-background-color); 
 }
 
 .paragraph_copyright_footer_scroll_to_btn{
     background-color: var(--darken-colour);
     font-size: 25px;
+    border: 2px solid var(--color);
 }
 
 .table-spacing{
@@ -443,7 +451,7 @@ section div img {
 
 .upload-btn{
     background-color: var(--darken-colour); 
-    color: var(--color);
+    color: var(--font-color);
     border: none;
     border-radius: 8px;
     padding: 10px 20px; 
@@ -553,7 +561,8 @@ section div img {
 
 .paragraph-copyright {
     margin-top: 30%;
-    background-color: var(--background-color);
+    border: 2px solid #b4b2b2;
+    background-color: var(--footer-background-color); 
 }
 
 .section-album-info{
@@ -592,6 +601,7 @@ section div img {
 .ul-nav-links.open {
     display: flex;
     align-items: center;
+    background-color: rgb(225, 225, 225);
     justify-content: center;
     flex-direction: column;
     margin-top: 3%;
@@ -616,7 +626,8 @@ section div img {
 
 .paragraph-copyright {
     margin-top: 450%;
-    background-color: var(--background-color);
+    border: 2px solid #b4b2b2;
+    background-color: var(--footer-background-color); 
 }
 
 .section-album-info{
@@ -628,7 +639,7 @@ section div img {
 .nav-navbar {
     padding: 10px 20px;
     width: 1222px;
-    background-color: var(--background-color);
+    background-color: var(--nav-background-color);
 }
 
 .ul-nav-links {
@@ -636,7 +647,7 @@ section div img {
     flex-direction: row;
     position: static;
     width: auto;
-    background-color: var(--background-color);
+    background-color: var(--nav-background-color);
 }
 .ul-nav-links li {
     margin: 0 10px;
@@ -655,7 +666,8 @@ section div img {
 .paragraph-copyright {
     /* margin-top: 30%; */
     width: 1222px;
-    background-color: var(--background-color);
+    border: 2px solid #b4b2b2;
+    background-color: var(--footer-background-color); 
 }
 }
 
