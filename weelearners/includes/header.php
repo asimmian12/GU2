@@ -19,8 +19,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="<?= ROOT_DIR ?>assets/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= ROOT_DIR ?>assets/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= ROOT_DIR ?>assets/favicon_io/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="manifest" href="<?= ROOT_DIR ?>assets/favicon_io/site.webmanifest">
     <link rel="stylesheet" href="<?= ROOT_DIR ?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Wee Learners</title>
 </head>
 <body>

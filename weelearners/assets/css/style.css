@@ -292,6 +292,11 @@ section div img {
     background-color: var(--background-color); 
 }
 
+.paragraph_copyright_footer_scroll_to_btn{
+    background-color: var(--darken-colour);
+    font-size: 25px;
+}
+
 .table-spacing{
     padding: 5px;
 }

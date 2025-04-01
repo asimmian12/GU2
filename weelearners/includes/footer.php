@@ -17,7 +17,12 @@
         </div>
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; Wee Learners. <?= date('Y') ?> All Rights Reserved.</span>
     </div>
+    <!-- The scroll to top button -->
+     <button onclick="topFunction()" title="Go to Top Of The Page" class="paragraph_copyright_footer_scroll_to_btn">
+        <i class="ri-arrow-drop-up-line"></i>
+    </button>
 </footer>
+
 
 
 <script src="assets/js/script.js"></script>

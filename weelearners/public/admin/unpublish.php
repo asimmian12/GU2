@@ -4,49 +4,33 @@ include "../../includes/header.php";
 
 if (isset($_GET['aid'])) {
     $aid = $_GET['aid'];
-    $stmt = $conn->prepare("UPDATE photo SET is_active = 0 WHERE id = ?");
-    $stmt->bind_param("i", $aid);
-
-    if ($stmt->execute()) {
-        header("Location: pending.php");
-        exit;
-    } else {
-        echo "Error unpublishing photo.";
-    }
+    $unpublish = $conn->prepare("UPDATE photo SET is_active = 0 WHERE id = ?");
+    $unpublish->bind_param("i", $aid);
+    $unpublish->execute();
+    header("Location: ../../pending");
+    exit;
 } elseif (isset($_GET['bid'])) {
     $bid = $_GET['bid'];
-    $stmt = $conn->prepare("UPDATE badge SET is_active = 0 WHERE id = ?");
-    $stmt->bind_param("i", $bid);
-
-    if ($stmt->execute()) {
-        header("Location: pending.php");
-        exit;
-    } else {
-        echo "Error unpublishing badge.";
-    }
+    $unpublish = $conn->prepare("UPDATE badge SET is_active = 0 WHERE id = ?");
+    $unpublish->bind_param("i", $bid);
+    $unpublish->execute();
+    header("Location: ../../pending");
+    exit;
 } elseif (isset($_GET['vid'])) {
     $vid = $_GET['vid'];
-    $stmt = $conn->prepare("UPDATE videos SET is_active = 0 WHERE id = ?");
-    $stmt->bind_param("i", $vid);
-
-    if ($stmt->execute()) {
-        header("Location: pending.php");
-        exit;
-    } else {
-        echo "Error unpublishing videos.";
-    }
+    $unpublish = $conn->prepare("UPDATE videos SET is_active = 0 WHERE id = ?");
+    $unpublish->bind_param("i", $vid);
+    $unpublish->execute();
+    header("Location: ../../pending");
+    exit;
 } elseif (isset($_GET['tid'])) {
     $tid = $_GET['tid'];
-    $stmt = $conn->prepare("UPDATE testimonals SET is_active = 0 WHERE id = ?");
-    $stmt->bind_param("i", $tid);
-
-    if ($stmt->execute()) {
-        header("Location: pending.php");
-        exit;
-    } else {
-        echo "Error publishing reviews.";
-    }
-} else{
-    echo("Nothing is being is not provided");
+    $unpublish = $conn->prepare("UPDATE testimonals SET is_active = 0 WHERE id = ?");
+    $unpublish->bind_param("i", $tid);
+    $unpublish->execute();
+    header("Location: ../../pending");
+    exit;
+} else {
+    echo "Nothing is being provided.";
 }
 ?>

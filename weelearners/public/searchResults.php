@@ -78,15 +78,15 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
     
     <section>
     <?php 
-    // Displaying testimonals which i didn't add to requirement spec to make it more dynamic
+    // Display testimonials
     while ($testimonals->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
             <p><?= htmlspecialchars($tDesc ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
         </div>
+        <?php endwhile ?>
     </section>
-    <?php endwhile ?>
 
     
     <?php include 'includes/footer.php'; ?>
