@@ -81,10 +81,10 @@ ul > li{
     background-color: var(--nav-background-color);
     color: var(--color);
     max-width: 100%; 
-    border: 2px solid #b4b2b2;
+    /* border: 2px solid var(--color); */
 }
 .input-search-bar{
-    height: 35px;
+    height: 38px;
     width: 90px;
     border-radius: 5px;
     border: none;
@@ -101,7 +101,8 @@ ul > li{
     padding: 8px 16px;
     font-size: var(--second-font-size);
     cursor: pointer;
-    height: 35px;
+    height: 38px;
+    width: 90px;
 }
 
 /* Nav */
@@ -276,7 +277,7 @@ section div img {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 15px; 
+    padding: 9px; 
 }
 
 .status-message{
@@ -304,7 +305,82 @@ section div img {
     font-size: 25px;
     border: 2px solid var(--color);
 }
-
+    /* This can style the footer column by adding horizontal padding for spacing */
+    .footer__col {
+    padding-inline: 2rem;
+} 
+  
+  /* This can style images within the footer container, setting a maximum width and centering them with margins */
+  .footer__container img {
+    max-width: 170px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+  /* This can style the footer social links container with flexible layout and spacing */
+  .footer__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* This can style the social media icons in the footer with size and color */
+  .footer__socials a {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+  }
+  
+  /* This can style the hover effect for social media icons in the footer */
+  .footer__socials a:hover {
+    color: var(--text-light);
+  }
+  
+  /* This can style the footer links container with a grid layout */
+  .footer__links {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  /* This can style individual footer links with block display, font weight, and color */
+  .footer__links a {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  
+  /* This can style the hover effect for footer links */
+  .footer__links a:hover {
+    color: var(--text-light);
+  } 
+  
+  /* This can style the headings in footer columns with margin, font size, weight, and color */
+  .footer__col h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+  } 
+  
+  /* This can style paragraphs in footer columns with color, line height, and text alignment */
+  .footer__col p {
+    color: var(--text-light);
+    line-height: 1.75rem;
+    text-align: center;
+  }
+  
+  /* This can style the footer copyright section with padding, font size, color, and text alignment */
+  .footer__copyright {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+   
 .table-spacing{
     padding: 5px;
 }
@@ -528,7 +604,31 @@ section div img {
     width: 100%; 
 }
 
+
 /* Media Queries */
+
+/* This can style the layout for screens with a minimum width of 540px */
+@media (min-width: 540px) {  
+    /* This can style the footer container with a two-column layout with grid*/
+    .footer__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    /* This can style the footer container with a two-column layout with grid*/
+    .footer__iframe {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* This can style the first footer column to span the full width */
+    .footer__col:nth-child(1) {
+      grid-area: 1/1/2/3;
+    }
+  
+    /* This can style the third footer column with a left border */
+    .footer__col:nth-child(3) {
+      border-left: 2px solid var(--text-dark);
+    }
+  }
+  
 @media (min-width: 768px) {
 .nav-navbar {
     padding: 10px 20px;
@@ -568,6 +668,28 @@ section div img {
 .section-album-info{
     min-width: 5%;
 } 
+/* This can style the footer container with a three-column layout with grid*/
+ .footer__iframe{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* This can style the footer container with a three-column layout with grid*/
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* This can style the first footer column with specific grid positioning and borders */
+  .footer__col:nth-child(1) {
+  grid-area: 1/2/2/3;
+  border-left: 2px solid var(--text-dark);
+  border-right: 2px solid var(--text-dark);
+
+  }
+
+  /* This can style the third footer column to remove borders */
+  .footer__col:nth-child(3) {
+    border: none;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -669,6 +791,28 @@ section div img {
     border: 2px solid #b4b2b2;
     background-color: var(--footer-background-color); 
 }
+/* This can style the footer container with a three-column layout with grid*/
+.footer__iframe{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* This can style the footer container with a three-column layout with grid*/
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* This can style the first footer column with specific grid positioning and borders */
+  .footer__col:nth-child(1) {
+  grid-area: 1/2/2/3;
+  border-left: 2px solid var(--text-dark);
+  border-right: 2px solid var(--text-dark);
+
+  }
+
+  /* This can style the third footer column to remove borders */
+  .footer__col:nth-child(3) {
+    border: none;
+  }
+
 }
 
 @media (min-width: 1024px) {

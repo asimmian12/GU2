@@ -29,7 +29,7 @@
     </ul>
     
     <form action="search" method="POST" class="form-search-bar">
-        Search: <input type="text" name="search" class="input-search-bar" placeholder="Enter your search:"/>
+        <input type="text" name="search" class="input-search-bar" placeholder="Enter your search:"/>
         <input type="submit" value="Search" class="input-search-btn"/>
     </form>
 
