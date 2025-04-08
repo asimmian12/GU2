@@ -4,7 +4,7 @@
     <section class="footer__col">
       <!-- The section for Footer Social Media Links-->
       <section class="footer__socials">
-        <p class="paragraph-text">Social Media Links</p>
+        <p class="paragraph-text">Social Media Links: </p>
           <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
           <a href="https://twitter.com" target="_blank"><i class="fa-solid fa-x"></i></a>       
         <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
