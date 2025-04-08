@@ -1,5 +1,5 @@
 <!-- The secontion__container and footer__container footer -->
-<section class="paragraph-copyright" id="footer">
+<footer class="paragraph-copyright" id="footer">
     <!-- The footer col with logo and social media links to X (Twitter) and Instagram -->
     <section class="footer__col">
       <!-- The section for Footer Social Media Links-->
@@ -22,22 +22,25 @@
         <p class="paragraph-text">Email: info@weelearners.ac.uk</p>
       </section>
   </section>
+
   <section class="footer__col">
     <form action="search" method="POST" class="form-search-bar">
-        <p class="paragraph-text">Newsletter</p>
+        <p class="paragraph-text">Newsletter: </p>
         <input type="text" name="search" class="input-search-bar" placeholder="Email Address:  "/>
         <input type="submit" value="Search" class="input-search-btn"/>
     </form>
 </section>
+
   <!-- The Copyright Information -->
   <section class="footer__copyright">
-    &copy; Weelearners All rights reserved. <?php echo date("D-M-Y");?>. 
+    &copy; WeeLearners By Asim Mian. All rights reserved. <?php echo date("d-m-Y");?>. 
   </section> 
+
   <!-- The scroll to top button -->
   <button onclick="topFunction()" title="Go to Top" class="paragraph_copyright_footer_scroll_to_btn">
     <i class="fa-solid fa-arrow-up">  Back To Top</i>
   </button>
-</section>  
+
 </footer>
 
 
