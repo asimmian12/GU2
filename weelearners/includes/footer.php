@@ -1,3 +1,8 @@
+  <!-- The scroll to top button -->
+  <button onclick="topFunction()" title="Go to Top" class="paragraph_copyright_footer_scroll_to_btn">
+    <i class="fa-solid fa-arrow-up">  Back To Top</i>
+  </button>
+
 <!-- The secontion__container and footer__container footer -->
 <footer class="paragraph-copyright" id="footer">
     <!-- The footer col with logo and social media links to X (Twitter) and Instagram -->
@@ -31,16 +36,18 @@
     </form>
 </section>
 
+  <section class="footer__col">
+    <form action="search" method="POST" class="form-search-bar">
+        <p class="paragraph-text">Search: </p>
+        <input type="text" name="search" class="input-search-bar" placeholder="Enter Search:  "/>
+        <input type="submit" value="Search" class="input-search-btn"/>
+    </form>
+</section>
+
   <!-- The Copyright Information -->
   <section class="footer__copyright">
     &copy; WeeLearners By Asim Mian. All rights reserved. <?php echo date("d-m-Y");?>. 
   </section> 
-
-  <!-- The scroll to top button -->
-  <button onclick="topFunction()" title="Go to Top" class="paragraph_copyright_footer_scroll_to_btn">
-    <i class="fa-solid fa-arrow-up">  Back To Top</i>
-  </button>
-
 </footer>
 
 

@@ -28,11 +28,6 @@
         <?php endif; ?>
     </ul>
     
-    <form action="search" method="POST" class="form-search-bar">
-        <input type="text" name="search" class="input-search-bar" placeholder="Enter your search:"/>
-        <input type="submit" value="Search" class="input-search-btn"/>
-    </form>
-
     <div class="div-hamburger-menu" id="div-hamburger-menu">
         <span></span>
         <span></span>
