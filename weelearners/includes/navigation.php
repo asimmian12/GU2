@@ -28,6 +28,9 @@
         <?php endif; ?>
     </ul>
     
+    <button><a href="<?= ROOT_DIR ?>login">Login</a></button>
+    <button><a href="<?= ROOT_DIR ?>register">Register</a></button>
+
     <div class="div-hamburger-menu" id="div-hamburger-menu">
         <span></span>
         <span></span>

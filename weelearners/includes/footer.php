@@ -1,7 +1,7 @@
-  <!-- The scroll to top button -->
-  <button onclick="topFunction()" title="Go to Top" class="paragraph_copyright_footer_scroll_to_btn">
-    <i class="fa-solid fa-arrow-up">  Back To Top</i>
-  </button>
+<!-- The scroll to top button -->
+<button onclick="topFunction()" title="Go to Top" class="paragraph_copyright_footer_scroll_to_btn">
+  <i class="fa-solid fa-arrow-up">  Back To Top</i>
+</button>
 
 <!-- The secontion__container and footer__container footer -->
 <footer class="paragraph-copyright" id="footer">

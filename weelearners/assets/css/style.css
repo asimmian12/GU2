@@ -39,6 +39,12 @@ button{
     cursor: pointer; 
 }
 
+button > a {
+    background-color: var(--darken-colour);
+    color: var(--font-color);
+    border-radius: 8px;
+}
+
 /* Img */
 img{
     height: 250px;
@@ -304,6 +310,7 @@ section div img {
     background-color: var(--darken-colour);
     font-size: 25px;
     border: 2px solid var(--color);
+    margin-left: 100%;
 }
 /* This can style the footer column by adding horizontal padding for spacing */
 .footer__col {
@@ -351,27 +358,22 @@ section div img {
   .footer__links a {
     display: block;
     font-weight: 600;
-    color: var(--text-dark);
     text-align: center;
 }
-  
-/* This can style the hover effect for footer links */
-  .footer__links a:hover {
-    color: var(--text-light);
-} 
+
   
 /* This can style the headings in footer columns with margin, font size, weight, and color */
   .footer__col h4 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-dark);
+    color: var(--color);
     text-align: center;
 } 
   
 /* This can style paragraphs in footer columns with color, line height, and text alignment */
   .footer__col p {
-    color: var(--text-light);
+    color: var(--color);
     line-height: 1.75rem;
     text-align: center;
 }
@@ -380,7 +382,7 @@ section div img {
   .footer__copyright {
     padding: 1rem;
     font-size: 0.9rem;
-    color: var(--text-dark);
+    color: var(--color);
     text-align: center;
 }
    
@@ -628,7 +630,7 @@ section div img {
   
     /* This can style the third footer column with a left border */
     .footer__col:nth-child(3) {
-      border-left: 2px solid var(--text-dark);
+      border-left: 2px solid var(--color);
     }
   }
   
@@ -683,8 +685,8 @@ section div img {
   /* This can style the first footer column with specific grid positioning and borders */
   .footer__col:nth-child(1) {
   grid-area: 1/2/2/3;
-  border-left: 2px solid var(--text-dark);
-  border-right: 2px solid var(--text-dark);
+  border-left: 2px solid var(--color);
+  border-right: 2px solid var(--color);
 
   }
 
@@ -806,8 +808,8 @@ section div img {
   /* This can style the first footer column with specific grid positioning and borders */
   .footer__col:nth-child(1) {
   grid-area: 1/2/2/3;
-  border-left: 2px solid var(--text-dark);
-  border-right: 2px solid var(--text-dark);
+  border-left: 2px solid var(--color);
+  border-right: 2px solid var(--color);
 
   }
 
