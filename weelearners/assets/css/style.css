@@ -630,7 +630,10 @@ section div img {
   
     /* This can style the third footer column with a left border */
     .footer__col:nth-child(3) {
-      border-left: 2px solid var(--color);
+        margin-left: 50px;
+        margin-right: 50px;
+        border-left: 2px solid var(--color);
+        border-right: 2px solid var(--color);
     }
   }
   
@@ -685,6 +688,8 @@ section div img {
   /* This can style the first footer column with specific grid positioning and borders */
   .footer__col:nth-child(1) {
   grid-area: 1/2/2/3;
+  margin-left: 50px;
+  margin-right: 50px;
   border-left: 2px solid var(--color);
   border-right: 2px solid var(--color);
 
@@ -808,6 +813,8 @@ section div img {
   /* This can style the first footer column with specific grid positioning and borders */
   .footer__col:nth-child(1) {
   grid-area: 1/2/2/3;
+  margin-left: 50px;
+  margin-right: 50px;
   border-left: 2px solid var(--color);
   border-right: 2px solid var(--color);
 

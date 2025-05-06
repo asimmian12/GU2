@@ -14,8 +14,7 @@
           <a href="https://twitter.com" target="_blank"><i class="fa-solid fa-x"></i></a>
           <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </section>
-    </section>
-   
+
   <!-- The footer__address section with Google Maps embeded -->
   <section class="footer__iframe">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2241.036117291089!2d-4.2622782999999345!3d55.8273324!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4888472b0e9b374d%3A0x3cf03c27eb6d2804!2sMary%20Stuart%20Building!5e0!3m2!1sen!2s!4v1744042242875!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -42,6 +41,7 @@
         <input type="text" name="search" class="input-search-bar" placeholder="Enter Search:  "/>
         <input type="submit" value="Search" class="input-search-btn"/>
     </form>
+</section>
 </section>
 
   <!-- The Copyright Information -->
