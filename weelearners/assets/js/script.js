@@ -23,8 +23,22 @@ function scrollFunction() {
   }
 }
 
-// This js code can provide functionality to create a function to scroll to the top of the page
+// The js code can provide functionality to create a function to scroll to the top of the page
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+
+// Still need to fix this!!! Asim Mian 11:05: 2025!!!!!
+
+// The js code can provide functionality to to perfrom validation.
+function submitForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+  // I can perform validation here before displaying the message/pop up.
+  
+  var messageDiv = document.getElementById("message");
+  messageDiv.innerText = "Thanks," + name + "" + "You are now subscribed!";
 }
