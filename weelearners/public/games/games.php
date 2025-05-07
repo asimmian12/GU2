@@ -48,8 +48,18 @@ function fetchFromApi($url) {
             </div>
         <?php endforeach; ?>
     </section>
-</body>
-</html>
+
+    <h2 class="h2-secondary-colour">Contact</h2>
+    <section class="footer__col">
+      <!-- The text container for footer__address -->
+      <div class="section-album-info">
+          <p class="paragraph-text"><i class="fa-solid fa-phone">Emerengency:   0141 272 9000</i></p>
+          <p class="paragraph-text"><i class="fa-solid fa-location-dot">Location:    50 Prospecthill Road Glasgow G42 9LB</i></p>
+          <p class="paragraph-text"><i class="fa-solid fa-envelope">Email:   info@weelearners.ac.uk</i></p>
+          <p class="paragraph-text"><i class="fa-solid fa-envelope">Working Hours:    Mon-Sat 09:00-20:00 Sunday emergency only.</i></p>
+        </div>
+    </section>
+
 
 <?php
 include '../../includes/footer.php';
