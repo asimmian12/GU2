@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 31, 2025 at 09:17 PM
+-- Generation Time: May 07, 2025 at 01:32 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -114,7 +114,7 @@ CREATE TABLE `testimonals` (
 INSERT INTO `testimonals` (`id`, `testimonals_name`, `description`, `fk_user_id`, `is_active`) VALUES
 (1, 'Mahmood Sabagah', '\"Great Staff. The teaching is nice, and the students are encouraging their students very well because my daughter used to be non-verbal and now she starts to speak\".', 55, 1),
 (2, 'Natalie Stark', '\"The nursery provides such a warm and caring environment. The staff are incredibly attentive, and my child loves spending time there. Its wonderful to see how much my little one has developed socially and cognitively in such a short time. I couldnt be happier with the nurturing atmosphere.\"', 55, 1),
-(3, 'Ian McDonald', '\"I am so grateful for the excellent care and support my child receives at this nursery. The staff are not only professional but also genuinely care about the childrens well-being. Every day, my child comes home excited to share what they\ve learned, and it\s clear they are thriving in this positive, engaging environment.\"', 55, 1);
+(3, 'Ian McDonald', '\"I am so grateful for the excellent care and support my child receives at this nursery. The staff are not only professional but also genuinely care about the childrens well-being. Every day, my child comes home excited to share what theyve learned, and its clear they are thriving in this positive, engaging environment.\"', 55, 1);
 
 -- --------------------------------------------------------
 

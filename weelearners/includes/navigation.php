@@ -11,18 +11,22 @@
             <li><a href="<?= ROOT_DIR ?>badge">Badge</a></li>
             <li><a href="<?= ROOT_DIR ?>login">Login</a></li>
             <li><a href="<?= ROOT_DIR ?>register">Register</a></li>
-        <?php else: ?>
-            <!-- For logged-in users -->
-            <li><a href="<?= ROOT_DIR ?>">Home</a></li>
-            <li><a href="<?= ROOT_DIR ?>badge">Badge</a></li>
-            <?php if ($_SESSION['is_admin'] == 1) : ?>
-                <li><a href="<?= ROOT_DIR ?>admin">Admin Dash</a></li>
-                <li><a href="<?= ROOT_DIR ?>public/admin/pending.php">Pending Uploads</a></li>
-                <li><a href="<?= ROOT_DIR ?>allUsers">Users</a></li>
-            <?php else : ?>
-                <li><a href="<?= ROOT_DIR ?>user">User Dash</a></li>
-                <li><a href="<?= ROOT_DIR ?>uploads">Upload Badge</a></li>
-                <li><a href="<?= ROOT_DIR ?>account">Account Details</a></li>
+            <li><a href="<?= ROOT_DIR ?>public/contact/contact.php">Contact</a></li>
+            <?php else: ?>
+                <!-- For logged-in users -->
+                <li><a href="<?= ROOT_DIR ?>">Home</a></li>
+                <li><a href="<?= ROOT_DIR ?>badge">Badge</a></li>
+                <?php if ($_SESSION['is_admin'] == 1) : ?>
+                    <li><a href="<?= ROOT_DIR ?>admin">Admin Dash</a></li>
+                    <li><a href="<?= ROOT_DIR ?>public/admin/pending.php">Pending Uploads</a></li>
+                    <li><a href="<?= ROOT_DIR ?>allUsers">Users</a></li>
+                    <li><a href="<?= ROOT_DIR ?>public/contact/contact.php">Contact</a></li>
+                    <?php else : ?>
+                        <li><a href="<?= ROOT_DIR ?>user">User Dash</a></li>
+                        <li><a href="<?= ROOT_DIR ?>public/games/games.php">Games</a></li>
+                        <li><a href="<?= ROOT_DIR ?>uploads">Upload Badge</a></li>
+                        <li><a href="<?= ROOT_DIR ?>account">Account Details</a></li>
+                        <li><a href="<?= ROOT_DIR ?>public/contact/contact.php">Contact</a></li>
             <?php endif; ?>
             <li><a href="<?= ROOT_DIR ?>logout">Logout</a></li>
         <?php endif; ?>

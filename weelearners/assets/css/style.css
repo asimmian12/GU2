@@ -249,6 +249,13 @@ section div img {
     object-fit: contain;
 }
 
+section > div > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 /* Fonts/Paragraph Settings */
 .h1-heading-center{
     color: var(--p-text);
@@ -310,7 +317,8 @@ section div img {
     background-color: var(--darken-colour);
     font-size: 25px;
     border: 2px solid var(--color);
-    margin-left: 100%;
+    margin-top: 15%;
+    margin-left: 80%;
 }
 /* This can style the footer column by adding horizontal padding for spacing */
 .footer__col {
@@ -612,6 +620,35 @@ section div img {
 
 /* Media Queries */
 
+@media (min-width: 300px) and (max-width: 400px) {
+    /* This can style the footer container with a one-column layout with grid*/
+    .footer__container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    /* This can style the footer container with a one-column layout with grid*/
+    .footer__iframe {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    /* This can style the first footer column to span the full width */
+    .footer__col:nth-child(1) {
+      grid-area: 1/1/2/3;
+    }
+  
+    /* This can style the third footer column to remove borders */
+    .footer__col:nth-child(3) {
+      border: none;
+    }
+
+    .paragraph_copyright_footer_scroll_to_btn{
+        background-color: var(--darken-colour);
+        font-size: 25px;
+        border: 2px solid var(--color);
+        margin-top: 304%;
+        margin-left: 80%;
+    }
+  }
+
 /* This can style the layout for screens with a minimum width of 540px */
 @media (min-width: 540px) {  
     /* This can style the footer container with a two-column layout with grid*/
@@ -628,13 +665,28 @@ section div img {
       grid-area: 1/1/2/3;
     }
   
+
+  
     /* This can style the third footer column with a left border */
-    .footer__col:nth-child(3) {
-        margin-left: 50px;
-        margin-right: 50px;
+    .footer__col:nth-child(1) {
         border-left: 2px solid var(--color);
         border-right: 2px solid var(--color);
     }
+
+  
+    /* This can style the third footer column with a left border */
+    .footer__col:nth-child(2) {
+        border-left: 2px solid var(--color);
+        border-right: 2px solid var(--color);
+    }
+
+  
+    /* This can style the third footer column with a left border */
+    .footer__col:nth-child(4) {
+        border-left: 2px solid var(--color);
+        border-right: 2px solid var(--color);
+    }
+
   }
   
 @media (min-width: 768px) {
@@ -687,11 +739,10 @@ section div img {
 
   /* This can style the first footer column with specific grid positioning and borders */
   .footer__col:nth-child(1) {
-  grid-area: 1/2/2/3;
-  margin-left: 50px;
-  margin-right: 50px;
-  border-left: 2px solid var(--color);
-  border-right: 2px solid var(--color);
+    display: flex;
+    align-items: center;
+    border-left: 2px solid var(--color);
+    border-right: 2px solid var(--color);
 
   }
 
@@ -717,6 +768,8 @@ section div img {
 
 .div-hamburger-menu {
     display: flex;
+    align-content: center;
+    margin-left: 5%; 
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
@@ -801,6 +854,14 @@ section div img {
     border: 2px solid #b4b2b2;
     background-color: var(--footer-background-color); 
 }
+
+.paragraph_copyright_footer_scroll_to_btn {
+    background-color: var(--darken-colour);
+    font-size: 25px;
+    border: 2px solid var(--color);
+    margin-left: 100%;
+}
+
 /* This can style the footer container with a three-column layout with grid*/
 .footer__iframe{
     grid-template-columns: repeat(3, 1fr);
@@ -812,11 +873,10 @@ section div img {
 
   /* This can style the first footer column with specific grid positioning and borders */
   .footer__col:nth-child(1) {
-  grid-area: 1/2/2/3;
-  margin-left: 50px;
-  margin-right: 50px;
-  border-left: 2px solid var(--color);
-  border-right: 2px solid var(--color);
+    display: flex;
+    align-items: center;
+    border-left: 2px solid var(--color);
+    border-right: 2px solid var(--color);
 
   }
 
