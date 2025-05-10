@@ -28,6 +28,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
             <p><?= htmlspecialchars($bDesc ?? '') ?></p>
             <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($bID ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
+            <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile ?>
 </section>

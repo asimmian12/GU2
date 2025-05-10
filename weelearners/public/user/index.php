@@ -53,7 +53,7 @@
     <?php endif; ?>
 </section>
 
-<h2 class="main-heading">Personal Account Information</h2>
+<h2 class="main-heading">Personal Account Information: </h2>
 <section>
         <?php while ($user->fetch()): ?>
             <div> 

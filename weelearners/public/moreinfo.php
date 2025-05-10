@@ -74,6 +74,7 @@ if ($testimonalsID == true) {
             <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? 'No photo description is available') ?></h2>
             <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($pID ?? ' ') ?></p>
             <span><?= htmlspecialchars($release ?? 'Release date is not available') ?></span>
+            <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
 </section>
@@ -87,6 +88,7 @@ if ($testimonalsID == true) {
             <p><?= htmlspecialchars($vDesc ?? 'No video description is not available') ?></p>
             <p> Uploaded by Anonymus User ID: <?= htmlspecialchars($vID ?? ' ') ?></p>
             <span><?= htmlspecialchars($vRelease ?? 'Release date is not available') ?></span>
+            <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
 </section>
@@ -99,6 +101,7 @@ if ($testimonalsID == true) {
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
             <p><?= htmlspecialchars($bDesc ?? '') ?></p>
             <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($bID ?? '') ?></p>
+            <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
 </section>
@@ -110,6 +113,7 @@ if ($testimonalsID == true) {
             <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
             <p><?= htmlspecialchars($tDesc ?? '') ?></p>
             <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($tID ?? '') ?></p>
+            <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
 </section>
