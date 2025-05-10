@@ -24,6 +24,7 @@ include '../../includes/header.php';
         <!-- <div class="msg"></div> -->
     </section>
 
+    
 <h2 class="h2-secondary-colour">Contact</h2>
     <section class="footer__col">
       <!-- The text container for footer__address -->
