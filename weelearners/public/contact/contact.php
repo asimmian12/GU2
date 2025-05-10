@@ -5,20 +5,24 @@ include '../../includes/header.php';
 ?>
 <h1 class="h1-heading-center">Contact Us</h1>
 
-<section class="section-login-form">
-    <form action="" method="post" class="form-login-form">
-        <label for="name">Name:</label>
-        <input type="text" class="section-login-form" id="name" name="name" placeholder="Enter Your Name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" class="section-login-form" id="email" name="email" placeholder="Enter Your Email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" class="section-login-form" name="message" placeholder="Enter Your Message" required></textarea>
-
-        <input type="submit" class="input-login-btn" onclick="submitForm()" value="Submit">
-    </form>
-</section>
+    <section class="section-login-form">
+        <form action="#" method="post" class="form-login-form">
+            <label for="name">Name: </label>
+            <input type="text" class="section-login-form" name="name" id="name" placeholder="Enter Your Name:  " required>
+            <label for="email">Email: </label>
+            <input type="email" class="section-login-form" name="email" id="email" placeholder="Enter Your Email:  " required>
+            <label for="message">Message:</label>
+            <input type="text" id="message" name="message" class="section-login-form" placeholder="Enter Your Message" required></textarea>
+            <input type="submit" class="input-login-btn" onclick="submitForm()" value="Submit">
+    
+            <section class="section-login-options">
+                <div class="login-message">
+                    <a href="register">Don't a have an account? <span>REGISTER</span></a>
+                </div>
+            </section>
+        </form>
+        <!-- <div class="msg"></div> -->
+    </section>
 
 <h2 class="h2-secondary-colour">Contact</h2>
     <section class="footer__col">
