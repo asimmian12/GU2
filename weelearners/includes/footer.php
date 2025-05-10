@@ -19,7 +19,7 @@
   <section class="footer__col">
       <!-- The text container for footer__address -->
       <section class="paragraph-text">
-        <p class="paragraph-text">Page Link's: </p>
+        <p class="paragraph-text">Page Links: </p>
         <?php if (!isset($_SESSION['loggedin'])) : ?>
             <!-- For non-logged-in users -->
             <p class="paragraph-text"><a href="<?= ROOT_DIR ?>">Home</a></p>
