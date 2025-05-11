@@ -3,6 +3,10 @@ include '../../config/config.php';
 include '../../includes/header.php';
 
 ?>
+<section class="section-banner">
+        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+</section>
+
 <h1 class="h1-heading-center">Contact Us</h1>
 
     <section class="section-login-form">

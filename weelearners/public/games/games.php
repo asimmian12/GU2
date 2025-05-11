@@ -20,6 +20,10 @@ function fetchFromApi($url) {
   // The fetchFromApi function is called to get the games data and store it in the $games variable
   $games = fetchFromApi($url);
 ?>
+    <section class="section-banner">
+        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+    </section>
+
     <h1 class="h2-secondary-colour">Games</h1>   
     <?php
     shuffle($games);
@@ -47,7 +51,6 @@ function fetchFromApi($url) {
         </div>
     </section>
 
-
-<?php
-include '../../includes/footer.php';
-?>
+    
+<script src="../../assets/js/script.js"></script>
+<?php include '../../includes/footer.php'; ?>

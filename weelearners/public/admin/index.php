@@ -37,6 +37,9 @@ $users->execute();
 $users->store_result();
 $users->bind_result($userID, $username, $email, $role, $isActive);
 ?>
+<section class="section-banner">
+        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+</section>
 
 <h1 class="h1-heading-center">Admin Dashboard</h1>
 <div>

@@ -17,6 +17,9 @@ $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 ?>
+<section class="section-banner">
+        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+</section>
 
 <h1 class="h1-heading-center">All Badges</h1>
 

@@ -57,6 +57,12 @@ ul > li{
     list-style-type: none;
 }
 
+.section-banner img {
+    width: 1326px;
+    height: 726px;
+    border-radius: 10px; 
+}
+
 /* login and register buttons*/
 .input-login-btn{
     background-color: var(--darken-colour); 
@@ -312,18 +318,6 @@ section > div > p {
     border: 2px solid #b4b2b2;
     background-color: var(--footer-background-color); 
 }
-
-.paragraph_copyright_footer_scroll_to_btn{
-    background-color: var(--darken-colour);
-    font-size: 25px;
-    border: 2px solid var(--color);
-    margin-top: 15%;
-    margin-left: 80%;
-}
-/* This can style the footer column by adding horizontal padding for spacing */
-.footer__col {
-    padding-inline: 2rem;
-} 
   
 /* This can style images within the footer container, setting a maximum width and centering them with margins */
 .footer__container img {
@@ -617,317 +611,270 @@ section > div > p {
     width: 100%; 
 }
 
-
 /* Media Queries */
-
 @media (min-width: 300px) and (max-width: 400px) {
-    /* This can style the footer container with a one-column layout with grid*/
+    /* This can style the footer container with a one-column layout with grid */
     .footer__container {
-      grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-    /* This can style the footer container with a one-column layout with grid*/
+    /* This can style the footer container with a one-column layout with grid */
     .footer__iframe {
-      grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-  
     /* This can style the first footer column to span the full width */
     .footer__col:nth-child(1) {
-      grid-area: 1/1/2/3;
+        grid-area: 1/1/2/3;
     }
-  
     /* This can style the third footer column to remove borders */
     .footer__col:nth-child(3) {
-      border: none;
+        border: none;
     }
 
-    .paragraph_copyright_footer_scroll_to_btn{
-        background-color: var(--darken-colour);
-        font-size: 25px;
-        border: 2px solid var(--color);
-        margin-top: 304%;
-        margin-left: 80%;
+    .section-banner img {
+        width: 100%;
+        height: auto;
     }
-  }
+}
 
-/* This can style the layout for screens with a minimum width of 540px */
-@media (min-width: 540px) {  
-    /* This can style the footer container with a two-column layout with grid*/
+@media (min-width: 540px) {
+    /* This can style the footer container with a two-column layout with grid */
     .footer__container {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-    /* This can style the footer container with a two-column layout with grid*/
+    /* This can style the footer container with a two-column layout with grid */
     .footer__iframe {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  
     /* This can style the first footer column to span the full width */
     .footer__col:nth-child(1) {
-      grid-area: 1/1/2/3;
+        grid-area: 1/1/2/3;
     }
-  
-
-  
-    /* This can style the third footer column with a left border */
-    .footer__col:nth-child(1) {
-        border-left: 2px solid var(--color);
-        border-right: 2px solid var(--color);
-    }
-
-  
-    /* This can style the third footer column with a left border */
-    .footer__col:nth-child(2) {
-        border-left: 2px solid var(--color);
-        border-right: 2px solid var(--color);
-    }
-
-  
-    /* This can style the third footer column with a left border */
+    /* This can style the footer columns with borders */
+    .footer__col:nth-child(1),
+    .footer__col:nth-child(2),
     .footer__col:nth-child(4) {
         border-left: 2px solid var(--color);
         border-right: 2px solid var(--color);
     }
+    .section-banner img {
+        width: 100%;
+        height: auto;
+    }
+}
 
-  }
-  
 @media (min-width: 768px) {
-.nav-navbar {
-    padding: 10px 20px;
-}
-
-.ul-nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    width: auto;
-    background-color: transparent;
-}
-
-.ul-nav-links li {
-    margin: 0 10px;
-}
-
-.div-hamburger-menu {
-    display: none;
-}
-
-.ul-nav-links a {
-    padding: 14px 20px;
-    border-radius: 4px;
-}
-
-.ul-nav-links a:hover {
-    background-color: var(--darken-colour);
-}
-
-.paragraph-copyright {
-    margin-top: 30%;
-    border: 2px solid #b4b2b2;
-    background-color: var(--footer-background-color); 
-}
-
-.section-album-info{
-    min-width: 5%;
-} 
-/* This can style the footer container with a three-column layout with grid*/
- .footer__iframe{
-    grid-template-columns: repeat(3, 1fr);
-  }
-  /* This can style the footer container with a three-column layout with grid*/
-  .footer__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* This can style the first footer column with specific grid positioning and borders */
-  .footer__col:nth-child(1) {
-    display: flex;
-    align-items: center;
-    border-left: 2px solid var(--color);
-    border-right: 2px solid var(--color);
-
-  }
-
-  /* This can style the third footer column to remove borders */
-  .footer__col:nth-child(3) {
-    border: none;
-  }
-
+    .nav-navbar {
+        padding: 10px 20px;
+    }
+    .ul-nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+    .ul-nav-links li {
+        margin: 0 10px;
+    }
+    .div-hamburger-menu {
+        display: none;
+    }
+    .ul-nav-links a {
+        padding: 14px 20px;
+        border-radius: 4px;
+    }
+    .ul-nav-links a:hover {
+        background-color: var(--darken-colour);
+    }
+    .paragraph-copyright {
+        margin-top: 30%;
+        border: 2px solid #b4b2b2;
+        background-color: var(--footer-background-color);
+    }
+    .section-album-info {
+        min-width: 5%;
+    }
+    /* This can style the footer container with a three-column layout with grid */
+    .footer__iframe,
+    .footer__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* This can style the first footer column with specific grid positioning and borders */
+    .footer__col:nth-child(1) {
+        display: flex;
+        align-items: center;
+        border-left: 2px solid var(--color);
+        border-right: 2px solid var(--color);
+    }
+    /* This can style the third footer column to remove borders */
+    .footer__col:nth-child(3) {
+        border: none;
+    }
+    .section-banner img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (max-width: 768px) {
-.ul-nav-links {
-    display: none;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 0;
-    margin: 0;
-}
-
-.div-hamburger-menu {
-    display: flex;
-    align-content: center;
-    margin-left: 5%; 
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.div-hamburger-menu span {
-    height: 3px;
-    width: 25px;
-    margin: 3px 0;
-    border-radius: 2px;
-    background-color: var(--darken-colour);
-}
-
-.ul-nav-links.open {
-    display: flex;
-    align-items: center;
-    background-color: rgb(225, 225, 225);
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 3%;
-}
-
-.ul-nav-links li {
-    text-align: center;
-    padding: 15px 20px;
-}
-
-.ul-nav-links a {
-    color: var(--color);
-    text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-}
-
-.ul-nav-links a:hover {
-    background-color: var(--background-color);
-    border-radius: 0;
-}
-
-.paragraph-copyright {
-    margin-top: 450%;
-    border: 2px solid #b4b2b2;
-    background-color: var(--footer-background-color); 
-}
-
-.section-album-info{
-    min-width: 8%;
-} 
+    .ul-nav-links {
+        display: none;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .div-hamburger-menu {
+        display: flex;
+        align-content: center;
+        margin-left: 5%;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+    .div-hamburger-menu span {
+        height: 3px;
+        width: 25px;
+        margin: 3px 0;
+        border-radius: 2px;
+        background-color: var(--darken-colour);
+    }
+    .ul-nav-links.open {
+        display: flex;
+        align-items: center;
+        background-color: rgb(225, 225, 225);
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 3%;
+    }
+    .ul-nav-links li {
+        text-align: center;
+        padding: 15px 20px;
+    }
+    .ul-nav-links a {
+        color: var(--color);
+        text-decoration: none;
+        padding: 14px 20px;
+        display: block;
+    }
+    .ul-nav-links a:hover {
+        background-color: var(--background-color);
+        border-radius: 0;
+    }
+    .paragraph-copyright {
+        margin-top: 450%;
+        border: 2px solid #b4b2b2;
+        background-color: var(--footer-background-color);
+    }
+    .section-album-info {
+        min-width: 8%;
+    }
+    .section-banner img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-.nav-navbar {
-    padding: 10px 20px;
-    width: 1222px;
-    background-color: var(--nav-background-color);
-}
+    .nav-navbar {
+        padding: 10px 20px;
+        width: 1222px;
+        background-color: var(--nav-background-color);
+    }
+    .ul-nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: var(--nav-background-color);
+    }
+    .ul-nav-links li {
+        margin: 0 10px;
+    }
+    .div-hamburger-menu {
+        display: none;
+    }
+    .ul-nav-links a {
+        padding: 14px 20px;
+        border-radius: 4px;
+    }
+    .ul-nav-links a:hover {
+        background-color: var(--darken-colour);
+    }
+    .paragraph-copyright {
+        width: 1222px;
+        border: 2px solid #b4b2b2;
+        background-color: var(--footer-background-color);
+    }
 
-.ul-nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    width: auto;
-    background-color: var(--nav-background-color);
-}
-.ul-nav-links li {
-    margin: 0 10px;
-}
-.div-hamburger-menu {
-    display: none;
-}
-.ul-nav-links a {
-    padding: 14px 20px;
-    border-radius: 4px;
-}
-
-.ul-nav-links a:hover {
-    background-color: var(--darken-colour);
-}
-.paragraph-copyright {
-    /* margin-top: 30%; */
-    width: 1222px;
-    border: 2px solid #b4b2b2;
-    background-color: var(--footer-background-color); 
-}
-
-.paragraph_copyright_footer_scroll_to_btn {
-    background-color: var(--darken-colour);
-    font-size: 25px;
-    border: 2px solid var(--color);
-    margin-left: 100%;
-}
-
-/* This can style the footer container with a three-column layout with grid*/
-.footer__iframe{
-    grid-template-columns: repeat(3, 1fr);
-  }
-  /* This can style the footer container with a three-column layout with grid*/
-  .footer__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* This can style the first footer column with specific grid positioning and borders */
-  .footer__col:nth-child(1) {
-    display: flex;
-    align-items: center;
-    border-left: 2px solid var(--color);
-    border-right: 2px solid var(--color);
-
-  }
-
-  /* This can style the third footer column to remove borders */
-  .footer__col:nth-child(3) {
-    border: none;
-  }
-
+    /* This can style the footer container with a three-column layout with grid */
+    .footer__iframe,
+    .footer__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* This can style the first footer column with specific grid positioning and borders */
+    .footer__col:nth-child(1) {
+        display: flex;
+        align-items: center;
+        border-left: 2px solid var(--color);
+        border-right: 2px solid var(--color);
+    }
+    /* This can style the third footer column to remove borders */
+    .footer__col:nth-child(3) {
+        border: none;
+    }
+    .section-banner img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (min-width: 1024px) {
-.nav-navbar {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.ul-nav-links {
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.ul-nav-links li {
-    margin: 0 15px;
-}
-
-.section-album-info{
-    min-width: 5%;
-} 
+    .nav-navbar {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .ul-nav-links {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .ul-nav-links li {
+        margin: 0 15px;
+    }
+    .section-album-info {
+        min-width: 5%;
+    }
+    .section-banner img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (max-width: 800px) {
-.nav-navbar {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.ul-nav-links {
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.ul-nav-links li {
-    margin: 0 15px;
-}
-
-.section-album-info{
-    min-width: 5%;
-} 
+    .nav-navbar {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .ul-nav-links {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .ul-nav-links li {
+        margin: 0 15px;
+    }
+    .section-album-info {
+        min-width: 5%;
+    }
+    .section-banner img {
+        width: 100%;
+        height: auto;
+    }
 }

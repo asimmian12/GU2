@@ -8,6 +8,9 @@ $user->execute();
 $user->store_result();
 $user->bind_result($userID, $username, $email, $role, $isAdmin);
 ?>
+<section class="section-banner">
+        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+</section>
 
 <h1 class="h1-heading-center">Current Users Page</h1>
 <section class="section-user">

@@ -16,6 +16,10 @@ $uploads->store_result();
 $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 ?>
 
+<section class="section-banner">
+        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+</section>
+
 <h1 class="h1-heading-center">Upload Badge Page</h1>
 <h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an badge for sale?</h2>
 <section class="uploadBadge">

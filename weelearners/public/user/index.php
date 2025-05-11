@@ -40,6 +40,10 @@
     $user->bind_result($name, $email, $stat, $userType, $role);
     $user->store_result();
 ?>
+<section class="section-banner">
+        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+</section>
+
 <h1 class="h1-heading-center">User Dashboard Page</h1>
 <h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to your User Dashboard!</h2>
 
