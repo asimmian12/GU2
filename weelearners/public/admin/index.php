@@ -32,10 +32,10 @@ if (isset($_POST['deleteUser'])) {
 }
 
 // Bringing in User Details
-$users = $conn->prepare("SELECT id, username, email, role, is_active FROM user");
+$users = $conn->prepare("SELECT id, username, email, role, is_active, name FROM user");
 $users->execute();
 $users->store_result();
-$users->bind_result($userID, $username, $email, $role, $isActive);
+$users->bind_result($userID, $username, $email, $role, $isActive, $name);
 ?>
 <section class="section-banner">
         <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
@@ -46,8 +46,9 @@ $users->bind_result($userID, $username, $email, $role, $isActive);
     <section>
         <?php while ($users->fetch()): ?>
         <div class="div-album-item">
-            <h2 class="main-heading">ID: <?= htmlspecialchars($userID ?? '') ?></h2>
-            <p class="paragraph-text">User: <?= htmlspecialchars($username ?? '') ?></p>
+            <h2 class="main-heading">Helper ID: <?= htmlspecialchars($userID ?? '') ?></h2>
+            <p class="paragraph-text">Helper Fullname: <?= htmlspecialchars($name ?? '') ?></p>
+            <p class="paragraph-text">Helper Username: <?= htmlspecialchars($username ?? '') ?></p>
             <p class="paragraph-text">Email: <?= htmlspecialchars($email ?? '') ?></p>
             <p class="paragraph-text">Job Role: <?= htmlspecialchars($role ?? '') ?></p>
             <p class="paragraph-text">Status: <?= htmlspecialchars($isActive ? 'Active' : 'Inactive') ?></p>
