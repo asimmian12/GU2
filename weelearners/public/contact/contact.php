@@ -10,24 +10,26 @@ include '../../includes/header.php';
 <h1 class="h1-heading-center">Contact Us</h1>
 
     <section class="section-contact-form">
-        <form action="#" method="post" class="form-contact-form">
+        <form action="#" method="post" class="form-contact-form" id="form-contact-form">
+            
             <label for="name">Name: </label>
             <input type="text" class="section-contact-form" name="name" id="name" placeholder="Enter Your Name:  " required>
+            
             <label for="email">Email: </label>
             <input type="email" class="section-contact-form" name="email" id="email" placeholder="Enter Your Email:  " required>
+            
             <label for="message">Message:</label>
-            <input type="text" id="message" name="message" class="section-contact-form" placeholder="Enter Your Message" required></textarea>
+            <textarea type="text" id="message" name="message" class="section-contact-form" placeholder="Enter Your Message" required></textarea>
+            
             <input type="submit" class="input-contact-btn" onclick="submitForm()" value="Submit">
-    
+
             <section class="section-contact-options">
                 <div class="login-message">
                     <a href="register">Don't a have an account? <span>REGISTER</span></a>
                 </div>
             </section>
         </form>
-        <!-- <div class="msg"></div> -->
     </section>
-
     
 <h2 class="h2-secondary-colour">Contact</h2>
 <section class="footer__col">

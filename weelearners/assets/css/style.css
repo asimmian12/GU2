@@ -32,7 +32,7 @@ button{
     background-color: var(--darken-colour);
     color: var(--font-color);
     border: 2px solid var(--color);
-    border-radius: 8px;
+    border-radius: 25px;
     padding: 10px 20px; 
     margin: 2px;
     font-size: var(--second-font-size); 
@@ -931,7 +931,7 @@ section > div > p {
         min-width: 5%;
     }
     .section-banner img {
-        width: 100%;
+        width: 50%;
         height: auto;
     }
 }
