@@ -292,7 +292,7 @@ section > div > p {
     padding: 15px; 
 }
 
-.section-album-info {
+.section-contact-info {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -740,7 +740,7 @@ section > div > p {
         border: 2px solid #b4b2b2;
         background-color: var(--footer-background-color);
     }
-    .section-album-info {
+    .section-contact-info {
         min-width: 5%;
     }
     /* This can style the footer container with a three-column layout with grid */
@@ -819,7 +819,7 @@ section > div > p {
         border: 2px solid #b4b2b2;
         background-color: var(--footer-background-color);
     }
-    .section-album-info {
+    .section-contact-info {
         min-width: 8%;
     }
     .section-banner img {
@@ -896,7 +896,7 @@ section > div > p {
     .ul-nav-links li {
         margin: 0 15px;
     }
-    .section-album-info {
+    .section-contact-info {
         min-width: 5%;
     }
     .section-banner img {
@@ -919,7 +919,7 @@ section > div > p {
     .ul-nav-links li {
         margin: 0 15px;
     }
-    .section-album-info {
+    .section-contact-info {
         min-width: 5%;
     }
     .section-banner img {
