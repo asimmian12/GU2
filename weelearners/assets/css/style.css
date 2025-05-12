@@ -88,6 +88,18 @@ ul > li{
     cursor: pointer; 
 }
 
+.input-contact-btn{
+    background-color: var(--darken-colour); 
+    color: var(--font-color);
+    border: none;
+    gap: 2%;
+    border-radius: 8px;
+    padding: 3%;
+    margin: 3%;
+    font-size: var(--second-font-size); 
+    cursor: pointer; 
+}
+
 /* Search */
 .form-search-bar {
     background-color: var(--nav-background-color);

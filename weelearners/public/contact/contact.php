@@ -17,7 +17,7 @@ include '../../includes/header.php';
             <input type="email" class="section-contact-form" name="email" id="email" placeholder="Enter Your Email:  " required>
             <label for="message">Message:</label>
             <input type="text" id="message" name="message" class="section-contact-form" placeholder="Enter Your Message" required></textarea>
-            <input type="submit" class="input-login-btn" onclick="submitForm()" value="Submit">
+            <input type="submit" class="input-contact-btn" onclick="submitForm()" value="Submit">
     
             <section class="section-contact-options">
                 <div class="login-message">
