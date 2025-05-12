@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 11, 2025 at 11:40 PM
--- Server version: 8.4.3
--- PHP Version: 8.3.16
+-- Host: 127.0.0.1
+-- Generation Time: May 12, 2025 at 03:00 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `badge` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `badge_name` varchar(64) DEFAULT NULL,
-  `description` text,
-  `fk_user_id` int DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `fk_user_id` int(11) DEFAULT NULL,
   `badge_img` varchar(255) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `is_active` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `badge`
@@ -72,17 +72,17 @@ INSERT INTO `badge` (`id`, `badge_name`, `description`, `fk_user_id`, `badge_img
 --
 
 CREATE TABLE `photo` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `albName` varchar(64) DEFAULT NULL,
-  `albDescription` tinytext,
+  `albDescription` tinytext DEFAULT NULL,
   `release_date` date DEFAULT NULL,
-  `fk_photo_id` int DEFAULT NULL,
-  `fk_person_id` int DEFAULT NULL,
-  `fk_record_label_id` int DEFAULT NULL,
-  `is_active` tinyint NOT NULL DEFAULT '0',
+  `fk_photo_id` int(11) DEFAULT NULL,
+  `fk_person_id` int(11) DEFAULT NULL,
+  `fk_record_label_id` int(11) DEFAULT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 0,
   `image` varchar(64) DEFAULT NULL,
-  `fk_user_id` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `fk_user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `photo`
@@ -100,12 +100,12 @@ INSERT INTO `photo` (`id`, `albName`, `albDescription`, `release_date`, `fk_phot
 --
 
 CREATE TABLE `testimonals` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `testimonals_name` varchar(255) DEFAULT NULL,
-  `description` text,
-  `fk_user_id` int DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `description` text DEFAULT NULL,
+  `fk_user_id` int(11) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `testimonals`
@@ -123,29 +123,30 @@ INSERT INTO `testimonals` (`id`, `testimonals_name`, `description`, `fk_user_id`
 --
 
 CREATE TABLE `user` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `password` varchar(132) DEFAULT NULL,
-  `is_admin` tinyint DEFAULT NULL,
+  `is_admin` tinyint(4) DEFAULT NULL,
   `email` varchar(132) DEFAULT NULL,
-  `is_active` tinyint DEFAULT NULL,
+  `is_active` tinyint(4) DEFAULT NULL,
   `username` varchar(32) DEFAULT NULL,
   `pw` varchar(132) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `profile_picture` varchar(255) DEFAULT NULL,
-  `role` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `role` varchar(255) DEFAULT NULL,
+  `release_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `username`, `pw`, `name`, `profile_picture`, `role`) VALUES
-(26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'Admin', NULL, 'Admin User ', NULL, 'Staff'),
-(27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 1, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen Sturgeon', NULL, 'Parent Helper'),
-(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'Asim Mian', NULL, 'Student'),
-(55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, 'Mahmood Al-Sabagah', NULL, 'Parent Helper'),
-(56, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'iain@weelearners.com', 1, 'Iain3', NULL, 'Iain Shaw', NULL, 'Student'),
-(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'natailie@weelearners.com', 1, 'NStark', NULL, 'Natailie Stark', NULL, 'Staff');
+INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `username`, `pw`, `name`, `profile_picture`, `role`, `release_date`) VALUES
+(26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'Admin', NULL, 'Admin User ', NULL, 'Staff', '2023-05-13'),
+(27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 1, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen Sturgeon', NULL, 'Parent Helper', '2024-06-24'),
+(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'Asim Mian', NULL, 'Student', '2024-01-13'),
+(55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, 'Mahmood Al-Sabagah', NULL, 'Parent Helper', '2024-05-19'),
+(56, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'iain@weelearners.com', 1, 'Iain3', NULL, 'Iain Shaw', NULL, 'Student', '2021-02-13'),
+(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'natailie@weelearners.com', 1, 'NStark', NULL, 'Natailie Stark', NULL, 'Staff', '0202-05-13');
 
 -- --------------------------------------------------------
 
@@ -154,15 +155,15 @@ INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `usernam
 --
 
 CREATE TABLE `videos` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `title` varchar(128) DEFAULT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `release_date` date DEFAULT NULL,
-  `is_active` tinyint NOT NULL DEFAULT '0',
+  `is_active` tinyint(4) NOT NULL DEFAULT 0,
   `video_url` varchar(255) DEFAULT NULL,
-  `fk_user_id` int DEFAULT NULL,
+  `fk_user_id` int(11) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `videos`
@@ -238,31 +239,31 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `badge`
 --
 ALTER TABLE `badge`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `photo`
 --
 ALTER TABLE `photo`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- AUTO_INCREMENT for table `testimonals`
 --
 ALTER TABLE `testimonals`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
