@@ -11,7 +11,9 @@ hamburgerMenu.addEventListener('click', () => {
 function submitForm() {
  document.getElementById("form-contact-form").addEventListener("submit", function(e) {
   if (!this.checkValidity()) {
-    e.preventDefault(); // Prevent form submission
+    // If the form is invalid, it then prevents the form submission, 
+    e.preventDefault(); 
+    // and shows the alert message to the user.
     alert("Please fill out all required fields.");
   } else{
     alert("Form submitted successfully!");
