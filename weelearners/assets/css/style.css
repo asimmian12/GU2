@@ -524,8 +524,8 @@ section > div > p {
     justify-content: center;
 } 
 
-/* Vinyl Section */
-.section-vinyl{
+/* Badge Section */
+.section-badge{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

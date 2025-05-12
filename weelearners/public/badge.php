@@ -23,7 +23,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 
 <h1 class="h1-heading-center">All Badges</h1>
 
-<section class="section-vinyl">
+<section class="section-badge">
     <?php while ($badge->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
