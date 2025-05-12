@@ -9,17 +9,17 @@ include '../../includes/header.php';
 
 <h1 class="h1-heading-center">Contact Us</h1>
 
-    <section class="section-login-form">
-        <form action="#" method="post" class="form-login-form">
+    <section class="section-contact-form">
+        <form action="#" method="post" class="form-contact-form">
             <label for="name">Name: </label>
-            <input type="text" class="section-login-form" name="name" id="name" placeholder="Enter Your Name:  " required>
+            <input type="text" class="section-contact-form" name="name" id="name" placeholder="Enter Your Name:  " required>
             <label for="email">Email: </label>
-            <input type="email" class="section-login-form" name="email" id="email" placeholder="Enter Your Email:  " required>
+            <input type="email" class="section-contact-form" name="email" id="email" placeholder="Enter Your Email:  " required>
             <label for="message">Message:</label>
-            <input type="text" id="message" name="message" class="section-login-form" placeholder="Enter Your Message" required></textarea>
+            <input type="text" id="message" name="message" class="section-contact-form" placeholder="Enter Your Message" required></textarea>
             <input type="submit" class="input-login-btn" onclick="submitForm()" value="Submit">
     
-            <section class="section-login-options">
+            <section class="section-contact-options">
                 <div class="login-message">
                     <a href="register">Don't a have an account? <span>REGISTER</span></a>
                 </div>

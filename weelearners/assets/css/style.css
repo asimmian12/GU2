@@ -474,6 +474,43 @@ section > div > p {
     border-radius: 10px;
     overflow: hidden;
 }
+/* Contact */
+
+.section-contact-form {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.section-contact-form:hover {
+    transform: translateY(-5px);
+}
+
+.section-contact-form Input,
+.section-contact-form label {
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+.form-contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3%;
+    height: 100%;
+    background-color: var(--background-color); 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Contact-Options */
+.section-contact-options {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+} 
 
 /* Vinyl Section */
 .section-vinyl{
