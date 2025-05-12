@@ -58,10 +58,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 <h1 class="h1-heading-center">Unpublished Photos</h1>
-<div class="div-album">
+<div class="div-photo">
     <section>
         <?php while ($unpublishedPhotos->fetch()) : ?>
-            <div class="div-album-item">
+            <div class="div-pending-item">
                 <h2 class="main-heading"><?= htmlspecialchars($pName ?? ' ') ?></h2>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? '') ?>" alt="Photo Image">
                 <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? ' ') ?></h2>
@@ -74,10 +74,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </div>
 
 <h1 class="h1-heading-center">Published Photos</h1>
-<div class="div-album">
+<div class="div-photo">
     <section>
         <?php while ($publishedPhotos->fetch()) : ?>
-            <div class="div-album-item">
+            <div class="div-pending-item">
                 <h2 class="main-heading"><?= htmlspecialchars($pName ?? ' ') ?></h2>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? '') ?>" alt="Photo Image">
                 <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? ' ') ?></h2>
@@ -90,10 +90,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </div>
 
 <h1 class="h1-heading-center">Unpublished Badges</h1>
-<div class="div-album">
+<div class="div-badge">
     <section>
         <?php while ($unpublishedBadges->fetch()) : ?>
-            <div class="div-album-item">
+            <div class="div-pending-item">
                 <h2 class="main-heading"><?= htmlspecialchars($bName ?? ' ') ?></h2>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage ?? '') ?>" alt="Badge Image">
                 <p><?= htmlspecialchars($bDesc ?? ' ') ?></p>
@@ -105,10 +105,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </div>
 
 <h1 class="h1-heading-center">Published Badges</h1>
-<div class="div-album">
+<div class="div-badge">
     <section>
         <?php while ($publishedBadges->fetch()) : ?>
-            <div class="div-album-item">
+            <div class="div-pending-item">
                 <h2 class="main-heading"><?= htmlspecialchars($bName ?? ' ') ?></h2>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage ?? '') ?>" alt="Badge Image">
                 <p><?= htmlspecialchars($bDesc ?? ' ') ?></p>
@@ -120,10 +120,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </div>
 
 <h1 class="h1-heading-center">Unpublished Videos</h1>
-<div class="div-album">
+<div class="div-video">
     <section>
         <?php while ($unpublishedVideos->fetch()) : ?>
-        <div class="div-album-item">
+        <div class="div-pending-item">
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
             <p><?= htmlspecialchars($vDesc ?? '') ?></p>
@@ -136,10 +136,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </div>
 
 <h1 class="h1-heading-center">Published Videos</h1>
-<div class="div-album">
+<div class="div-video">
     <section>
         <?php while ($publishedVideos->fetch()) : ?>
-            <div class="div-album-item"> 
+            <div class="div-pending-item"> 
                 <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
                 <p><?= htmlspecialchars($vDesc ?? '') ?></p>
@@ -152,10 +152,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </div>
 
 <h1 class="h1-heading-center">Unpublished Reviews</h1>
-<div class="div-album">
+<div class="div-review">
     <section>
         <?php while ($unpublishedReviews->fetch()) : ?>
-            <div class="div-album-item"> 
+            <div class="div-pending-item"> 
                 <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
                 <span><?= htmlspecialchars($tDesc ?? '') ?></span>
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
@@ -166,10 +166,10 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </div>
 
 <h1 class="h1-heading-center">Published Reviews</h1>
-<div class="div-album">
+<div class="div-review">
     <section>
         <?php while ($publishedReviews->fetch()) : ?>
-        <div class="div-album-item">
+        <div class="div-pending-item">
             <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
             <p><?= htmlspecialchars($tDesc ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>

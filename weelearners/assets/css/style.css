@@ -533,11 +533,23 @@ section > div > p {
 }
 
 /* Albums */
-.div-album { 
+.div-photo { 
     margin-bottom: 30px;
 }
 
-.div-album-item { 
+.div-badge { 
+    margin-bottom: 30px;
+}
+
+.div-video { 
+    margin-bottom: 30px;
+}
+
+.div-review { 
+    margin-bottom: 30px;
+}
+
+.div-pending-item { 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -549,12 +561,12 @@ section > div > p {
     overflow: hidden;
 }
 
-.div-album-item img { 
+.div-pending-item img { 
     max-width: 200px; 
     height: auto; 
 }
 
-/* Upload Vinyl's */
+/* Upload Badge's */
 .uploadBadge{
     display: flex;
     align-items: center;
