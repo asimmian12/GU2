@@ -474,8 +474,8 @@ section > div > p {
     border-radius: 10px;
     overflow: hidden;
 }
-/* Contact */
 
+/* Contact */
 .section-contact-form {
     display: flex;
     align-items: center; 
