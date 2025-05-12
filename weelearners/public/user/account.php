@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['section-profile-pict
 
 <h1 class="h1-heading-center">Account Details Page</h1>
 <h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Account Details Page!</h2>
-<section class="section-profile">
+<section class="section-profile-account">
     <div class="section-profile-info">
         <p class="paragraph-text">Username: <?= htmlspecialchars($_SESSION['name'] ?? '') ?></p>
         <p class="paragraph-text">Email: <?= htmlspecialchars($email ?? '') ?></p>

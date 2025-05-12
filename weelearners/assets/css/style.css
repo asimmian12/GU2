@@ -294,13 +294,13 @@ section > div > p {
 
 .section-contact-info {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 20px;
     max-width: 600px;
-    margin: 0 auto;
-  
+    margin: 0 auto; 
 }
 
 .paragraph-text{
@@ -629,19 +629,9 @@ section > div > p {
     height: 50vh;
     
 }
-/* .Users */
-.section-users{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px; 
-    padding: 15px;
-    margin: 30px;
-}
 
-/* section personal class */
-.section-personal-account {
+/* section-profile-account class */
+.section-profile-account{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -649,12 +639,11 @@ section > div > p {
     padding: 3%;
     margin: 5%;
     height: 50vh;
-    border: 2px solid var(--darken-colour);
     border-radius: 5px; 
     background-color: var(--background-colour); 
 }
 
-.section-personal-account:hover {
+.section-profile-account:hover {
     transform: translateY(-5px);
 }
 
