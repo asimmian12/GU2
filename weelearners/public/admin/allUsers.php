@@ -13,7 +13,7 @@ $user->bind_result($userID, $username, $email, $role, $isAdmin);
 </section>
 
 <h1 class="h1-heading-center">Current Users Page</h1>
-<section class="section-user">
+<section class="section-user-info">
     <?php while ($user->fetch()): ?>
         <div>
             <h1 class="paragraph-text">Username: <?= htmlspecialchars($username ?? '') ?></h1>
