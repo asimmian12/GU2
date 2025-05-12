@@ -532,19 +532,22 @@ section > div > p {
     padding: 20px;
 }
 
-/* Albums */
+/* Photo */
 .div-photo { 
     margin-bottom: 30px;
 }
 
+/* Badge */
 .div-badge { 
     margin-bottom: 30px;
 }
 
+/* Video */
 .div-video { 
     margin-bottom: 30px;
 }
 
+/* Review */
 .div-review { 
     margin-bottom: 30px;
 }
@@ -638,7 +641,7 @@ section > div > p {
     justify-content: center;
     padding: 3%;
     margin: 5%;
-    height: 50vh;
+    height: 100vh;
     border-radius: 5px; 
     background-color: var(--background-colour); 
 }
@@ -653,6 +656,7 @@ section > div > p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    height: 100%;
     gap: 5%;
     margin: 2px;
 }
@@ -726,42 +730,48 @@ section > div > p {
 }
 
 @media (min-width: 768px) {
-    .nav-navbar {
-        padding: 10px 20px;
-    }
-    .ul-nav-links {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-    }
-    .ul-nav-links li {
-        margin: 0 10px;
-    }
     .div-hamburger-menu {
-        display: none;
+        display: flex;
+        align-content: center;
+        margin-left: 5%;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
     }
+    
+    .div-hamburger-menu span {
+        height: 3px;
+        width: 25px;
+        margin: 3px 0;
+        border-radius: 2px;
+        background-color: var(--darken-colour);
+    }
+
     .ul-nav-links a {
         padding: 14px 20px;
         border-radius: 4px;
     }
+
     .ul-nav-links a:hover {
         background-color: var(--darken-colour);
     }
+
     .paragraph-copyright {
         margin-top: 30%;
         border: 2px solid #b4b2b2;
         background-color: var(--footer-background-color);
     }
+
     .section-contact-info {
         min-width: 5%;
     }
+
     /* This can style the footer container with a three-column layout with grid */
     .footer__iframe,
     .footer__container {
         grid-template-columns: repeat(3, 1fr);
     }
+
     /* This can style the first footer column with specific grid positioning and borders */
     .footer__col:nth-child(1) {
         display: flex;
@@ -769,10 +779,12 @@ section > div > p {
         border-left: 2px solid var(--color);
         border-right: 2px solid var(--color);
     }
+
     /* This can style the third footer column to remove borders */
     .footer__col:nth-child(3) {
         border: none;
     }
+    
     .section-banner img {
         width: 100%;
         height: auto;
@@ -843,23 +855,20 @@ section > div > p {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .nav-navbar {
-        padding: 10px 20px;
-        width: 1222px;
-        background-color: var(--nav-background-color);
-    }
-    .ul-nav-links {
+    .ul-nav-links.open {
         display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: var(--nav-background-color);
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(225, 225, 225);
     }
-    .ul-nav-links li {
-        margin: 0 10px;
-    }
+
     .div-hamburger-menu {
-        display: none;
+        display: flex;
+        align-content: center;
+        margin-left: 5%;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
     }
     .ul-nav-links a {
         padding: 14px 20px;
@@ -869,7 +878,6 @@ section > div > p {
         background-color: var(--darken-colour);
     }
     .paragraph-copyright {
-        width: 1222px;
         border: 2px solid #b4b2b2;
         background-color: var(--footer-background-color);
     }
@@ -897,12 +905,21 @@ section > div > p {
 }
 
 @media (min-width: 1024px) {
+    .div-hamburger-menu {
+        display: none;
+    }
+
     .nav-navbar {
         padding: 10px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
+    .ul-nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
     .ul-nav-links {
         flex-direction: row;
         justify-content: space-between;

@@ -21,7 +21,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 </section>
 
 <h1 class="h1-heading-center">Upload Badge Page</h1>
-<h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an badge for sale?</h2>
+<h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an badge to display your earned badges?</h2>
 <section class="uploadBadge">
     <form action="<?= ROOT_DIR ?>uploadConfig" method="post" enctype="multipart/form-data">
         <label for="badgeName">Badge Name</label>
@@ -38,7 +38,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
     </form>
 </section>
     
-<h1 class="h1-heading-center">User Uploads History Page</h1>
+<h1 class="h1-heading-center">Previously Earned Badges Page</h1>
 <section class="section-uploads">  
     <section>
         <?php while($uploads->fetch()): ?>
