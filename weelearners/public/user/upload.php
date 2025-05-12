@@ -42,7 +42,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 <section class="section-uploads">  
     <section>
         <?php while($uploads->fetch()): ?>
-            <div class="div-user-item">
+            <div class="div-user-badge-item">
                 <p class="paragraph-badge-text"><?= htmlspecialchars($badgeID ?? '') ?></p>
                 <p class="paragraph-badge-text"><?= htmlspecialchars($badgeName ?? '') ?></p>
                 <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $badgeImage ?? '') ?>" alt="Badge Cover">

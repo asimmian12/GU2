@@ -645,7 +645,7 @@ section > div > p {
 
 
 /* .div-user item */
-.div-user-item{ 
+.div-user-badge-item{ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -656,7 +656,7 @@ section > div > p {
     overflow: hidden;
 }
 
-.div-user-item img { 
+.div-user-badge-item img { 
     width: 100%; 
 }
 
