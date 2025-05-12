@@ -81,3 +81,6 @@ $users->bind_result($userID, $username, $email, $role, $isActive, $name, $releas
     </section>
 
 <?php include 'includes/footer.php'; ?>
+
+
+
