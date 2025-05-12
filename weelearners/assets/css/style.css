@@ -561,6 +561,19 @@ section > div > p {
     overflow: hidden;
 }
 
+.div-users-info { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 1 300px;
+    margin: 30px;
+    background-color: var(--background-color);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+
 .div-pending-item img { 
     max-width: 200px; 
     height: auto; 

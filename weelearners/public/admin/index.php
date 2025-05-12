@@ -45,7 +45,7 @@ $users->bind_result($userID, $username, $email, $role, $isActive, $name, $releas
 <div>
     <section>
         <?php while ($users->fetch()): ?>
-        <div class="div-album-item">
+        <div class="div-users-info">
             <h2 class="main-heading">Helper ID: <?= htmlspecialchars($userID ?? '') ?></h2>
             <p class="paragraph-text">Helper Fullname: <?= htmlspecialchars($name ?? '') ?></p>
             <p class="paragraph-text">Helper Username: <?= htmlspecialchars($username ?? '') ?></p>
