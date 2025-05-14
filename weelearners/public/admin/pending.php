@@ -195,3 +195,5 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 <?php ## include '../../includes/footer.php'; ?>
 <?php include 'C:/laragon/www/GU2/weelearners/includes/footer.php'; ?> 
 
+
+
