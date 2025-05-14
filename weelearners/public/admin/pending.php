@@ -191,6 +191,6 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 
-<script src="../../assets/js/script.js"></script>
-<?php ##include '../../includes/footer.php'; ?>
+<script src="<?= ROOT_DIR ?>assets/js/script.js"></script>
+<?php ## include '../../includes/footer.php'; ?>
 <?php include 'C:/laragon/www/GU2/weelearners/includes/footer.php'; ?> 
