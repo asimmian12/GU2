@@ -311,6 +311,13 @@ section > div > p {
     padding: 9px; 
 }
 
+.section-paragraph-text{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 9px; 
+}
+
 .status-message{
     display: flex;
     align-items: center;

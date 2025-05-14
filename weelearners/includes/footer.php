@@ -38,10 +38,10 @@
       <!-- The text container for footer__address -->
       <section class="paragraph-text">
         <p class="paragraph-text">Wee Learners Contact Details </p>
-        <p class="paragraph-text"><i class="fa-solid fa-location-dot">   50 Prospecthill Road</i></p>
-        <p class="paragraph-text"><i class="fa-solid fa-location-dot">   Glasgow G42 9LB</i></p>
-        <p class="paragraph-text"><i class="fa-solid fa-phone">   0141 272 9000</i></p>
-        <p class="paragraph-text"><i class="fa-solid fa-envelope">   info@weelearners.ac.uk</i></p>
+        <p class="section-paragraph-text"><i class="fa-solid fa-location-dot"></i>  50 Prospecthill Road</p>
+        <p class="section-paragraph-text"><i class="fa-solid fa-location-dot"></i>  Glasgow G42 9LB</p>
+        <p class="section-paragraph-text"><i class="fa-solid fa-phone"></i>   0141 272 9000</p>
+        <p class="section-paragraph-text"><i class="fa-solid fa-envelope"></i>  info@weelearners.ac.uk</p>
       </section>
   </section>
 
