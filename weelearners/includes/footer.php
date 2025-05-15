@@ -1,4 +1,4 @@
-<!-- The secontion__container and footer__container footer -->
+<!-- The footer__container footer that's nested with multiple sections to help me do it in parts.-->
 <footer class="paragraph-copyright" id="footer">
     <!-- The footer col with logo and social media links to X (Twitter) and Instagram -->
     <section class="footer__col">
@@ -10,6 +10,7 @@
           <a href="https://twitter.com" target="_blank"><i class="fa-solid fa-x"></i></a>
           <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </section>
+
 
   <section class="footer__col">
       <!-- The text container for footer__address -->
@@ -63,8 +64,9 @@
 
 <!-- The Scroll Reveal  -->
 <script src="https://unpkg.com/scrollreveal"></script>
-<script src="assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="<?= ROOT_DIR ?>assets/js/script.js" defer></script>
+
 </body>
 </html>
 

@@ -1,15 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var hamburgerMenu = document.querySelector('.div-hamburger-menu');
-  var navLinks = document.querySelector('.ul-nav-links');
-  
-  if (hamburgerMenu && navLinks) {
-    hamburgerMenu.addEventListener('click', () => {
-      hamburgerMenu.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-  }
-})
+var hamburgerMenu = document.querySelector('.div-hamburger-menu');
+var navLinks = document.querySelector('.ul-nav-links');
 
+if (hamburgerMenu && navLinks) {
+  hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    navLinks.classList.toggle('open');
+  });
+}
 
 
 // The js code can provide functionality to create a variable for ScrollReveal animations
@@ -86,7 +83,7 @@ ScrollReveal().reveal(".section-photo ", {
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-badge
-ScrollReveal().reveal(".section-badge ", {
+ScrollReveal().reveal(".section-badge", {
   ...scrollRevealOption,
 });
 

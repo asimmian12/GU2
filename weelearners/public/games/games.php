@@ -52,5 +52,5 @@ function fetchFromApi($json_file) {
     </div>
 </section>
 
-<script src="<?= ROOT_DIR ?>assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
 <?php include '../../includes/footer.php'; ?>

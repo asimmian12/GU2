@@ -137,6 +137,8 @@ ul > li{
     padding: 0 20px;
     color: var(--colour);
     background-color: var(--nav-background-color);
+    position: relative;
+    z-index: 2000;
 }
 .div-logo a {
     color: var(--color);
@@ -155,7 +157,29 @@ ul > li{
     position: absolute;
     top: 60px;
     left: 0;
+    z-index: 2050;
 }
+.ul-nav-links.open {
+    display: flex;
+    align-items: center;
+    background-color: rgb(225, 225, 225);
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 2050;
+    pointer-events: auto;
+}
+
+body > *:not(.nav-navbar):not(.ul-nav-links) {
+    position: relative;
+    z-index: 1;
+}
+
 
 .ul-nav-links li {
     text-align: center;
@@ -190,7 +214,7 @@ ul > li{
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 2100;
 }
 
 .div-hamburger-menu span {
@@ -933,17 +957,16 @@ section > div > p {
     .nav-navbar {
         padding: 10px 20px;
     }
-    .ul-nav-links {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-    }
-
-    .ul-nav-links {
-        flex-direction: row;
-        justify-content: space-between;
+    .ul-nav-links,
+    .ul-nav-links.open {
+        display: flex !important;
+        flex-direction: row !important;
+        position: static !important;
+        width: auto !important;
+        background-color: transparent !important;
+        min-height: auto !important;
+        margin-top: 0 !important;
+        pointer-events: auto !important;
     }
     .ul-nav-links li {
         margin: 0 15px;
