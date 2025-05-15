@@ -15,7 +15,7 @@ function fetchFromApi($url) {
     return json_decode($response, true);
 }
 
-  // The URL is hardcoded to fetch PC games data from the API
+  // The URL is hardcoded to fetch games data from the API
   $url = "https://www.freetogame.com/api/games?platform=pc";
   // The fetchFromApi function is called to get the games data and store it in the $games variable
   $games = fetchFromApi($url);
