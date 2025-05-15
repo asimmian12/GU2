@@ -17,7 +17,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 ?>
 
 <section class="section-banner">
-        <img src="<?= htmlspecialchars(ROOT_DIR . './assets/images/banner_img.jpg') ?>" alt="Colorful banner showcasing Wee Learners platform with cheerful children playing and learning together in a vibrant and welcoming environment">
+    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
 </section>
 
 <h1 class="h1-heading-center">Upload Badge Page</h1>
