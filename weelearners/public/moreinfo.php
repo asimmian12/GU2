@@ -66,7 +66,7 @@ if ($testimonalsID == true) {
 ?>
 
 <h1 class="h1-heading-center">More Photos</h1>
-<section>
+<section class="section-photo">
     <?php if ($photoID == true) : while ($photo->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? 'No Photo name is available') ?></h2>
@@ -80,7 +80,7 @@ if ($testimonalsID == true) {
 </section>
 
 <h1 class="h1-heading-center">More Videos</h1>
-<section>
+<section class="section-video">
     <?php if ($videoID == true) : while ($video->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? 'No Video title available') ?></h2>
@@ -93,8 +93,8 @@ if ($testimonalsID == true) {
     <?php endwhile; endif; ?>
 </section>
 
-<h2 class="h2-secondary-colour">More Badges</h2>
-<section>
+<h1 class="h1-heading-center">More Badges</h1>
+<section class="section-badge">
     <?php if ($badgeID == true) : while ($badge->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
@@ -106,8 +106,8 @@ if ($testimonalsID == true) {
     <?php endwhile; endif; ?>
 </section>
 
-<h2 class="h2-secondary-colour">More Testimonals</h2>
-<section>
+<h1 class="h1-heading-center">More Reviews</h1>
+<section class="section-review">
     <?php if ($testimonalsID == true) : while ($testimonals->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
@@ -118,16 +118,16 @@ if ($testimonalsID == true) {
     <?php endwhile; endif; ?>
 </section>
 
-<h2 class="h2-secondary-colour">Contact</h2>
-    <section class="footer__col">
+<section class="section-contact">
+    <h2 class="h2-secondary-colour">Contact</h2>
       <!-- The text container for footer__address -->
       <div class="section-contact-info">
           <p class="paragraph-text"><i class="fa-solid fa-phone">Emerengency:   0141 272 9000</i></p>
           <p class="paragraph-text"><i class="fa-solid fa-location-dot">Location:    50 Prospecthill Road Glasgow G42 9LB</i></p>
           <p class="paragraph-text"><i class="fa-solid fa-envelope">Email:   info@weelearners.ac.uk</i></p>
           <p class="paragraph-text"><i class="fa-solid fa-envelope">Working Hours:    Mon-Sat 09:00-20:00 Sunday emergency only.</i></p>
-        </div>
-    </section>
+    </div>
+</section>
 
-<script src="../assets/js/script.js"></script>
+<script src="<?= ROOT_DIR ?>assets/js/script.js"></script>
 <?php include '../includes/footer.php'; ?>

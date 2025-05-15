@@ -58,7 +58,7 @@
 </section>
 
 <h2 class="main-heading">Personal Account Information: </h2>
-<section>
+<section class="section-account-info">
         <?php while ($user->fetch()): ?>
             <div> 
                 <p class="paragraph-text">Username: <?= htmlspecialchars($name ?? '') ?></p>
@@ -69,8 +69,9 @@
         <?php endwhile; ?>
 </section>
 
-<h2 class="h2-secondary-colour">Contact</h2>
-<section class="footer__col">
+
+<section class="section-contact">
+    <h2 class="h2-secondary-colour">Contact</h2>
       <!-- The text container for footer__address -->
       <div class="section-contact-info">
           <p class="paragraph-text"><i class="fa-solid fa-phone">Emerengency:   0141 272 9000</i></p>

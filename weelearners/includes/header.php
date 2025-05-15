@@ -17,6 +17,7 @@
     <meta name="description" content="Wee Learner has been the go-to platform for parents, carers, and children love coming to us. Our website connects Parents and Carers of their kids, ranging from Special Needs and to Normal Kids. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearnersAM.com provide an easy-to-use platform where users can explore a diverse range of badge records, apply for being a helper, etc.">
     <meta name="author" content="Asim Main">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= ROOT_DIR ?>assets/favicon_io/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="icon" type="image/png" sizes="32x32" href="<?= ROOT_DIR ?>assets/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= ROOT_DIR ?>assets/favicon_io/favicon-16x16.png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>

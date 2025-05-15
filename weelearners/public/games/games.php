@@ -29,7 +29,7 @@ function fetchFromApi($json_file) {
 
 <h1 class="h2-secondary-colour">Games</h1>
 
-<section>
+<section class="section-game">
     <?php for ($i = 0; $i < count($games); $i++): ?>
         <?php $game = $games[$i]; ?>
         <div>

@@ -220,7 +220,7 @@ section > div {
     background-color: var(--background-color);
     border-radius: 25px;
     overflow: hidden;
-    padding:20px;
+    padding: 20px;
 }
 
 section > div:hover {
@@ -531,14 +531,20 @@ section > div > p {
     justify-content: center;
 } 
 
-/* Badge Section */
-.section-badge{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+.section-photo,
+.section-video,
+.section-badge,
+.section-review {
+  margin-bottom: 30px;
 }
 
+.section-game{
+    margin-bottom: 30px;
+}
+
+.section-account-info{
+    margin-bottom: 30px;
+}
 /* Photo */
 .div-photo { 
     margin-bottom: 30px;
@@ -583,10 +589,17 @@ section > div > p {
     overflow: hidden;
 }
 
-
 .div-pending-item img { 
     max-width: 200px; 
     height: auto; 
+}
+
+.section-contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 230%;
 }
 
 /* Upload Badge's */
@@ -648,7 +661,7 @@ section > div > p {
     justify-content: center;
     padding: 3%;
     margin: 5%;
-    height: 100vh;
+    /* height: 100vh; */
     border-radius: 5px; 
     background-color: var(--background-colour); 
 }
@@ -667,7 +680,6 @@ section > div > p {
     gap: 5%;
     margin: 2px;
 }
-
 
 /* .div-user-badge-item */
 .div-user-badge-item{ 
@@ -770,6 +782,7 @@ section > div > p {
     }
 
     .section-contact-info {
+        margin-top: 5%;
         min-width: 5%;
     }
 
@@ -853,6 +866,7 @@ section > div > p {
         background-color: var(--footer-background-color);
     }
     .section-contact-info {
+        margin-top: 3%;
         min-width: 8%;
     }
     .section-banner img {

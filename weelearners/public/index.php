@@ -38,7 +38,7 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 <h2 class="h2-secondary-colour">All Photos</h2>
-<section>
+<section class="section-photo">
     <?php while ($photo->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? '') ?></h2>
@@ -51,7 +51,7 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 <h2 class="h2-secondary-colour">All Videos</h2>
-<section>
+<section class="section-video">
     <?php while ($video->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
@@ -64,7 +64,7 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 <h2 class="h2-secondary-colour">All Badges</h2>
-<section>
+<section class="section-badge">
     <?php while ($badge->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
@@ -76,7 +76,7 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 <h2 class="h2-secondary-colour">All Reviews</h2>
-<section>
+<section class="section-review">
     <?php while ($testimonals->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
@@ -86,8 +86,9 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile ?>
 </section>
 
-<h2 class="h2-secondary-colour">Contact</h2>
-<section class="footer__col">
+
+<section class="section-contact">
+    <h2 class="h2-secondary-colour">Contact</h2>
       <!-- The text container for footer__address -->
       <div class="section-contact-info">
           <p class="paragraph-text"><i class="fa-solid fa-phone">Emerengency:   0141 272 9000</i></p>
