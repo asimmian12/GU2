@@ -1,9 +1,6 @@
 <?php
-// include '../../config/config.php';
-// include '../../includes/header.php';
-include 'C:/laragon/www/GU2/weelearners/config/config.php';
-include 'C:/laragon/www/GU2/weelearners/includes/header.php';
-
+include '../../config/config.php';
+include '../../includes/header.php';
 
 // Bringing in Unpublished Photo Details
 $unpublishedPhotos = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE is_active = 0 ORDER BY RAND()");
@@ -192,8 +189,7 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 
 
 <script src="<?= ROOT_DIR ?>assets/js/script.js"></script>
-<?php ## include '../../includes/footer.php'; ?>
-<?php include 'C:/laragon/www/GU2/weelearners/includes/footer.php'; ?> 
+<?php include '../../includes/footer.php'; ?>
 
 
 
