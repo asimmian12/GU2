@@ -133,20 +133,21 @@ CREATE TABLE `user` (
   `name` varchar(255) DEFAULT NULL,
   `profile_picture` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
-  `release_date` date DEFAULT NULL
+  `release_date` date DEFAULT NULL,
+  `available_day` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `username`, `pw`, `name`, `profile_picture`, `role`, `release_date`) VALUES
-(26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'Admin', NULL, 'Admin User ', NULL, 'Staff', '2023-05-13'),
-(27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 1, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen Sturgeon', NULL, 'Parent Helper', '2024-06-24'),
-(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'Asim Mian', NULL, 'Student', '2024-01-13'),
-(55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, 'Mahmood Al-Sabagah', NULL, 'Parent Helper', '2024-05-19'),
-(56, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'iain@weelearners.com', 1, 'Iain3', NULL, 'Iain Shaw', NULL, 'Student', '2021-02-13'),
-(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'natailie@weelearners.com', 1, 'NStark', NULL, 'Natailie Stark', NULL, 'Staff', '0202-05-13');
+INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `username`, `pw`, `name`, `profile_picture`, `role`, `release_date`, `available_day`) VALUES
+(26, '$2y$10$UcV3.Pvs9b7Jw5IHcaHgbuNw1d765BsUyED29ueHy9eamVMmLHr3u', 1, 'admin@weelearners.com', 1, 'Admin', NULL, 'Admin User ', NULL, 'Staff', '2023-05-13', 'Mon-Tue: 9AM - 12PM'),
+(27, '$2y$10$BQ.jxuz7e12MGFNDSNMKH.sivaZV2/PH5oDWbosc58EpVIWCWvXIC', 1, 'karen@weelearners.com', 1, 'Karen', NULL, 'Karen Sturgeon', NULL, 'Parent Helper', '2024-06-24', 'Tue-Wed: 12PM - 2PM'), 
+(47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'Asim Mian', NULL, 'Student', '2024-01-13', 'Wed-Thu: 9AM - 2:30PM'),
+(55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, 'Mahmood Al-Sabagah', NULL, 'Parent Helper', '2024-05-19', 'Wed-Thu: 2.30PM - 3PM'),
+(56, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'iain@weelearners.com', 1, 'Iain3', NULL, 'Iain Shaw', NULL, 'Student', '2021-02-13', 'Thu-Fri: 9AM - 1:00PM'),
+(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'natailie@weelearners.com', 1, 'NStark', NULL, 'Natailie Stark', NULL, 'Staff', '2020-05-13', 'Thu-Fri: 1PM - 3:00PM');
 
 -- --------------------------------------------------------
 

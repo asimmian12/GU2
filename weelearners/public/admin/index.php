@@ -32,10 +32,10 @@ if (isset($_POST['deleteUser'])) {
 }
 
 // Bringing in User Details
-$users = $conn->prepare("SELECT id, username, email, role, is_active, name, release_date FROM user");
+$users = $conn->prepare("SELECT id, username, email, role, is_active, name, release_date, available_day FROM user");
 $users->execute();
 $users->store_result();
-$users->bind_result($userID, $username, $email, $role, $isActive, $name, $release_date);
+$users->bind_result($userID, $username, $email, $role, $isActive, $name, $release_date, $day);
 ?>
 <section class="section-banner">
     <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
@@ -52,6 +52,7 @@ $users->bind_result($userID, $username, $email, $role, $isActive, $name, $releas
             <p class="paragraph-text">Email: <?= htmlspecialchars($email ?? '') ?></p>
             <p class="paragraph-text">Job Role: <?= htmlspecialchars($role ?? '') ?></p>
             <p class="paragraph-text">Date of Upload: <?= htmlspecialchars($release_date ?? '') ?></p>
+            <p class="paragraph-text">Available Day: <?= htmlspecialchars($day ?? '') ?></p>
             <p class="paragraph-text">Status: <?= htmlspecialchars($isActive ? 'Active' : 'Inactive') ?></p>
 
             <form method="POST">
