@@ -37,50 +37,50 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
     <p class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where parents and carers can explore a wide range of badge records, for their children, and apply for being a helper, etc.</p>
 </section>
 
-<h2 class="h2-secondary-colour">All Photos</h2>
+<h1 class="h1-heading-center">All Photos</h1>
 <section class="section-photo">
     <?php while ($photo->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Photo Cover">
             <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? '') ?></h2>
-            <span><?= htmlspecialchars($release ?? '') ?></span>
+            <p class="paragraph-text"><?= htmlspecialchars($release ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h2 class="h2-secondary-colour">All Videos</h2>
+<h1 class="h1-heading-center">All Videos</h1>
 <section class="section-video">
     <?php while ($video->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
-            <p><?= htmlspecialchars($vDesc ?? '') ?></p>
-            <span><?= htmlspecialchars($vRelease ?? '') ?></span>
+            <p class="paragraph-text"><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <p class="paragraph-text"><?= htmlspecialchars($vRelease ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h2 class="h2-secondary-colour">All Badges</h2>
+<h1 class="h1-heading-center">All Badges</h1>
 <section class="section-badge">
     <?php while ($badge->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image" style="max-width: 200px; height: auto;">
-            <p><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <p class="paragraph-text"><?= htmlspecialchars($bDesc ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h2 class="h2-secondary-colour">All Reviews</h2>
+<h1 class="h1-heading-center">All Reviews</h1>
 <section class="section-review">
     <?php while ($testimonals->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <p class="paragraph-text"><?= htmlspecialchars($tDesc ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>

@@ -72,8 +72,8 @@ if ($testimonalsID == true) {
             <h2 class="main-heading"><?= htmlspecialchars($pName ?? 'No Photo name is available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? 'default.jpg') ?>" alt="Photo Image">
             <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? 'No photo description is available') ?></h2>
-            <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($pID ?? ' ') ?></p>
-            <span><?= htmlspecialchars($release ?? 'Release date is not available') ?></span>
+            <p class="paragraph-text">Uploaded by Anonymus User ID: <?= htmlspecialchars($pID ?? ' ') ?></p>
+            <p class="paragraph-text"><?= htmlspecialchars($release ?? 'Release date is not available') ?></p>
             <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
@@ -85,9 +85,9 @@ if ($testimonalsID == true) {
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? 'No Video title available') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $vImage ?? 'default-video.jpg') ?>" alt="Video Thumbnail">
-            <p><?= htmlspecialchars($vDesc ?? 'No video description is not available') ?></p>
-            <p> Uploaded by Anonymus User ID: <?= htmlspecialchars($vID ?? ' ') ?></p>
-            <span><?= htmlspecialchars($vRelease ?? 'Release date is not available') ?></span>
+            <p class="paragraph-text"><?= htmlspecialchars($vDesc ?? 'No video description is not available') ?></p>
+            <p class="paragraph-text"> Uploaded by Anonymus User ID: <?= htmlspecialchars($vID ?? ' ') ?></p>
+            <p class="paragraph-text"><?= htmlspecialchars($vRelease ?? 'Release date is not available') ?></p>
             <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
@@ -99,8 +99,8 @@ if ($testimonalsID == true) {
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
-            <p><?= htmlspecialchars($bDesc ?? '') ?></p>
-            <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($bID ?? '') ?></p>
+            <p class="paragraph-text"><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <p class="paragraph-text">Uploaded by Anonymus User ID: <?= htmlspecialchars($bID ?? '') ?></p>
             <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
@@ -111,8 +111,8 @@ if ($testimonalsID == true) {
     <?php if ($testimonalsID == true) : while ($testimonals->fetch()) : ?>
         <div>
             <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p><?= htmlspecialchars($tDesc ?? '') ?></p>
-            <p>Uploaded by Anonymus User ID: <?= htmlspecialchars($tID ?? '') ?></p>
+            <p class="paragraph-text"><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <p class="paragraph-text">Uploaded by Anonymus User ID: <?= htmlspecialchars($tID ?? '') ?></p>
             <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
         </div>
     <?php endwhile; endif; ?>
