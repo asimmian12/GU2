@@ -28,17 +28,39 @@ include 'includes/header.php';
         </form>
         <!-- <div class="msg"></div> -->
     </section>
-
-    <section class="section-contact">
+    
     <h2 class="h2-secondary-colour">Contact</h2>
-      <!-- The text container for footer__address -->
-      <div class="section-contact-info">
-          <p class="paragraph-text"><i class="fa-solid fa-phone">Emerengency:   0141 272 9000</i></p>
-          <p class="paragraph-text"><i class="fa-solid fa-location-dot">Location:    50 Prospecthill Road Glasgow G42 9LB</i></p>
-          <p class="paragraph-text"><i class="fa-solid fa-envelope">Email:   info@weelearners.ac.uk</i></p>
-          <p class="paragraph-text"><i class="fa-solid fa-envelope">Working Hours:    Mon-Sat 09:00-20:00 Sunday emergency only.</i></p>
+    <section class="section-contact">
+    <div class="contact-cards">
+
+    <div class="contact-card">
+      <i class="fa-solid fa-phone"></i>
+      <h3>EMERGENCY</h3>
+      <p class="paragraph-text">0141 272 9000</p>
     </div>
+
+    <div class="contact-card">
+      <i class="fa-solid fa-location-dot"></i>
+      <h3>LOCATION</h3>
+      <p class="paragraph-text">50 Prospecthill Road</p>
+      <p class="paragraph-text">G42 9LB, Glasgow, UK</p>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-solid fa-envelope"></i>
+      <h3>EMAIL</h3>
+      <a href="mailto:info@weelearners.ac.uk">info@weelearners.ac.uk</a>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-solid fa-clock"></i>
+      <h3>WORKING HOURS</h3>
+      <p class="paragraph-text">Mon–Sat: 09:00–20:00</p>
+      <p class="paragraph-text">Sunday: Emergency only</p>
+    </div>
+  </div>
 </section>
+
     
 <?php include 'includes/footer.php'; ?>
 
