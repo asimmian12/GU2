@@ -629,7 +629,7 @@ section > div > p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 230%;
+    /* margin-top: 230%; */
 }
 
 /* Upload Badge's */
@@ -679,7 +679,7 @@ section > div > p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    /* height: 50vh; */
     
 }
 
@@ -806,13 +806,12 @@ section > div > p {
     }
 
     .paragraph-copyright {
-        margin-top: 30%;
+        margin-top: 30px;
         border: 2px solid #b4b2b2;
         background-color: var(--footer-background-color);
     }
 
     .section-contact-info {
-        margin-top: 5%;
         min-width: 5%;
     }
 
@@ -891,12 +890,11 @@ section > div > p {
         border-radius: 0;
     }
     .paragraph-copyright {
-        margin-top: 450%;
+        /* margin-top: 450%; */
         border: 2px solid #b4b2b2;
         background-color: var(--footer-background-color);
     }
     .section-contact-info {
-        margin-top: 3%;
         min-width: 8%;
     }
     .section-banner img {

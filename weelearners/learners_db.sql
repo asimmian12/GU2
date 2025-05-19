@@ -147,8 +147,9 @@ INSERT INTO `user` (`id`, `password`, `is_admin`, `email`, `is_active`, `usernam
 (47, '$2y$10$/Oqd0lU1xPVVLi0P2Va9Ce00QtPHxBe8T4M5bbfKLyqh4ZMH4XwJS', 0, 'asim@weelearners.com', 1, 'asim1', NULL, 'Asim Mian', NULL, 'Student', '2024-01-13', 'Wed-Thu: 9AM - 2:30PM'),
 (55, '$2y$10$Ch8YYtNN.sIGKQr8dDlyaekd8rS.375FXGVDBVqaADl9k0hxRJCk6', 0, 'mal@weelearners.com', 1, 'MAL', NULL, 'Mahmood Al-Sabagah', NULL, 'Parent Helper', '2024-05-19', 'Wed-Thu: 2.30PM - 3PM'),
 (56, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'iain@weelearners.com', 1, 'Iain3', NULL, 'Iain Shaw', NULL, 'Student', '2021-02-13', 'Thu-Fri: 9AM - 1:00PM'),
-(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'natailie@weelearners.com', 1, 'NStark', NULL, 'Natailie Stark', NULL, 'Staff', '2020-05-13', 'Thu-Fri: 1PM - 3:00PM');
-
+(57, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'natailie@weelearners.com', 1, 'NStark', NULL, 'Natailie Stark', NULL, 'Staff', '2020-05-13', 'Thu-Fri: 1PM - 3:00PM'),
+(58, '$2y$10$7wJ8wRtmpZwKfJTpmmhpAesIsHY1Cfx//CT5z3KRw/BBVuDJeFfu.', 0, 'david@weelearners.com', 1, 'David5', NULL, 'David Stewart', NULL, 'Student', '2024-02-13', 'Thu-Fri: 1PM - 2:00PM'),
+(59, '$2y$10$Sg64LxzSwtWS.MRZkD4r.uI1Vwv7wAHYpZm6BPAi/tYjcqAiqE6Kq', 1, 'michael@weelearners.com', 1, 'Mixhael', NULL, 'Michael Goldfis', NULL, 'Staff', '2024-05-13', 'Thu-Fri: 2PM - 3:00PM');
 -- --------------------------------------------------------
 
 --
