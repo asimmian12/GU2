@@ -58,7 +58,7 @@
 
   <!-- The Copyright Information -->
   <section class="footer__copyright">
-    &copy; WeeLearners By Asim Mian. All rights reserved. <?php echo date("d-m-Y");?>. 
+    <p class="paragraph-text">&copy; WeeLearners By Asim Mian. All rights reserved. <?php echo date("d-m-Y");?>.</p>
   </section> 
 </footer>
 
