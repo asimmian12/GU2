@@ -17,18 +17,18 @@
         <p class="paragraph-text">Page Links: </p>
         <?php if (!isset($_SESSION['loggedin'])) : ?>
             <!-- For non-logged-in users -->
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>">Home</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>badge">Badge</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>login">Login</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>register">Register</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>public/contact/contact.php">Contact</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>"><i class="fa fa-arrow-right" aria-hidden="true"></i> Home</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>badge"><i class="fa fa-arrow-right" aria-hidden="true"></i> Badge</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>login"><i class="fa fa-arrow-right" aria-hidden="true"></i> Login</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>register"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>public/contact/contact.php"><i class="fa fa-arrow-right" aria-hidden="true"></i> Contact</a></p>
         <?php else : ?>
             <!-- For logged-in users -->
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>">Home</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>badge">Badge</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>login">Login</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>register">Register</a></p>
-            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>public/contact/contact.php">Contact</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>"><i class="fa fa-arrow-right" aria-hidden="true"></i> Home</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>badge"><i class="fa fa-arrow-right" aria-hidden="true"></i> Badge</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>login"><i class="fa fa-arrow-right" aria-hidden="true"></i> Login</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>register"><i class="fa fa-arrow-right" aria-hidden="true"></i> Register</a></p>
+            <p class="paragraph-text"><a href="<?= ROOT_DIR ?>public/contact/contact.php"><i class="fa fa-arrow-right" aria-hidden="true"></i> Contact</a></p>
         <?php endif; ?>
       </section>
   </section>

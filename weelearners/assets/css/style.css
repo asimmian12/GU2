@@ -39,6 +39,11 @@ button{
     cursor: pointer; 
 }
 
+a{
+    text-decoration: none;
+    color: var(--color);
+}
+
 button > a {
     background-color: var(--darken-colour);
     color: var(--font-color);
