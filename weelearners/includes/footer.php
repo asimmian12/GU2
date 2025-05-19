@@ -9,7 +9,7 @@
           <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
           <a href="https://twitter.com" target="_blank"><i class="fa-solid fa-x"></i></a>
           <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      </section>      
+      </section>       
 
     <section class="footer__col">
       <!-- The text container for footer__address -->
