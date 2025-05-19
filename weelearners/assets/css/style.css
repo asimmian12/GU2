@@ -27,27 +27,10 @@ header {
     
 }  
 
-/*Buttons  */
-button{
-    background-color: var(--darken-colour);
-    color: var(--font-color);
-    border: 2px solid var(--color);
-    border-radius: 25px;
-    padding: 10px 20px; 
-    margin: 2px;
-    font-size: var(--second-font-size); 
-    cursor: pointer; 
-}
-
+/* This can style the a to not make the text underlined, and have a same colour as my paragraph text */
 a{
     text-decoration: none;
     color: var(--color);
-}
-
-button > a {
-    background-color: var(--darken-colour);
-    color: var(--font-color);
-    border-radius: 8px;
 }
 
 /* Img */
@@ -105,6 +88,37 @@ ul > li{
     cursor: pointer; 
 }
 
+/*Buttons  */
+button{
+    background-color: var(--darken-colour);
+    color: var(--font-color);
+    border: 2px solid var(--color);
+    border-radius: 25px;
+    padding: 10px 20px; 
+    margin: 2px;
+    font-size: var(--second-font-size); 
+    cursor: pointer; 
+}
+
+/* This can style the button to have a background colour, text colour, border, and border radius */
+button > a {
+    background-color: var(--darken-colour);
+    color: var(--font-color);
+    border-radius: 8px;
+}
+
+.input-search-btn{
+    background-color: var(--darken-colour);
+    color: var(--font-color);
+    border: 2px solid var(--color);
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: var(--second-font-size);
+    cursor: pointer;
+    height: 38px;
+    width: 90px;
+}
+
 /* Search */
 .form-search-bar {
     background-color: var(--nav-background-color);
@@ -120,18 +134,6 @@ ul > li{
     padding: 6px;
     margin: 6px;
     border: 2px solid #b4b2b2;
-}
-
-.input-search-btn{
-    background-color: var(--darken-colour);
-    color: var(--font-color);
-    border: 2px solid var(--color);
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: var(--second-font-size);
-    cursor: pointer;
-    height: 38px;
-    width: 90px;
 }
 
 /* Nav */
