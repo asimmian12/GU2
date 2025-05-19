@@ -6,7 +6,7 @@ include '../../includes/header.php';
 <?php
 
 // The $json_file variable before calling the function
-$json_file = $_SERVER['DOCUMENT_ROOT'] . '/Asim/GU2/weelearners/assets/json/games.json';
+$json_file = $_SERVER['DOCUMENT_ROOT'] . '/GU2/weelearners/assets/json/games.json';
 
 // The function fetchFromApi is used to retrieve game data from the FreeToGame API
 function fetchFromApi($json_file) {
