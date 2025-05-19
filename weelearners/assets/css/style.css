@@ -99,7 +99,7 @@ button{
     font-size: var(--second-font-size); 
     cursor: pointer; 
 }
-
+    
 /* This can style the button to have a background colour, text colour, border, and border radius */
 button > a {
     background-color: var(--darken-colour);
