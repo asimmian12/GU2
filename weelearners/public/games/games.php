@@ -5,8 +5,8 @@ include '../../includes/header.php';
 
 <?php
 
-// Creating the $json_file variable before calling the function
-$json_file = $_SERVER['DOCUMENT_ROOT'] . '/GU2/weelearners/assets/json/games.json';
+// The $json_file variable before calling the function
+$json_file = $_SERVER['DOCUMENT_ROOT'] . '/Asim/GU2/weelearners/assets/json/games.json';
 
 // The function fetchFromApi is used to retrieve game data from the FreeToGame API
 function fetchFromApi($json_file) {
@@ -41,14 +41,14 @@ function fetchFromApi($json_file) {
     <?php endfor; ?>
 </section>
 
-<h2 class="h2-secondary-colour">Contact</h2>
-<section class="footer__col">
-    <!-- The text container for footer__address -->
-    <div class="section-contact-info">
-        <p class="paragraph-text"><i class="fa-solid fa-phone">Emerengency:   0141 272 9000</i></p>
-        <p class="paragraph-text"><i class="fa-solid fa-location-dot">Location:    50 Prospecthill Road Glasgow G42 9LB</i></p>
-        <p class="paragraph-text"><i class="fa-solid fa-envelope">Email:   info@weelearners.ac.uk</i></p>
-        <p class="paragraph-text"><i class="fa-solid fa-envelope">Working Hours:    Mon-Sat 09:00-20:00 Sunday emergency only.</i></p>
+<section class="section-contact">
+    <h2 class="h2-secondary-colour">Contact</h2>
+      <!-- The text container for footer__address -->
+      <div class="section-contact-info">
+          <p class="paragraph-text"><i class="fa-solid fa-phone">Emerengency:   0141 272 9000</i></p>
+          <p class="paragraph-text"><i class="fa-solid fa-location-dot">Location:    50 Prospecthill Road Glasgow G42 9LB</i></p>
+          <p class="paragraph-text"><i class="fa-solid fa-envelope">Email:   info@weelearners.ac.uk</i></p>
+          <p class="paragraph-text"><i class="fa-solid fa-envelope">Working Hours:    Mon-Sat 09:00-20:00 Sunday emergency only.</i></p>
     </div>
 </section>
 

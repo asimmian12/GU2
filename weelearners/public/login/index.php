@@ -29,7 +29,7 @@ include 'includes/header.php';
         <!-- <div class="msg"></div> -->
     </section>
 
-<section class="section-contact">
+    <section class="section-contact">
     <h2 class="h2-secondary-colour">Contact</h2>
       <!-- The text container for footer__address -->
       <div class="section-contact-info">
