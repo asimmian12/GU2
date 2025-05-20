@@ -32,9 +32,13 @@ $testimonals->execute();
 $testimonals->store_result();
 $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
+<section class="section-banner">
+  <h1 class="h1-heading-center">Search Results</h1>
+  <p class="paragraph-text">
+    Welcome to the search results page. Here you can find all the results related to your search query. Our search engine scans through multiple categories including photos, videos, badges, and testimonials to provide you with the most relevant information based on your input. Whether you are looking for a specific album, an inspiring video, a badge to earn, or testimonials from our valued users, all matching results will be displayed below. To refine your search, simply enter a new keyword in the search bar and submit again. The results are dynamically updated to ensure you always have access to the latest and most accurate information available on our platform. Each result includes a brief description and an image (where available), along with a link for more detailed information. If you have any questions or need further assistance, please feel free to contact us using the details at the bottom of this page. Thank you for using our search feature. We are committed to helping you find exactly what you are looking for and making your experience as smooth and informative as possible. Please scroll down to view your search results. If you do not find what you are looking for, try using different keywords, or check back later as our content is regularly updated.
+  </p>
+</section> 
 
-<h1 class="h1-heading-center">Home Page</h1>
-<h2 class="h2-secondary-colour">Search</h2>
     <section>
     <?php
     // Display Photo Results

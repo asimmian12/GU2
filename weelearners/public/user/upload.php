@@ -17,11 +17,10 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 ?>
 
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+    <h1 class="h1-heading-center">Upload Badge Page</h1>
+    <p class="paragraph-text">  <h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to your upload bagde page in Wee Learners website. Here you can find all the badges related to your account. You can also upload your badge with permission from admin.</p>
 </section>
 
-<h1 class="h1-heading-center">Upload Badge Page</h1>
-<h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, would you like to upload an badge to display your earned badges?</h2>
 <section class="uploadBadge">
     <form action="<?= ROOT_DIR ?>uploadConfig" method="post" enctype="multipart/form-data">
         <label for="badgeName">Badge Name</label>

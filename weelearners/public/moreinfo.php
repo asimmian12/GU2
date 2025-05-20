@@ -65,7 +65,13 @@ if ($testimonalsID == true) {
 }
 ?>
 
-<h1 class="h1-heading-center">More Photos</h1>
+<section class="section-banner">
+  <h1 class="h1-heading-center">More Information Page</h1>
+  <p class="paragraph-text">
+    Welcome to the More Information page. Here you can find detailed information about the specific content you are interested in. Whether it's a photo, video, badge, or testimonial, we provide comprehensive details to help you understand more about it. You can also find the release date and the user who uploaded it. If you have any questions or need further assistance, please feel free to contact us using the details at the bottom of this page. Thank you for visiting our More Information page.
+  </p>
+</section>
+
 <section class="section-photo">
     <?php if ($photoID == true) : while ($photo->fetch()) : ?>
         <div>

@@ -28,12 +28,7 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
-</section>
-
-
-<h1 class="h1-heading-center">Home Page</h1>
-<section class="section-intro">
+    <h1 class="h1-heading-center">Home Page</h1>
     <p class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where parents and carers can explore a wide range of badge records, for their children, and apply for being a helper, etc.</p>
 </section>
 

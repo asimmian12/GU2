@@ -41,11 +41,10 @@
     $user->store_result();
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+    <h1 class="h1-heading-center">User Dashboard Page</h1>
+    <p class="paragraph-text"><h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to your dashboard in Wee Learners website. Here you can find all the information related to your account. You can view your personal account information.</p>
 </section>
 
-<h1 class="h1-heading-center">User Dashboard Page</h1>
-<h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to your User Dashboard!</h2>
 
 <section>
     <?php if (isset($profilePicture)): ?>

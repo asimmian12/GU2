@@ -54,12 +54,36 @@ img{
 ul > li{
     list-style-type: none;
 }
-
-.section-banner img {
-    width: 1326px;
-    height: 726px;
-    border-radius: 10px; 
+.section-banner {
+    position: relative;
+    background-image: url('../images/banner_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 65vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--darken-colour);
+    padding: 3rem 1.5rem;
+    overflow: hidden;
 }
+
+.section-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.7); 
+    z-index: 1;
+}
+
+.section-banner > * {
+    position: relative;
+    z-index: 2;
+}
+
 
 /* login and register buttons*/
 .input-login-btn{
@@ -898,11 +922,14 @@ section > div > p {
         border: none;
     }
     
-    .section-banner img {
-        width: 100%;
-        height: auto;
+    .section-banner img{
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
     }
-}
+  }
+
 
 @media (max-width: 768px) {
     .ul-nav-links {
@@ -961,11 +988,14 @@ section > div > p {
     .section-contact-info {
         min-width: 8%;
     }
-    .section-banner img {
-        width: 100%;
-        height: auto;
+     
+    .section-banner img{
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
     }
-
+  
     .contact-cards {
     display: flex;
     align-items: center;
@@ -1028,9 +1058,11 @@ section > div > p {
     .footer__col:nth-child(3) {
         border: none;
     }
-    .section-banner img {
-        width: 100%;
-        height: auto;
+    .section-banner img{
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
     }
 
     .contact-cards {
@@ -1044,7 +1076,7 @@ section > div > p {
 
   .contact-card {
     width: 90%;
-    max-width: 400px; /* optional, so cards don’t get too wide */
+    max-width: 400px; 
   }
 }
 
@@ -1073,9 +1105,12 @@ section > div > p {
     .section-contact-info {
         min-width: 5%;
     }
-    .section-banner img {
-        width: 50%;
-        height: auto;
+        
+    .section-banner img{
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
     }
 }
 
@@ -1096,8 +1131,11 @@ section > div > p {
     .section-contact-info {
         min-width: 5%;
     }
-    .section-banner img {
-        width: 100%;
-        height: auto;
+        
+    .section-banner img{
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
     }
 }

@@ -9,10 +9,10 @@ $user->store_result();
 $user->bind_result($userID, $username, $email, $role, $isAdmin);
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+    <h1 class="h1-heading-center">Current Users Page</h1>
+    <p class="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to the Current Users Page! Here you can view all registered users, to see who is signed up, for updating their roles,</p>
 </section>
 
-<h1 class="h1-heading-center">Current Users Page</h1>
 <section class="section-user-info">
     <?php while ($user->fetch()): ?>
         <div>

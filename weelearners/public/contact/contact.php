@@ -4,10 +4,9 @@ include '../../includes/header.php';
 
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+    <h1 class="h1-heading-center">Contact Us Page</h1>
+    <p class="paragraph-text">Welcome to the Contact Us page of Wee Learners. If you have any questions, comments, or feedback, please feel free to reach out to us using the form below. We value your input and will get back to you as soon as possible.</p>
 </section>
-
-<h1 class="h1-heading-center">Contact Us</h1>
 
     <section class="section-contact-form">
         <form action="#" method="post" class="form-contact-form" id="form-contact-form">

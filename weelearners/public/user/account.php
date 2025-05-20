@@ -55,11 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['section-profile-pict
 }
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+   <h1 class="h1-heading-center">Account Details Page</h1>
+   <p class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Account Details Page! Here you can find all the information related to your account. You can also upload your profile picture and view your personal account information.</p>
 </section>
 
-<h1 class="h1-heading-center">Account Details Page</h1>
-<h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Account Details Page!</h2>
 <section class="section-profile-account">
     <div class="section-profile-info">
         <?php if (isset($userPicture)): ?>

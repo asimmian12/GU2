@@ -2,7 +2,13 @@
 include 'config/config.php';
 include 'includes/header.php';
 ?>
-    <h1 class="h1-heading-center">Register Page</h1>
+<section class="section-banner">
+  <h1 class="h1-heading-center">Register Page</h1>
+  <p class="paragraph-text">
+    Welcome to the registration page. Here you can create a new account to access all the features and resources available on our platform.
+    Please fill in the form below with your details to get started.
+  </p>
+</section>
     <section class="section-register-form">
         <form action="<?= ROOT_DIR ?>registerConfig" method="post" class="form-register-form">
         <input type="hidden" name="is_active" value="1">           

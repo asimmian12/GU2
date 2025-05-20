@@ -38,10 +38,10 @@ $users->store_result();
 $users->bind_result($userID, $username, $email, $role, $isActive, $name, $release_date, $day);
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+    <h1 class="h1-heading-center">Admin Dashboard Page</h1>
+    <p class="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Admin Dashboard! Here you can manage all users and their badges. You can delete any user with their permisisson or by deactiving their account. You have the ability to update user information, activate or deactivate accounts, and ensure that only authorised users have access to the system. Please review user details carefully before making any changes, as your actions will directly affect user access on the website.</p>
 </section>
 
-<h1 class="h1-heading-center">Admin Dashboard</h1>
 <div>
     <section>
         <?php while ($users->fetch()): ?>

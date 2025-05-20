@@ -24,10 +24,9 @@ function fetchFromApi($json_file) {
   $games = array_slice($games, 0, 3);
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+    <h1 class="h1-heading-center">Games Page</h1>
+    <p class="paragraph-text">Welcome to the Games section of Wee Learners. Here you can find a selection of games that are available for you to play. Click on any game to get more information about it.</p>
 </section>
-
-<h1 class="h2-secondary-colour">Games</h1>
 
 <section class="section-game">
     <?php for ($i = 0; $i < count($games); $i++): ?>

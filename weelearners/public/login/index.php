@@ -3,7 +3,11 @@
 include 'config/config.php';
 include 'includes/header.php';
 ?>
-    <h1 class="h1-heading-center">Login Page</h1>
+<section class="section-banner">
+  <h1 class="h1-heading-center">Login Page</h1>
+  <p class="paragraph-text">Welcome to the Wee Learners login page. Please enter your username and password below to securely access your online account. By logging in, you can view your account, track your badges, and access exclusive badges just for you. If you have forgotten your password, you can use the password recovery option to reset it. For any issues or assistance, please contact our support team using the details provided below.</p>
+</section>
+
     <section class="section-login-form">
         <form action="<?= ROOT_DIR ?>authenticate" method="post" class="form-login-form">
             <label for="username">Username</label>

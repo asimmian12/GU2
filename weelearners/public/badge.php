@@ -18,10 +18,10 @@ $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+  <h1 class="h1-heading-center">Badges Page</h1>
+  <p class="paragraph-text">Welcome to the Badge section of Wee Learners. Here you can find all the badges that have been uploaded by our users. You can click on any badge to get more information about it.</p>
 </section>
 
-<h1 class="h1-heading-center">All Badges</h1>
 
 <section class="section-badge">
     <?php while ($badge->fetch()) : ?>

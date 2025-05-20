@@ -51,7 +51,8 @@ $publishedReviews->store_result();
 $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 <section class="section-banner">
-    <img src="<?= ROOT_DIR ?>assets/images/banner_img.jpg" alt="Cheerful children playing and learning together on the Wee Learners platform in a vibrant welcoming environment with bright colors and smiling faces creating a joyful and inclusive atmosphere">
+    <h1 class="h1-heading-center">Pending Upload Page</h1>
+    <p class="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Admin Dashboard! Here you can manage all badges, photos, videos, and reviews. You can delete that if it's deemed as unacceptable to the policy, if you delete it it won't appear, but if you approve it, then it'll appear in the website</p>
 </section>
 
 <h1 class="h1-heading-center">Unpublished Photos</h1>
