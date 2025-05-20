@@ -853,13 +853,7 @@ section > div > p {
     .footer__col:nth-child(1) {
         grid-area: 1/1/2/3;
     }
-    /* This can style the footer columns with borders */
-    .footer__col:nth-child(1),
-    .footer__col:nth-child(2),
-    .footer__col:nth-child(4) {
-        border-left: 2px solid var(--color);
-        border-right: 2px solid var(--color);
-    }
+
     .section-banner img {
         width: 100%;
         height: auto;
@@ -913,8 +907,6 @@ section > div > p {
     .footer__col:nth-child(1) {
         display: flex;
         align-items: center;
-        border-left: 2px solid var(--color);
-        border-right: 2px solid var(--color);
     }
 
     /* This can style the third footer column to remove borders */
@@ -1051,8 +1043,6 @@ section > div > p {
     .footer__col:nth-child(1) {
         display: flex;
         align-items: center;
-        border-left: 2px solid var(--color);
-        border-right: 2px solid var(--color);
     }
     /* This can style the third footer column to remove borders */
     .footer__col:nth-child(3) {
