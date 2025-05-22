@@ -19,7 +19,7 @@ $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 ?>
 <section class="section-banner">
   <h1 class="h1-heading-center">Badges Page</h1>
-  <p class="paragraph-text">Welcome to the Badge section of Wee Learners. Here you can find all the badges that have been uploaded by our users. You can click on any badge to get more information about it.</p>
+  <p class="paragraph-text">Welcome to the Badge section of Wee Learners. Here, you can explore a wide variety of badges that have been created and shared by our community of users. Badges are a great way to showcase achievements, recognize contributions, and celebrate milestones. On this page, you will find a curated selection of badges, each with its own unique design and description. Whether you are looking for inspiration, want to learn more about a specific badge, or simply enjoy browsing through creative designs, this is the perfect place for you. Each badge includes a detailed description, an image, and information about the user who uploaded it. You can click on any badge to view more details, including its origin and purpose. If you find a badge particularly interesting, feel free to share it with others or print it out for your personal collection. Our badge library is constantly growing, so be sure to check back often for new additions.  If you have any questions or need assistance, please don't hesitate to reach out to us using the contact information provided below. We hope you enjoy exploring the badges and discovering the creativity of our community. Thank you for being a part of Wee Learners!</p>
 </section>
 
 

@@ -4,10 +4,12 @@ include 'includes/header.php';
 ?>
 <section class="section-banner">
   <h1 class="h1-heading-center">Register Page</h1>
-  <p class="paragraph-text">
-    Welcome to the registration page. Here you can create a new account to access all the features and resources available on our platform.
-    Please fill in the form below with your details to get started.
-  </p>
+<p class="paragraph-text">
+  Welcome to the registration page of Wee Learners. Here, you have the opportunity to create a new account and become a part of our vibrant community. By registering, you gain access to a wide range of features, resources, and tools designed to enhance your learning experience. Whether you are here to explore educational content, connect with like-minded individuals, or track your progress, this is the first step to unlocking your potential. 
+  On this page, you will find a simple and secure registration form. Please provide accurate details, including your username, email address, and a strong password, to ensure a smooth registration process. Once registered, you will be able to personalize your profile, participate in discussions, and access exclusive content tailored to your interests. 
+  Our platform is designed to be user-friendly and inclusive, catering to learners of all ages and backgrounds. If you encounter any issues during the registration process or have questions, our support team is here to assist you. Feel free to reach out using the contact information provided below. 
+  We are excited to have you join us and look forward to supporting your learning journey. Thank you for choosing Wee Learners as your trusted platform for growth and discovery. Let’s get started!
+</p>
 </section>
     <section class="section-register-form">
         <form action="<?= ROOT_DIR ?>registerConfig" method="post" class="form-register-form">

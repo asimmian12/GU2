@@ -25,7 +25,7 @@ function fetchFromApi($json_file) {
 ?>
 <section class="section-banner">
     <h1 class="h1-heading-center">Games Page</h1>
-    <p class="paragraph-text">Welcome to the Games section of Wee Learners. Here you can find a selection of games that are available for you to play. Click on any game to get more information about it.</p>
+    <p class="paragraph-text">Welcome to the Games page of Wee Learners. Here, we aim to provide a fun and engaging experience for learners of all ages. Our carefully curated selection of games is designed to entertain, educate, and inspire creativity. Whether you're looking for a quick challenge, an interactive learning opportunity, or just some lighthearted fun, you'll find something here to enjoy. Each game has been chosen with care to ensure it aligns with our mission of fostering a positive and enriching environment for our community. On this page, you'll find a variety of games that cater to different interests and skill levels. Simply click on any game to learn more about it and start playing. We believe that games are a powerful tool for learning and personal growth, and we are excited to share these experiences with you. Thank you for visiting the Games section of Wee Learners. We hope you have a fantastic time exploring and playing the games we have to offer. If you have any feedback or suggestions for new games, please don't hesitate to reach out to us. Let's make learning fun and memorable together!</p>
 </section>
 
 <section class="section-game">
