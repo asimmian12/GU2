@@ -395,8 +395,8 @@ section > div > p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px; 
-    padding: 15px;
+    gap: 2%; 
+    /* padding: 15px; */
     margin-top: 8%;
     border: 2px solid #b4b2b2;
     background-color: var(--footer-background-color); 
