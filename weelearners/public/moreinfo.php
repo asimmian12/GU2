@@ -2,145 +2,214 @@
 include '../config/config.php';
 include '../includes/header.php';
 
-// Fetch Photo ID
-if (isset($_GET['aid'])) {
-    $photoID = $_GET['aid'];
-} else {
-    $photoID = null;
-}
+// Fetch IDs from URL parameters
+$photoID = $_GET['aid'] ?? null;
+$videoID = $_GET['vid'] ?? null;
+$badgeID = $_GET['bid'] ?? null;
+$testimonalsID = $_GET['tid'] ?? null;
 
-// Fetch Video ID
-if (isset($_GET['vid'])) {
-    $videoID = $_GET['vid'];
-} else {
-    $videoID = null;
-}
-
-// Fetch Badge ID
-if (isset($_GET['bid'])) {
-    $badgeID = $_GET['bid'];
-} else {
-    $badgeID = null;
-}
-
-// Fetch Testimonals ID
-if (isset($_GET['tid'])) {
-    $testimonalsID = $_GET['tid'];
-} else {
-    $testimonalsID = null;
-}
-
-// Fetching Photo Details
-if ($photoID == true) {
-    $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE id = ? AND is_active = 1 LIMIT 3");
+// Fetch Main Content Items
+if ($photoID) {
+    $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE id = ? AND is_active = 1");
     $photo->bind_param("i", $photoID);
     $photo->execute();
     $photo->store_result();
-    $photo->bind_result($pID, $pName, $pDesc, $release, $pImage);
+    $photo->bind_result($pID, $pName, $pDesc, $pRelease, $pImage);
 }
 
-// Fetching Video Details
-if ($videoID == true) {
-    $video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE id = ? AND is_active = 1 LIMIT 3");
+if ($videoID) {
+    $video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE id = ? AND is_active = 1");
     $video->bind_param("i", $videoID);
     $video->execute();
     $video->store_result();
     $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 }
 
-if ($badgeID == true) {
-    $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE id = ? LIMIT 3");
+if ($badgeID) {
+    $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE id = ?");
     $badge->bind_param("i", $badgeID);
     $badge->execute();
     $badge->store_result();
     $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 }
 
-if ($testimonalsID == true) {
-    $testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE id = ? LIMIT 3");
+if ($testimonalsID) {
+    $testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE id = ?");
     $testimonals->bind_param("i", $testimonalsID);
     $testimonals->execute();
     $testimonals->store_result();
     $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 }
+
+// Fetch Suggested Content
+if ($photoID) {
+    $suggestedPhotos = $conn->prepare("SELECT id, albName, albDescription, image FROM photo WHERE id != ? AND is_active = 1 ORDER BY RAND() LIMIT 3");
+    $suggestedPhotos->bind_param("i", $photoID);
+    $suggestedPhotos->execute();
+    $suggestedPhotosResult = $suggestedPhotos->get_result();
+}
+
+if ($videoID) {
+    $suggestedVideos = $conn->prepare("SELECT id, title, description, image FROM videos WHERE id != ? AND is_active = 1 ORDER BY RAND() LIMIT 3");
+    $suggestedVideos->bind_param("i", $videoID);
+    $suggestedVideos->execute();
+    $suggestedVideosResult = $suggestedVideos->get_result();
+}
+
+if ($badgeID) {
+    $suggestedBadges = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE id != ? ORDER BY RAND() LIMIT 3");
+    $suggestedBadges->bind_param("i", $badgeID);
+    $suggestedBadges->execute();
+    $suggestedBadgesResult = $suggestedBadges->get_result();
+}
+
+if ($testimonalsID) {
+    $suggestedTestimonials = $conn->prepare("SELECT id, testimonals_name, description FROM testimonals WHERE id != ? ORDER BY RAND() LIMIT 3");
+    $suggestedTestimonials->bind_param("i", $testimonalsID);
+    $suggestedTestimonials->execute();
+    $suggestedTestimonialsResult = $suggestedTestimonials->get_result();
+}
 ?>
 
+<!-- Banner Section -->
 <section class="section-banner">
- <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Information Page</h1>
-  <p class="paragraph-text">
-    Welcome to the More Information page. Here you can find detailed information about the specific content you are interested in. Whether it's a photo, video, badge, or testimonial, we provide comprehensive details to help you understand more about it. You can also find the release date and the user who uploaded it. If you have any questions or need further assistance, please feel free to contact us using the details at the bottom of this page. Thank you for visiting our More Information page.
-  </p>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Information Page</h1>
+    <p class="paragraph-text">Welcome to the More Information page. Here you can find detailed information about the specific content you are interested in. Whether it's a photo, video, badge, or testimonial, we provide comprehensive details to help you understand more about it. You can also find the release date and the user who uploaded it. If you have any questions or need further assistance, please feel free to contact us using the details at the bottom of this page. Thank you for visiting our More Information page.</p>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Photo Details</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-    <?php if ($photoID == true) : while ($photo->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? 'No Photo name available') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? 'default.jpg') ?>" alt="Photo Image" class="mx-auto mb-2 max-h-60 object-cover">
-            <p class="mb-2"><?= htmlspecialchars($pDesc ?? 'No photo description available') ?></p>
-            <p class="text-sm text-gray-500 mb-3">Uploaded by Anonymous User ID: <?= htmlspecialchars($pID ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($release ?? 'Release date not available') ?></p>
-            <div class="flex justify-center gap-2">
-                <button onclick="window.print()" class="text-white bg-gray-500 hover:bg-gray-600 font-medium py-1 px-3 rounded-md text-sm transition">
-                    <i class="fa-solid fa-print mr-1"></i> Print
-                </button>
+<!-- Photo Section -->
+<?php if ($photoID && $photo->num_rows > 0) : ?>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Photo Details</h1>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+        <?php while ($photo->fetch()) : ?>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? 'No Photo Name') ?></h2>
+                <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Photo Cover">
+                <p class="mb-1"><?= htmlspecialchars($pDesc ?? 'No description available') ?></p>
+                <p class="text-sm text-gray-500">Released: <?= htmlspecialchars(date('M d, Y', strtotime($pRelease)) ?? 'Date not available') ?></p>
+                <p class="text-sm text-gray-500">Uploaded by Anonymous User ID: <?= htmlspecialchars($pID ?? '') ?></p>
             </div>
-        </div>
-    <?php endwhile; endif; ?>
-</section>
+        <?php endwhile ?>
+    </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Videos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-    <?php if ($videoID == true) : while ($video->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? 'No Video title available') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $vImage ?? 'default-video.jpg') ?>" alt="Video Thumbnail" class="mx-auto mb-2 max-h-60 object-cover">
-            <p class="mb-2"><?= htmlspecialchars($vDesc ?? 'No video description available') ?></p>
-            <p class="text-sm text-gray-500 mb-3">Uploaded by Anonymous User ID: <?= htmlspecialchars($vID ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($vRelease ?? 'Release date not available') ?></p>
-            <div class="flex justify-center gap-2">
-                <button onclick="window.print()" class="text-white bg-gray-500 hover:bg-gray-600 font-medium py-1 px-3 rounded-md text-sm transition">
-                    <i class="fa-solid fa-print mr-1"></i> Print
-                </button>
+    <!-- Suggested Photos -->
+    <?php if (isset($suggestedPhotosResult) && $suggestedPhotosResult->num_rows > 0) : ?>
+        <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Photos</h1>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+            <?php while ($sp = $suggestedPhotosResult->fetch_assoc()) : ?>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($sp['albName'] ?? '') ?></h2>
+                    <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($sp['image'] ?? 'default.jpg')) ?>" alt="Photo Cover">
+                    <p class="mb-1"><?= htmlspecialchars($sp['albDescription'] ?? '') ?></p>
+                    <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $sp['id'] ?? '') ?>">More Information</a>
+                </div>
+            <?php endwhile ?>
+        </section>
+    <?php endif; ?>
+<?php endif; ?>
+
+<!-- Video Section -->
+<?php if ($videoID && $video->num_rows > 0) : ?>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Video Details</h1>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+        <?php while ($video->fetch()) : ?>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? 'No Video Title') ?></h2>
+                <div class="relative pb-[56.25%] mb-2">
+                    <img src="<?= ROOT_DIR . 'assets/images/' . $vImage ?>" alt="<?= $vTitle ?>" class="absolute w-full h-full object-cover">
+                </div>
+                <p class="mb-1"><?= htmlspecialchars($vDesc ?? 'No description available') ?></p>
+                <p class="text-sm text-gray-500">Released: <?= htmlspecialchars(date('M d, Y', strtotime($vRelease)) ?? 'Date not available') ?></p>
+                <a href="<?= $vVideoURL ?>" class="text-blue-600 hover:underline mt-2 inline-block">Watch Video</a>
             </div>
-        </div>
-    <?php endwhile; endif; ?>
-</section>
+        <?php endwhile ?>
+    </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Badges</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-    <?php if ($badgeID == true) : while ($badge->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? '') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image" class="mx-auto mb-2" style="max-width: 200px; height: auto;">
-            <p class="mb-2"><?= htmlspecialchars($bDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3">Uploaded by Anonymous User ID: <?= htmlspecialchars($bID ?? '') ?></p>
-            <div class="flex justify-center gap-2">
-                <button onclick="window.print()" class="text-white bg-gray-500 hover:bg-gray-600 font-medium py-1 px-3 rounded-md text-sm transition">
-                    <i class="fa-solid fa-print mr-1"></i> Print
-                </button>
+    <!-- Suggested Videos -->
+    <?php if (isset($suggestedVideosResult) && $suggestedVideosResult->num_rows > 0) : ?>
+        <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Videos</h1>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+            <?php while ($sv = $suggestedVideosResult->fetch_assoc()) : ?>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($sv['title'] ?? '') ?></h2>
+                    <div class="relative pb-[56.25%] mb-2">
+                        <img src="<?= ROOT_DIR . 'assets/images/' . $sv['image'] ?>" alt="<?= $sv['title'] ?>" class="absolute w-full h-full object-cover">
+                    </div>
+                    <p class="mb-1"><?= htmlspecialchars($sv['description'] ?? '') ?></p>
+                    <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $sv['id'] ?? '') ?>">More Information</a>
+                </div>
+            <?php endwhile ?>
+        </section>
+    <?php endif; ?>
+<?php endif; ?>
+
+<!-- Badge Section -->
+<?php if ($badgeID && $badge->num_rows > 0) : ?>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Badge Details</h1>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+        <?php while ($badge->fetch()) : ?>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? 'No Badge Name') ?></h2>
+                <img class="mx-auto mb-2 w-32 h-32 object-contain" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
+                <p class="mb-1"><?= htmlspecialchars($bDesc ?? 'No description available') ?></p>
+                <p class="text-sm text-gray-500">Uploaded by User ID: <?= htmlspecialchars($bUserID ?? '') ?></p>
             </div>
-        </div>
-    <?php endwhile; endif; ?>
-</section>
+        <?php endwhile ?>
+    </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Reviews</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-    <?php if ($testimonalsID == true) : while ($testimonals->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p class="mb-2"><?= htmlspecialchars($tDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3">Uploaded by Anonymous User ID: <?= htmlspecialchars($tID ?? '') ?></p>
-            <div class="flex justify-center gap-2">
-                <button onclick="window.print()" class="text-white bg-gray-500 hover:bg-gray-600 font-medium py-1 px-3 rounded-md text-sm transition">
-                    <i class="fa-solid fa-print mr-1"></i> Print
-                </button>
+    <!-- Suggested Badges -->
+    <?php if (isset($suggestedBadgesResult) && $suggestedBadgesResult->num_rows > 0) : ?>
+        <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Badges</h1>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+            <?php while ($sb = $suggestedBadgesResult->fetch_assoc()) : ?>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($sb['badge_name'] ?? '') ?></h2>
+                    <img class="mx-auto mb-2 w-32 h-32 object-contain" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($sb['badge_img'] ?? 'default.jpg')) ?>" alt="Badge Image">
+                    <p class="mb-1"><?= htmlspecialchars($sb['description'] ?? '') ?></p>
+                    <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $sb['id'] ?? '') ?>">More Information</a>
+                </div>
+            <?php endwhile ?>
+        </section>
+    <?php endif; ?>
+<?php endif; ?>
+
+<!-- Testimonials Section -->
+<?php if ($testimonalsID && $testimonals->num_rows > 0) : ?>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Testimonial Details</h1>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+        <?php while ($testimonals->fetch()) : ?>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                <div class="flex items-center justify-center mb-2">
+                    <div class="bg-pink-100 text-pink-600 rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold mr-2">
+                        <?= substr($tName, 0, 1) ?>
+                    </div>
+                    <h2 class="text-xl font-bold"><?= htmlspecialchars($tName ?? 'Anonymous') ?></h2>
+                </div>
+                <p class="mb-1 italic">"<?= htmlspecialchars($tDesc ?? 'No testimonial text') ?>"</p>
+                <p class="text-sm text-gray-500">User ID: <?= htmlspecialchars($tUserID ?? '') ?></p>
             </div>
-        </div>
-    <?php endwhile; endif; ?>
-</section>
+        <?php endwhile ?>
+    </section>
 
+    <!-- Suggested Testimonials -->
+    <?php if (isset($suggestedTestimonialsResult) && $suggestedTestimonialsResult->num_rows > 0) : ?>
+        <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">More Testimonials</h1>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+            <?php while ($st = $suggestedTestimonialsResult->fetch_assoc()) : ?>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <div class="flex items-center justify-center mb-2">
+                        <div class="bg-pink-100 text-pink-600 rounded-full w-10 h-10 flex items-center justify-center text-lg font-bold mr-2">
+                            <?= substr($st['testimonals_name'], 0, 1) ?>
+                        </div>
+                        <h2 class="text-xl font-bold"><?= htmlspecialchars($st['testimonals_name'] ?? 'Anonymous') ?></h2>
+                    </div>
+                    <p class="mb-1 italic">"<?= htmlspecialchars($st['description'] ?? 'No testimonial text') ?>"</p>
+                    <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $st['id'] ?? '') ?>">More Information</a>
+                </div>
+            <?php endwhile ?>
+        </section>
+    <?php endif; ?>
+<?php endif; ?>
 
 <!-- Contact Section -->
 <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
@@ -169,6 +238,4 @@ if ($testimonalsID == true) {
   </div>
 </section>
 
-
-<script src="assets/js/script.js"></script>
 <?php include '../includes/footer.php'; ?>

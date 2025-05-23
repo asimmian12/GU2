@@ -166,25 +166,25 @@ function submitForm() {
 });
 };
 
-    // File selection handler
+    // The js code can provide to be a file selection handler
     document.getElementById('section-profile-picture').addEventListener('change', function(e) {
-        const file = e.target.files[0];
+        var file = e.target.files[0];
         if (file) {
-            // Update file info text
+            // The js code can update the file info text
             document.getElementById('file-selected-text').textContent = file.name;
             
-            // Show preview
+            // The js code can store the image preview as a variable, that's attached with classes
             const previewContainer = document.getElementById('image-preview-container');
             const previewImage = document.getElementById('image-preview');
             const fileNameElement = document.getElementById('file-name');
             const fileSizeElement = document.getElementById('file-size');
             
-            // Display file info
+            // The js code can show the file info
             fileNameElement.textContent = file.name;
             fileSizeElement.textContent = (file.size / 1024 / 1024).toFixed(2) + 'MB';
             
-            // Create image preview
-            const reader = new FileReader();
+            // The js code can provide functionality to create, and now finally show the image preview
+            var reader = new FileReader();
             reader.onload = function(event) {
                 previewImage.src = event.target.result;
                 previewContainer.classList.remove('hidden');
@@ -192,26 +192,25 @@ function submitForm() {
             reader.readAsDataURL(file);
         }
     });
-
-    // File selection handler
+    // The js code can provide to be a file selection handler
     document.getElementById('imgUpload').addEventListener('change', function(e) {
-        const file = e.target.files[0];
+        var file = e.target.files[0];
         if (file) {
-            // Update file info text
+            // The js code can update the file info text
             document.getElementById('file-selected-text').textContent = file.name;
             
-            // Show preview
+            // The js code can store the image preview as a variable, that's attached with classes
             const previewContainer = document.getElementById('image-preview-container');
             const previewImage = document.getElementById('image-preview');
             const fileNameElement = document.getElementById('file-name');
             const fileSizeElement = document.getElementById('file-size');
             
-            // Display file info
+            // The js code can show the file info
             fileNameElement.textContent = file.name;
             fileSizeElement.textContent = (file.size / 1024 / 1024).toFixed(2) + 'MB';
             
-            // Create image preview
-            const reader = new FileReader();
+            // The js code can provide functionality to create, and now finally show the image preview
+            var reader = new FileReader();
             reader.onload = function(event) {
                 previewImage.src = event.target.result;
                 previewContainer.classList.remove('hidden');
