@@ -1,68 +1,118 @@
 <?php
 include '../../config/config.php';
 include '../../includes/header.php';
-
 ?>
-<section class="section-banner">
-    <h1 class="h1-heading-center">Contact Us Page</h1>
-    <p class="paragraph-text">Welcome to the Contact Us page of Wee Learners. We are here to assist you with any inquiries, feedback, or support you may need. Whether you have questions about our services, suggestions for improvement, or require assistance with any aspect of our platform, we encourage you to reach out to us. Your input is invaluable in helping us provide the best possible experience for our community. On this page, you will find a simple and user-friendly contact form. Please provide your name, email address, and a detailed message so that we can address your concerns effectively. Our team is committed to responding promptly and ensuring that your needs are met with care and professionalism. In addition to the contact form, you can find alternative ways to reach us below, including our phone number, email address, and physical location. We strive to make communication as convenient as possible for you. At Wee Learners, we value every member of our community and are dedicated to fostering a supportive and inclusive environment. If you encounter any issues or have urgent matters to discuss, please do not hesitate to contact us. We are here to help and look forward to hearing from you. Thank you for choosing Wee Learners. Together, we can create a positive and enriching learning experience for everyone. Let us know how we can assist you today! </p>
-</section>
 
-    <section class="section-contact-form">
-        <form action="#" method="post" class="form-contact-form" id="form-contact-form">
-            
-            <label for="name">Name: </label>
-            <input type="text" class="section-contact-form" name="name" id="name" placeholder="Enter Your Name:  " required>
-            
-            <label for="email">Email: </label>
-            <input type="email" class="section-contact-form" name="email" id="email" placeholder="Enter Your Email:  " required>
-            
-            <label for="message">Message:</label>
-            <textarea type="text" id="message" name="message" class="section-contact-form" placeholder="Enter Your Message" required></textarea>
-            
-            <input type="submit" class="input-contact-btn" onclick="submitForm()" value="Submit">
+<div class="min-h-screen bg-white flex flex-col">
+  <!-- Banner Section -->
+  <section class="section-banner">
+    <h1 class="text-3xl font-semibold mt-12 mb-6 text-pink-500">Contact Us Page</h1>
+    <p class="paragraph-text">
+      Welcome to the Contact Us page of Wee Learners. We are here to assist you with any inquiries, feedback, or support you may need. 
+      Whether you have questions about our services, suggestions for improvement, or require assistance with any aspect of our platform, 
+      we encourage you to reach out to us. Your input is invaluable in helping us provide the best possible experience for our community.
+    </p>
+  </section>
 
-            <section class="section-contact-options">
-                <div class="login-message">
-                    <a href="register">Don't a have an account? <span>REGISTER</span></a>
-                </div>
-            </section>
-        </form>
-    </section>
-    
+  <div class="h-16"></div>
 
-    <h2 class="h2-secondary-colour">Contact</h2>
-    <section class="section-contact">
-    <div class="contact-cards">
+  <!-- Contact Form Section -->
+  <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="relative py-3 w-full max-w-3xl mx-auto">
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+      <div class="relative px-8 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-12">
+        <div class="mx-auto">
+          <h1 class="text-2xl font-semibold mb-8 text-pink-500 text-center">Get In Touch</h1>
+          
+          <form action="#" method="POST" id="form-contact-form" class="space-y-6">
+            <!-- Name Field -->
+            <div class="relative">
+              <input 
+                id="name" 
+                name="name" 
+                type="text" 
+                class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-pink-500" 
+                placeholder="Your Name"
+                required
+              >
+              <label for="name" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+                Your Name
+              </label>
+            </div>
 
-    <div class="contact-card">
-      <i class="fa-solid fa-phone"></i>
-      <h3>EMERGENCY</h3>
-      <p class="paragraph-text">0141 272 9000</p>
-    </div>
+            <!-- Email Field -->
+            <div class="relative">
+              <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-pink-500" 
+                placeholder="Email Address"
+                required
+              >
+              <label for="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+                Email Address
+              </label>
+            </div>
 
-    <div class="contact-card">
-      <i class="fa-solid fa-location-dot"></i>
-      <h3>LOCATION</h3>
-      <p class="paragraph-text">50 Prospecthill Road</p>
-      <p class="paragraph-text">G42 9LB, Glasgow, UK</p>
-    </div>
+            <!-- Message Field -->
+            <div class="relative">
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                class="peer placeholder-transparent pt-2 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-pink-500" 
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <label for="message" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+                Your Message
+              </label>
+            </div>
 
-    <div class="contact-card">
-      <i class="fa-solid fa-envelope"></i>
-      <h3>EMAIL</h3>
-      <a href="mailto:info@weelearners.ac.uk">info@weelearners.ac.uk</a>
-    </div>
-
-    <div class="contact-card">
-      <i class="fa-solid fa-clock"></i>
-      <h3>WORKING HOURS</h3>
-      <p class="paragraph-text">Mon–Sat: 09:00–20:00</p>
-      <p class="paragraph-text">Sunday: Emergency only</p>
+            <!-- Submit Button -->
+            <div>
+              <button type="submit" onclick="submitForm()"
+                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
+  <div class="h-16"></div>
+  
+  <!-- Contact Section -->
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">EMERGENCY</h3>
+    <p class="text-gray-700">0141 272 9000</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-location-dot text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">LOCATION</h3>
+    <p class="text-gray-700">50 Prospecthill Road</p>
+    <p class="text-gray-700">G42 9LB, Glasgow, UK</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-envelope text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">EMAIL</h3>
+    <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">WORKING HOURS</h3>
+    <p class="text-gray-700">Mon–Sat: 09:00–20:00</p>
+    <p class="text-gray-700">Sunday: Emergency only</p>
+  </div>
+</section>
+  </div>
+</div>
 
 <script src="assets/js/script.js"></script>
 <?php include '../../includes/footer.php'; ?>

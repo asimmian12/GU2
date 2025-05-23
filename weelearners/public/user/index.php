@@ -1,104 +1,125 @@
 <?php 
-    include 'includes/header.php';
-    include 'config/config.php';
+include 'includes/header.php';
+include 'config/config.php';
 
-
-
-   if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin'])) {
     header("Location: login.php");
     exit();
 }
 
-    // Bringing in Account Details
-    $userId = $_SESSION['id']; 
-    $sql = "SELECT 
-    id, 
-    username, 
-    email,
-    role 
-    FROM user 
-    WHERE id = ?";
-    $account = $conn->prepare($sql);
-    $account->bind_param("i", $userId);
-    $account->execute();
-    $account->bind_result($id, $username, $email, $role);
-    $account->fetch();
-    $account->close();
-    
-    // Bringing in User Details
-    $sql = "SELECT 
-    username, 
-    email, 
-    is_active, 
-    is_admin,
-    role 
-    FROM user 
-    WHERE id = ?";
-    $user = $conn->prepare($sql);
-    $user->bind_param("i", $userId);
-    $user->execute();
-    $user->bind_result($name, $email, $stat, $userType, $role);
-    $user->store_result();
+// Bringing in Account Details
+$userId = $_SESSION['id']; 
+$sql = "SELECT 
+id, 
+username, 
+email,
+role 
+FROM user 
+WHERE id = ?";
+$account = $conn->prepare($sql);
+$account->bind_param("i", $userId);
+$account->execute();
+$account->bind_result($id, $username, $email, $role);
+$account->fetch();
+$account->close();
+
+// Bringing in User Details
+$sql = "SELECT 
+username, 
+email, 
+is_active, 
+is_admin,
+role 
+FROM user 
+WHERE id = ?";
+$user = $conn->prepare($sql);
+$user->bind_param("i", $userId);
+$user->execute();
+$user->bind_result($name, $email, $stat, $userType, $role);
+$user->store_result();
 ?>
-<section class="section-banner">
-    <h1 class="h1-heading-center">User Dashboard Page</h1>
-    <p class="paragraph-text"><h2 class="main-heading">Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to your dashboard in Wee Learners website. Here you can find all the information related to your account. You can view your personal account information.</p>
-</section>
 
+<div class="min-h-screen bg-white-100 flex flex-col">
+  <section class="section-banner">
+    <h1 class="text-3xl font-semibold mt-12 mb-6 text-pink-500">User Dashboard Page</h1>
+    <p class="paragraph-text">
+      Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to your dashboard in Wee Learners website. 
+      Here you can find all the information related to your account. You can view your personal account information.
+    </p>
+  </section>
 
-<section>
+  <section class="my-8 flex justify-center">
     <?php if (isset($profilePicture)): ?>
-        <div>
-            <img src="<?= htmlspecialchars(($profilePicture ?? '')) ?>"> 
-        </div>
+      <div>
+        <img src="<?= htmlspecialchars(($profilePicture ?? '')) ?>" alt="Profile Picture" class="rounded-full w-32 h-32 object-cover border-4 border-blue-500"> 
+      </div>
     <?php else: ?>
-        <p class="paragraph-text">You can upload upload your profile picture in your Account Details Page.</p>
+      <p class="text-gray-700 text-center">You can upload your profile picture in your Account Details Page.</p>
     <?php endif; ?>
-</section>
+  </section>
 
-<h2 class="main-heading">Personal Account Information: </h2>
-<section class="section-account-info">
-        <?php while ($user->fetch()): ?>
-            <div> 
-                <p class="paragraph-text">Username: <?= htmlspecialchars($name ?? '') ?></p>
-                <p class="paragraph-text">Email: <?= htmlspecialchars($email ?? '') ?></p>
-                <p class="paragraph-text">Status: <?= htmlspecialchars($stat == 1 ? 'Active' : 'Inactive') ?></p>
-                <p class="paragraph-text">Job Role: <?= htmlspecialchars($role ?? '') ?></p>
-            </div>
-        <?php endwhile; ?>
-</section>
+  <div class="h-16"></div>
 
-<h2 class="h2-secondary-colour">Contact</h2>
-    <section class="section-contact">
-    <div class="contact-cards">
-
-    <div class="contact-card">
-      <i class="fa-solid fa-phone"></i>
-      <h3>EMERGENCY</h3>
-      <p class="paragraph-text">0141 272 9000</p>
-    </div>
-
-    <div class="contact-card">
-      <i class="fa-solid fa-location-dot"></i>
-      <h3>LOCATION</h3>
-      <p class="paragraph-text">50 Prospecthill Road</p>
-      <p class="paragraph-text">G42 9LB, Glasgow, UK</p>
-    </div>
-
-    <div class="contact-card">
-      <i class="fa-solid fa-envelope"></i>
-      <h3>EMAIL</h3>
-      <a href="mailto:info@weelearners.ac.uk">info@weelearners.ac.uk</a>
-    </div>
-
-    <div class="contact-card">
-      <i class="fa-solid fa-clock"></i>
-      <h3>WORKING HOURS</h3>
-      <p class="paragraph-text">Mon–Sat: 09:00–20:00</p>
-      <p class="paragraph-text">Sunday: Emergency only</p>
+  <div class="flex-grow flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+    <div class="relative py-3 w-full max-w-4xl mx-auto"> 
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+      <div class="relative px-10 py-16 bg-white shadow-lg sm:rounded-3xl sm:p-16">
+        <div class="mx-auto">
+          <h2 class="text-3xl font-semibold mb-10 text-pink-500 text-center">Personal Account Details</h2> 
+          
+          <div class="space-y-8"> 
+            <?php while ($user->fetch()): ?>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm"> 
+                  <p class="text-xl text-gray-800"><strong class="font-semibold text-gray-900">Username:</strong> <?= htmlspecialchars($name ?? '') ?></p> <!-- Larger text -->
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                  <p class="text-xl text-gray-800"><strong class="font-semibold text-gray-900">Email:</strong> <?= htmlspecialchars($email ?? '') ?></p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                  <p class="text-xl text-gray-800"><strong class="font-semibold text-gray-900">Status:</strong> <?= htmlspecialchars($stat == 1 ? 'Active' : 'Inactive') ?></p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                  <p class="text-xl text-gray-800"><strong class="font-semibold text-gray-900">Job Role:</strong> <?= htmlspecialchars($role ?? '') ?></p>
+                </div>
+              </div>
+            <?php endwhile; ?>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
+  <div class="h-16"></div>
+  
+    
+  <!-- Contact Section -->
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">EMERGENCY</h3>
+    <p class="text-gray-700">0141 272 9000</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-location-dot text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">LOCATION</h3>
+    <p class="text-gray-700">50 Prospecthill Road</p>
+    <p class="text-gray-700">G42 9LB, Glasgow, UK</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-envelope text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">EMAIL</h3>
+    <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">WORKING HOURS</h3>
+    <p class="text-gray-700">Mon–Sat: 09:00–20:00</p>
+    <p class="text-gray-700">Sunday: Emergency only</p>
+  </div>
+</section>
+</div>
+</div>
 
 <?php include 'includes/footer.php'; ?>

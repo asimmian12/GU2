@@ -28,95 +28,86 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 
 <section class="section-banner">
-    <h1 class="h1-heading-center">Home Page</h1>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Home Page</h1>
     <p class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where parents and carers can explore a wide range of badge records, for their children, and apply for being a helper, etc.</p>
 </section>
 
-<h1 class="h1-heading-center">All Photos</h1>
-<section class="section-photo">
+
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Photos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
     <?php while ($photo->fetch()) : ?>
-        <div>
-            <h2 class="main-heading"><?= htmlspecialchars($pName ?? '') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Photo Cover">
-            <h2 class="main-heading"><?= htmlspecialchars($pDesc ?? '') ?></h2>
-            <p class="paragraph-text"><?= htmlspecialchars($release ?? '') ?></p>
-            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? '') ?></h2>
+            <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Photo Cover">
+            <p class="mb-1"><?= htmlspecialchars($pDesc ?? '') ?></p>
+            <p class="text-sm text-gray-500"><?= htmlspecialchars($release ?? '') ?></p>
+            <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h1 class="h1-heading-center">All Videos</h1>
-<section class="section-video">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Videos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
     <?php while ($video->fetch()) : ?>
-        <div>
-            <h2 class="main-heading"><?= htmlspecialchars($vTitle ?? '') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
-            <p class="paragraph-text"><?= htmlspecialchars($vDesc ?? '') ?></p>
-            <p class="paragraph-text"><?= htmlspecialchars($vRelease ?? '') ?></p>
-            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+            <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
+            <p class="mb-1"><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <p class="text-sm text-gray-500"><?= htmlspecialchars($vRelease ?? '') ?></p>
+            <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h1 class="h1-heading-center">All Badges</h1>
-<section class="section-badge">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Badges</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
     <?php while ($badge->fetch()) : ?>
-        <div>
-            <h2 class="main-heading"><?= htmlspecialchars($bName ?? '') ?></h2>
-            <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image" style="max-width: 200px; height: auto;">
-            <p class="paragraph-text"><?= htmlspecialchars($bDesc ?? '') ?></p>
-            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? '') ?></h2>
+            <img class="mx-auto mb-2" style="max-width: 200px; height: auto;" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
+            <p class="mb-2"><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <a class="text-blue-600 hover:underline" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h1 class="h1-heading-center">All Reviews</h1>
-<section class="section-review">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Reviews</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
     <?php while ($testimonals->fetch()) : ?>
-        <div>
-            <h2 class="main-heading"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p class="paragraph-text"><?= htmlspecialchars($tDesc ?? '') ?></p>
-            <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p class="mb-2"><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <a class="text-blue-600 hover:underline" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-
-<h2 class="h2-secondary-colour">Contact</h2>
-<section class="section-contact">
-    <div class="contact-cards">
-
-    <div class="contact-card">
-      <i class="fa-solid fa-phone"></i>
-      <h3>EMERGENCY</h3>
-      <p class="paragraph-text">0141 272 9000</p>
-    </div>
-
-    <div class="contact-card">
-      <i class="fa-solid fa-location-dot"></i>
-      <h3>LOCATION</h3>
-      <p class="paragraph-text">50 Prospecthill Road</p>
-      <p class="paragraph-text">G42 9LB, Glasgow, UK</p>
-    </div>
-
-    <div class="contact-card">
-      <i class="fa-solid fa-envelope"></i>
-      <h3>EMAIL</h3>
-      <a href="mailto:info@weelearners.ac.uk">info@weelearners.ac.uk</a>
-    </div>
-
-    <div class="contact-card">
-      <i class="fa-solid fa-clock"></i>
-      <h3>WORKING HOURS</h3>
-      <p class="paragraph-text">Mon–Sat: 09:00–20:00</p>
-      <p class="paragraph-text">Sunday: Emergency only</p>
-    </div>
+<!-- Contact Section -->
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">EMERGENCY</h3>
+    <p class="text-gray-700">0141 272 9000</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-location-dot text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">LOCATION</h3>
+    <p class="text-gray-700">50 Prospecthill Road</p>
+    <p class="text-gray-700">G42 9LB, Glasgow, UK</p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-envelope text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">EMAIL</h3>
+    <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>
+    <h3 class="font-semibold text-lg">WORKING HOURS</h3>
+    <p class="text-gray-700">Mon–Sat: 09:00–20:00</p>
+    <p class="text-gray-700">Sunday: Emergency only</p>
   </div>
 </section>
-
-
-
-
 
 
 <?php include 'includes/footer.php'; ?>

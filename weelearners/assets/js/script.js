@@ -165,3 +165,57 @@ function submitForm() {
   }
 });
 };
+
+    // File selection handler
+    document.getElementById('section-profile-picture').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            // Update file info text
+            document.getElementById('file-selected-text').textContent = file.name;
+            
+            // Show preview
+            const previewContainer = document.getElementById('image-preview-container');
+            const previewImage = document.getElementById('image-preview');
+            const fileNameElement = document.getElementById('file-name');
+            const fileSizeElement = document.getElementById('file-size');
+            
+            // Display file info
+            fileNameElement.textContent = file.name;
+            fileSizeElement.textContent = (file.size / 1024 / 1024).toFixed(2) + 'MB';
+            
+            // Create image preview
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                previewImage.src = event.target.result;
+                previewContainer.classList.remove('hidden');
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // File selection handler
+    document.getElementById('imgUpload').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            // Update file info text
+            document.getElementById('file-selected-text').textContent = file.name;
+            
+            // Show preview
+            const previewContainer = document.getElementById('image-preview-container');
+            const previewImage = document.getElementById('image-preview');
+            const fileNameElement = document.getElementById('file-name');
+            const fileSizeElement = document.getElementById('file-size');
+            
+            // Display file info
+            fileNameElement.textContent = file.name;
+            fileSizeElement.textContent = (file.size / 1024 / 1024).toFixed(2) + 'MB';
+            
+            // Create image preview
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                previewImage.src = event.target.result;
+                previewContainer.classList.remove('hidden');
+            }
+            reader.readAsDataURL(file);
+        }
+    });
