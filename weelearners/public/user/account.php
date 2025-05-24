@@ -55,10 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['section-profile-pict
 }
 ?>
 <section class="section-banner">
-    <h1 class="text-3xl font-semibold text-pink-500 mb-4">Account Details Page</h1>
-    <p class="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Account Details Page! Here you can find all the information related to your account. You can also upload your profile picture and view your personal account information.</p>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Account Details Page</h1>
+    <p class="paragraph-text" id="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Account Details Page! Here you can find all the information related to your account. You can also upload your profile picture and view your personal account information.</p>
 </section>
-<h1 class="text-1xl font-semibold text-center mt-12 mb-6 text-pink-500">Please fill in the details to upload your profile picture here.</h1>
+
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Please fill in the details to upload your profile picture here.</h1>
 <main class="min-h-screen bg-white-50 flex items-center justify-center px-4 py-12">
     <div class="w-full max-w-xl space-y-8">
         <!-- Account Info Section -->
@@ -67,16 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['section-profile-pict
                 <?php if (isset($userPicture)): ?>
                     <img src="<?= htmlspecialchars($targetDir . $userPicture ?? '') ?>" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto object-cover">
                     <?php endif; ?>
-                    <h1 class="text-1xl font-semibold text-center mt-12 mb-6 text-pink-600">Personal Account Details:</h1>
-                    <p class="text-gray-700">Username: <span class="font-semibold"><?= htmlspecialchars($_SESSION['name'] ?? '') ?></span></p>
-                    <p class="text-gray-700">Email: <span class="font-semibold"><?= htmlspecialchars($email ?? '') ?></span></p>
-                    <p class="text-gray-700">Job Role: <span class="font-semibold"><?= htmlspecialchars($role ?? '') ?></span></p>
+                    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Personal Account Details:</h1>
+                    <p id="paragraph-text" class="text-gray-700">Username: <span class="font-semibold"><?= htmlspecialchars($_SESSION['name'] ?? '') ?></span></p>
+                    <p id="paragraph-text" class="text-gray-700">Email: <span class="font-semibold"><?= htmlspecialchars($email ?? '') ?></span></p>
+                    <p id="paragraph-text" class="text-gray-700">Job Role: <span class="font-semibold"><?= htmlspecialchars($role ?? '') ?></span></p>
                 </div>
             </section>
 
         <!-- Message if exists -->
         <?php if (isset($message)): ?>
-            <p class="text-center text-sm text-indigo-600"><?= htmlspecialchars($message ?? '') ?></p>
+            <p id="paragraph-text" class="text-center text-sm text-indigo-600"><?= htmlspecialchars($message ?? '') ?></p>
         <?php endif; ?>
 
  <!-- Upload Form Section -->
@@ -84,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['section-profile-pict
     <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6">
         <div class="space-y-2">
             <h3 class="text-lg font-medium text-gray-900">Profile Picture Upload</h3>
-            <p class="text-sm text-gray-500">JPG, JPEG, or PNG (Max. 5MB)</p>
+            <p id="paragraph-text" class="text-sm text-gray-500">JPG, JPEG, or PNG (Max. 5MB)</p>
         </div>
 
         <!-- Drag and Drop Zone -->
@@ -98,9 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['section-profile-pict
                         <span>Upload a file</span>
                         <input id="section-profile-picture" name="section-profile-picture" type="file" class="sr-only" accept="image/jpeg, image/png" required>
                     </label>
-                    <p class="pl-1">or drag and drop</p>
+                    <p id="paragraph-text" class="pl-1">or drag and drop</p>
                 </div>
-                <p class="text-xs text-gray-500" id="file-selected-text">No file selected</p>
+                <p id="paragraph-text" class="text-xs text-gray-500" id="file-selected-text">No file selected</p>
             </div>
         </div>
 
@@ -120,8 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_FILES['section-profile-pict
 
 
 <!-- Contact Section -->
-<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>

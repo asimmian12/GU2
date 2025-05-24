@@ -18,8 +18,8 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 <div class="min-h-screen bg-white flex flex-col">
   <!-- Banner Section -->
   <section class="section-banner">
-    <h1 class="text-3xl font-semibold mt-12 mb-6 text-pink-500 text-center">Upload Badge Page</h1>
-    <p class="paragraph-text text-center">
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Upload Badge Page</h1>
+    <p class="paragraph-text text-center" id="paragraph-text">
       Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to your upload badge page in Wee Learners website. 
       Here you can find all the badges related to your account. You can also upload your badge with permission from admin 
       once they get permission from the teachers, if you passed or failed.
@@ -29,14 +29,15 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
   <div class="h-8"></div>
 
   <!-- Upload Form Section -->
-  <h1 class="text-xl font-semibold text-center mb-6 text-pink-500">Please fill in the details to upload your badge here, and the admin will approve it with the teachers permission, if you have passed or failed.</h1>
-  
-  <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Please fill in the details to upload your badge here, and the admin will approve it with the teachers permission, if you have passed or failed.</h1>
+  <div class="h-8"></div>
+  <div class="h-8"></div>
+  <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id="section-upload-form">
     <div class="relative py-3 w-full max-w-3xl mx-auto">
       <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
       <div class="relative px-8 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-12">
         <div class="mx-auto">
-          <h1 class="text-2xl font-semibold mb-8 text-pink-500 text-center">Upload Your Badge</h1>
+          <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Upload Your Badge</h1>
           
           <form action="<?= ROOT_DIR ?>uploadConfig" method="post" enctype="multipart/form-data" class="space-y-6">
             <!-- Badge Name Field -->
@@ -72,7 +73,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
             <!-- Badge Upload Section -->
             <div class="space-y-2">
               <h3 class="text-lg font-medium text-gray-900">Badge Image Upload</h3>
-              <p class="text-sm text-gray-500">JPG, JPEG, or PNG (Max. 5MB)</p>
+              <p id="paragraph-text" class="text-sm text-gray-500">JPG, JPEG, or PNG (Max. 5MB)</p>
             </div>
 
             <!-- Drag and Drop Zone -->
@@ -86,9 +87,9 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
                     <span>Upload badge image</span>
                     <input id="imgUpload" name="file" type="file" class="sr-only" accept="image/jpeg, image/png" required>
                   </label>
-                  <p class="pl-1">or drag and drop</p>
+                  <p id="paragraph-text" class="pl-1">or drag and drop</p>
                 </div>
-                <p class="text-xs text-gray-500" id="badge-file-selected-text">No file selected</p>
+                <p id="paragraph-text" class="text-xs text-gray-500" id="badge-file-selected-text">No file selected</p>
               </div>
             </div>
 
@@ -121,14 +122,14 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
   <div class="h-16"></div>
 
   <!-- Previously Earned Badges Section -->
-  <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Previously Earned Badges</h1>
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 mb-12">
+  <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Previously Earned Badges</h1>
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 mb-12" id="section-uploads">
       <?php while ($uploads->fetch()): ?>
           <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
-              <p class="text-sm text-gray-500 mb-2">Badge ID: <?= htmlspecialchars($badgeID ?? '') ?></p>
-              <h2 class="text-xl font-bold mb-2 text-gray-800"><?= htmlspecialchars($badgeName ?? '') ?></h2>
+              <p id="paragraph-text" class="text-sm text-gray-500 mb-2">Badge ID: <?= htmlspecialchars($badgeID ?? '') ?></p>
+              <h2 id="main-heading" class="text-xl font-bold mb-2 text-gray-800"><?= htmlspecialchars($badgeName ?? '') ?></h2>
               <img class="mx-auto mb-4 rounded" style="max-width: 200px; height: auto;" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($badgeImage ?? 'default.jpg')) ?>" alt="Badge Cover">
-              <p class="mb-3 text-gray-700"><?= htmlspecialchars($badgeDescription ?? '') ?></p>
+              <p id="paragraph-text" class="mb-3 text-gray-700"><?= htmlspecialchars($badgeDescription ?? '') ?></p>
               <a class="text-blue-600 hover:underline" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $badgeID ?? '') ?>">More Information</a>
           </div>
       <?php endwhile; ?>
@@ -137,8 +138,8 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
   <div class="h-16"></div>
   
   <!-- Contact Section -->
-  <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
-  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+  <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
     <div class="bg-white p-6 rounded-lg shadow-md">
       <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
       <h3 class="font-semibold text-lg">EMERGENCY</h3>

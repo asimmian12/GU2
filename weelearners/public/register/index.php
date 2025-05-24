@@ -5,8 +5,8 @@ include 'includes/header.php';
 
 <div class="min-h-screen bg-white-100 flex flex-col">
   <section class="section-banner">
-    <h1 class="text-3xl font-semibold mt-12 mb-6 text-pink-500">Register Page</h1>
-    <p class="paragraph-text">
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Register Page</h1>
+    <p class="paragraph-text" id="paragraph-text">
       Welcome to the registration page of Wee Learners. Here, you have the opportunity to create a new account and become a part of our vibrant community. 
       By registering, you gain access to a wide range of features, resources, and tools designed to enhance your learning experience. 
       Whether you are here to explore educational content, connect with like-minded individuals, or track your progress, this is the first step to unlocking your potential.
@@ -16,12 +16,12 @@ include 'includes/header.php';
   <div class="h-16"></div>
 
   <!-- Register Form Section -->
-  <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id="section-register-form">
     <div class="relative py-3 w-full max-w-3xl mx-auto">
       <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
       <div class="relative px-8 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-12">
         <div class="mx-auto">
-          <h1 class="text-2xl font-semibold mb-8 text-pink-500 text-center">Create Your Account</h1>
+          <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Create Your Account</h1>
           
           <form action="<?= ROOT_DIR ?>registerConfig" method="post" class="space-y-6">
             <input type="hidden" name="is_active" value="1">           
@@ -163,8 +163,8 @@ include 'includes/header.php';
   <div class="h-16"></div>
   
 <!-- Contact Section -->
-<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>

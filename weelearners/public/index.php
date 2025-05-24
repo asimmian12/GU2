@@ -28,63 +28,63 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 
 <section class="section-banner">
-    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Home Page</h1>
-    <p class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where parents and carers can explore a wide range of badge records, for their children, and apply for being a helper, etc.</p>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Home Page</h1>
+    <p id="paragraph-text" class="paragraph-text">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where parents and carers can explore a wide range of badge records, for their children, and apply for being a helper, etc.</p>
 </section>
 
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Photos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Photos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-photo">
     <?php while ($photo->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? '') ?></h2>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? '') ?></h2>
             <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($pImage ?? 'default.jpg')) ?>" alt="Photo Cover">
-            <p class="mb-1"><?= htmlspecialchars($pDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500"><?= htmlspecialchars($release ?? '') ?></p>
-            <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
+            <p id="paragraph-text" class="mb-1"><?= htmlspecialchars($pDesc ?? '') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500"><?= htmlspecialchars($release ?? '') ?></p>
+            <a id="paragraph-text" class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Videos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Videos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-video">
     <?php while ($video->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
             <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
-            <p class="mb-1"><?= htmlspecialchars($vDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500"><?= htmlspecialchars($vRelease ?? '') ?></p>
+            <p id="paragraph-text" class="mb-1"><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500"><?= htmlspecialchars($vRelease ?? '') ?></p>
             <a class="text-blue-600 hover:underline mt-2 inline-block" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Badges</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Badges</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-badge">
     <?php while ($badge->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? '') ?></h2>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? '') ?></h2>
             <img class="mx-auto mb-2" style="max-width: 200px; height: auto;" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($bImage ?? 'default.jpg')) ?>" alt="Badge Image">
-            <p class="mb-2"><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <p id="paragraph-text" class="mb-2"><?= htmlspecialchars($bDesc ?? '') ?></p>
             <a class="text-blue-600 hover:underline" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Reviews</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Reviews</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-review">
     <?php while ($testimonals->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p class="mb-2"><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p id="paragraph-text" class="mb-2"><?= htmlspecialchars($tDesc ?? '') ?></p>
             <a class="text-blue-600 hover:underline" href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>">More Information</a>
         </div>
     <?php endwhile ?>
 </section>
 
 <!-- Contact Section -->
-<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>

@@ -38,21 +38,21 @@ $users->store_result();
 $users->bind_result($userID, $username, $email, $role, $isActive, $name, $release_date, $day);
 ?>
 <section class="section-banner">
-    <h1 class="text-3xl font-semibold text-pink-500 mb-4">Admin Dashboard Page</h1>
-    <p class="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Admin Dashboard! Here you can manage all users and their badges. You can delete any user with their permisisson or by deactiving their account. You have the ability to update user information, activate or deactivate accounts, and ensure that only authorised users have access to the system. Please review user details carefully before making any changes, as your actions will directly affect user access on the website.</p>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Admin Dashboard Page</h1>
+    <p class="paragraph-text" id="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Admin Dashboard! Here you can manage all users and their badges. You can delete any user with their permisisson or by deactiving their account. You have the ability to update user information, activate or deactivate accounts, and ensure that only authorised users have access to the system. Please review user details carefully before making any changes, as your actions will directly affect user access on the website.</p>
 </section>
 
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-16">
     <?php while ($users->fetch()): ?>
-        <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col space-y-2">
-            <p class="text-lg font-bold text-gray-800">Helper ID: <?= htmlspecialchars($userID ?? '') ?></p>
-            <p class="text-gray-700">Fullname: <span class="font-semibold"><?= htmlspecialchars($name ?? '') ?></span></p>
-            <p class="text-gray-700">Username: <span class="font-semibold"><?= htmlspecialchars($username ?? '') ?></span></p>
-            <p class="text-gray-700">Email: <span class="font-semibold"><?= htmlspecialchars($email ?? '') ?></span></p>
-            <p class="text-gray-700">Job Role: <span class="font-semibold"><?= htmlspecialchars($role ?? '') ?></span></p>
-            <p class="text-gray-700">Date of Upload: <span class="font-semibold"><?= htmlspecialchars($release_date ?? '') ?></span></p>
-            <p class="text-gray-700">Available Day: <span class="font-semibold"><?= htmlspecialchars($day ?? '') ?></span></p>
-            <p class="text-gray-700">Status: 
+        <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col space-y-2" id="div-users-info">
+            <p id="paragraph-text" class="text-lg font-bold text-gray-800">Helper ID: <?= htmlspecialchars($userID ?? '') ?></p>
+            <p id="paragraph-text" class="text-gray-700">Fullname: <span class="font-semibold"><?= htmlspecialchars($name ?? '') ?></span></p>
+            <p id="paragraph-text" class="text-gray-700">Username: <span class="font-semibold"><?= htmlspecialchars($username ?? '') ?></span></p>
+            <p id="paragraph-text" class="text-gray-700">Email: <span class="font-semibold"><?= htmlspecialchars($email ?? '') ?></span></p>
+            <p id="paragraph-text" class="text-gray-700">Job Role: <span class="font-semibold"><?= htmlspecialchars($role ?? '') ?></span></p>
+            <p id="paragraph-text" class="text-gray-700">Date of Upload: <span class="font-semibold"><?= htmlspecialchars($release_date ?? '') ?></span></p>
+            <p id="paragraph-text" class="text-gray-700">Available Day: <span class="font-semibold"><?= htmlspecialchars($day ?? '') ?></span></p>
+            <p id="paragraph-text" class="text-gray-700">Status: 
                 <span class="inline-block px-2 py-1 text-sm rounded 
                     <?= $isActive ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700' ?>">
                     <?= htmlspecialchars($isActive ? 'Active' : 'Inactive') ?>
@@ -81,8 +81,8 @@ $users->bind_result($userID, $username, $email, $role, $isActive, $name, $releas
 
 
 <!-- Contact Section -->
-<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>

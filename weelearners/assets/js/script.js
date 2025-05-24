@@ -1,6 +1,8 @@
-var hamburgerMenu = document.querySelector('.div-hamburger-menu');
-var navLinks = document.querySelector('.ul-nav-links');
-
+// The js code can provide functionality to create a variable for the hamburger menu
+var hamburgerMenu = document.querySelector('#div-hamburger-menu');
+// The js code can provide functionality to create a variable for the navigation links
+var navLinks = document.querySelector('#ul-nav-links');
+// The js code can provide functionality to open and close the hamburger menu with a simple if statement
 if (hamburgerMenu && navLinks) {
   hamburgerMenu.addEventListener('click', () => {
     hamburgerMenu.classList.toggle('active');
@@ -25,127 +27,123 @@ var swiper = new Swiper(".swiper", {
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-user-info
-ScrollReveal().reveal(".section-user-info", {
+ScrollReveal().reveal("#section-user-info", {
   ...scrollRevealOption,
 });
 
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-badge
-ScrollReveal().reveal(".section-badge", {
+ScrollReveal().reveal("#section-badge", {
   ...scrollRevealOption,
 });
 
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .div-users-info
-ScrollReveal().reveal(".div-users-info", {
+ScrollReveal().reveal("#div-users-info", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-account-info
-ScrollReveal().reveal(".section-account-info", {
+ScrollReveal().reveal("#section-account-info", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-uploads
-ScrollReveal().reveal(".section-uploads", {
-  ...scrollRevealOption,
-});
-
-
-// The js code can provide functionality to reveal sections with ScrollReveal for .footer__col
-ScrollReveal().reveal(".footer__col", {
+ScrollReveal().reveal("#section-uploads", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-register-form
-ScrollReveal().reveal(".section-register-form", {
+ScrollReveal().reveal("#section-register-form", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-login-form
-ScrollReveal().reveal(".section-login-form", {
+ScrollReveal().reveal("#section-login-form", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-contact-form
-ScrollReveal().reveal(".section-contact-form", {
+ScrollReveal().reveal("#section-contact-form", {
   ...scrollRevealOption,
 });
 
-// The js code can provide functionality to reveal sections with ScrollReveal for .div-photo
-ScrollReveal().reveal(".div-photo", {
+// The js code can provide functionality to reveal sections with ScrollReveal for .section-upload-form
+ScrollReveal().reveal("#section-upload-form", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-photo 
-ScrollReveal().reveal(".section-photo ", {
-  ...scrollRevealOption,
-});
-
-// The js code can provide functionality to reveal sections with ScrollReveal for .section-badge
-ScrollReveal().reveal(".section-badge", {
+ScrollReveal().reveal("#section-photo", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-videos
-ScrollReveal().reveal(".section-videos ", {
+ScrollReveal().reveal("#section-video", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-reviews
-ScrollReveal().reveal(".section-reviews ", {
+ScrollReveal().reveal("#section-review", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .div-pending-item
-ScrollReveal().reveal(".div-pending-item", {
+ScrollReveal().reveal("#div-pending-item", {
+  ...scrollRevealOption,
+});
+
+// The js code can provide functionality to reveal sections with ScrollReveal for .div-photo
+ScrollReveal().reveal("#div-photo", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .div-badge
-ScrollReveal().reveal(".div-badge", {
+ScrollReveal().reveal("#div-badge", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .div-video
-ScrollReveal().reveal(".div-video", {
+ScrollReveal().reveal("#div-video", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .div-review
-ScrollReveal().reveal(".div-review", {
+ScrollReveal().reveal("#div-review", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .nav-navbar
-ScrollReveal().reveal(".nav-navbar", {
+ScrollReveal().reveal("#nav-navbar", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .paragraph-text
-ScrollReveal().reveal(".paragraph-text", {
+ScrollReveal().reveal("#paragraph-text", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .main-heading
-ScrollReveal().reveal(".main-heading", {
+ScrollReveal().reveal("#main-heading", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-game
-ScrollReveal().reveal(".h1-heading-center", {
+ScrollReveal().reveal("#h1-heading-center", {
+  ...scrollRevealOption,
+});
+
+
+// The js code can provide functionality to reveal sections with ScrollReveal for .section-game
+ScrollReveal().reveal("#section-game", {
   ...scrollRevealOption,
 });
 
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-game
-ScrollReveal().reveal(".h2-secondary-colour", {
+ScrollReveal().reveal("#section-contact", {
   ...scrollRevealOption,
 });
 
-// The js code can provide functionality to reveal sections with ScrollReveal for .section-game
-ScrollReveal().reveal(".section-game", {
-  ...scrollRevealOption,
-});
 // The js code can provide functionality to reveal sections with ScrollReveal for .section-banner
 ScrollReveal().reveal(".section-banner", {
   ...scrollRevealOption,
@@ -174,10 +172,10 @@ function submitForm() {
             document.getElementById('file-selected-text').textContent = file.name;
             
             // The js code can store the image preview as a variable, that's attached with classes
-            const previewContainer = document.getElementById('image-preview-container');
-            const previewImage = document.getElementById('image-preview');
-            const fileNameElement = document.getElementById('file-name');
-            const fileSizeElement = document.getElementById('file-size');
+            var previewContainer = document.getElementById('image-preview-container');
+            var previewImage = document.getElementById('image-preview');
+            var fileNameElement = document.getElementById('file-name');
+            var fileSizeElement = document.getElementById('file-size');
             
             // The js code can show the file info
             fileNameElement.textContent = file.name;
@@ -200,10 +198,10 @@ function submitForm() {
             document.getElementById('file-selected-text').textContent = file.name;
             
             // The js code can store the image preview as a variable, that's attached with classes
-            const previewContainer = document.getElementById('image-preview-container');
-            const previewImage = document.getElementById('image-preview');
-            const fileNameElement = document.getElementById('file-name');
-            const fileSizeElement = document.getElementById('file-size');
+            var previewContainer = document.getElementById('image-preview-container');
+            var previewImage = document.getElementById('image-preview');
+            var fileNameElement = document.getElementById('file-name');
+            var fileSizeElement = document.getElementById('file-size');
             
             // The js code can show the file info
             fileNameElement.textContent = file.name;
@@ -218,3 +216,23 @@ function submitForm() {
             reader.readAsDataURL(file);
         }
     });
+    // The js code can provide functionality to create a variable button for "sparagraph_copyright_footer_scroll_to_btn" functionality
+    var scrollup = document.getElementById("paragraph_copyright_footer_scroll_to_btn");
+    // The js code can provide functionality to allow scroll event to show & hide the button on window load
+    window.onscroll = function() {
+      scrollFunction();
+    };
+    // The js code can provide functionality to create a function to handle the visibility of the scroll button
+    function scrollFunction() {
+      if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+        scroll__btn.style.display = "block";
+      } else {
+        scroll__btn.style.display = "none";
+      }
+    }
+    
+    // The js code can provide functionality to create a function to scroll to the top of the page
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+}

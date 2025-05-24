@@ -51,17 +51,18 @@ $publishedReviews->store_result();
 $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 <section class="section-banner">
-    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Pending Upload Page</h1>
-    <p class="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Admin Dashboard! Here you can manage all badges, photos, videos, and reviews. You can delete that if it's deemed as unacceptable to the policy, if you delete it it won't appear, but if you approve it, then it'll appear in the website</p>
+    <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Pending Upload Page</h1>
+    <p class="paragraph-text" id="paragraph-text">Hi <?= htmlspecialchars($_SESSION['name'] ?? '') ?>, Welcome to your Admin Dashboard! Here you can manage all badges, photos, videos, and reviews. You can delete that if it's deemed as unacceptable to the policy, if you delete it it won't appear, but if you approve it, then it'll appear in the website</p>
 </section>
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Unpublished Photos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Unpublished Photos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-photo">
     <?php while ($unpublishedPhotos->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? ' ') ?></h2>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? ' ') ?></h2>
             <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? '') ?>" alt="Photo Image">
-            <p class="mb-1"><?= htmlspecialchars($pDesc ?? ' ') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($pRelease ?? ' ') ?></p>
+            <p id="paragraph-text" class="mb-1"><?= htmlspecialchars($pDesc ?? ' ') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($pRelease ?? ' ') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -74,14 +75,14 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Published Photos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Published Photos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-photo">
     <?php while ($publishedPhotos->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? ' ') ?></h2>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? ' ') ?></h2>
             <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? '') ?>" alt="Photo Image">
-            <p class="mb-1"><?= htmlspecialchars($pDesc ?? ' ') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($pRelease ?? ' ') ?></p>
+            <p id="paragraph-text" class="mb-1"><?= htmlspecialchars($pDesc ?? ' ') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($pRelease ?? ' ') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?aid=' . $pID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -94,13 +95,13 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Unpublished Badges</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Unpublished Badges</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-badge">
     <?php while ($unpublishedBadges->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? ' ') ?></h2>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? ' ') ?></h2>
             <img class="mx-auto mb-2" style="max-width: 200px; height: auto;" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage ?? '') ?>" alt="Badge Image">
-            <p class="mb-3"><?= htmlspecialchars($bDesc ?? ' ') ?></p>
+            <p id="paragraph-text" class="mb-3"><?= htmlspecialchars($bDesc ?? ' ') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -113,13 +114,13 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Published Badges</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Published Badges</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-badge">
     <?php while ($publishedBadges->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? ' ') ?></h2>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? ' ') ?></h2>
             <img class="mx-auto mb-2" style="max-width: 200px; height: auto;" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage ?? '') ?>" alt="Badge Image">
-            <p class="mb-3"><?= htmlspecialchars($bDesc ?? ' ') ?></p>
+            <p id="paragraph-text" class="mb-3"><?= htmlspecialchars($bDesc ?? ' ') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?bid=' . $bID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -132,14 +133,14 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Unpublished Videos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Unpublished Videos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-video">
     <?php while ($unpublishedVideos->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
             <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
-            <p class="mb-1"><?= htmlspecialchars($vDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($vRelease ?? '') ?></p>
+            <p id="paragraph-text" class="mb-1"><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($vRelease ?? '') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -152,14 +153,14 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Published Videos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Published Videos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-video">
     <?php while ($publishedVideos->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
             <img class="mx-auto mb-2 max-h-60 object-cover" src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . ($vImage ?? 'default-video.jpg')) ?>" alt="Video Thumbnail">
-            <p class="mb-1"><?= htmlspecialchars($vDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($vRelease ?? '') ?></p>
+            <p id="paragraph-text" class="mb-1"><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($vRelease ?? '') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?vid=' . $vID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -172,12 +173,12 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Unpublished Reviews</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Unpublished Reviews</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-review">
     <?php while ($unpublishedReviews->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p class="mb-3"><?= htmlspecialchars($tDesc ?? '') ?></p>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p id="paragraph-text" class="mb-3"><?= htmlspecialchars($tDesc ?? '') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -190,12 +191,12 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Published Reviews</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Published Reviews</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="div-review">
     <?php while ($publishedReviews->fetch()) : ?>
-        <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p class="mb-3"><?= htmlspecialchars($tDesc ?? '') ?></p>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center" id="div-pending-item">
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p id="paragraph-text" class="mb-3"><?= htmlspecialchars($tDesc ?? '') ?></p>
             <div class="flex flex-col justify-center items-center gap-2">
                 <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                     More Info
@@ -209,8 +210,8 @@ $publishedReviews->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 <!-- Contact Section -->
-<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>

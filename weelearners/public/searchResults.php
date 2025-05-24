@@ -33,19 +33,19 @@ $testimonals->store_result();
 $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 ?>
 <section class="section-banner">
-  <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">Search Results</h1>
-  <p class="paragraph-text">
+  <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Search Results</h1>
+  <p class="paragraph-text" id="paragraph-text">
     Welcome to the search results page. Here you can find all the results related to your search query. Our search engine scans through multiple categories including photos, videos, badges, and testimonials to provide you with the most relevant information based on your input. Whether you are looking for a specific album, an inspiring video, a badge to earn, or testimonials from our valued users, all matching results will be displayed below. To refine your search, simply enter a new keyword in the search bar and submit again. The results are dynamically updated to ensure you always have access to the latest and most accurate information available on our platform. Each result includes a brief description and an image (where available), along with a link for more detailed information. If you have any questions or need further assistance, please feel free to contact us using the details at the bottom of this page. Thank you for using our search feature. We are committed to helping you find exactly what you are looking for and making your experience as smooth and informative as possible. Please scroll down to view your search results. If you do not find what you are looking for, try using different keywords, or check back later as our content is regularly updated.
   </p>
 </section>
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Photos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Photos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-photo">
     <?php while ($photo->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? '') ?></h2>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $pImage ?? '') ?>" alt="Photo Image" class="mx-auto mb-2 max-h-60 object-cover">
-            <p class="mb-2"><?= htmlspecialchars($pDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($pRelease ?? '') ?></p>
+            <p id="paragraph-text" class="mb-2"><?= htmlspecialchars($pDesc ?? '') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($pRelease ?? '') ?></p>
             <a href="<?= ROOT_DIR ?>public/moreinfo.php?aid=<?= htmlspecialchars($pID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                 More Info
             </a>
@@ -53,14 +53,14 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Videos</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Videos</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-video">
     <?php while ($videos->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $vImage ?? '') ?>" alt="Video Image" class="mx-auto mb-2 max-h-60 object-cover">
-            <p class="mb-2"><?= htmlspecialchars($vDesc ?? '') ?></p>
-            <p class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($vRelease ?? '') ?></p>
+            <p id="paragraph-text" class="mb-2"><?= htmlspecialchars($vDesc ?? '') ?></p>
+            <p id="paragraph-text" class="text-sm text-gray-500 mb-3"><?= htmlspecialchars($vRelease ?? '') ?></p>
             <a href="<?= ROOT_DIR ?>public/moreinfo.php?vid=<?= htmlspecialchars($vID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                 More Info
             </a>
@@ -68,13 +68,13 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Badges</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Badges</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-badge">
     <?php while ($badge->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? '') ?></h2>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? '') ?></h2>
             <img src="<?= htmlspecialchars(ROOT_DIR . 'assets/images/' . $bImage ?? '') ?>" alt="Badge Image" class="mx-auto mb-2" style="max-width: 200px; height: auto;">
-            <p class="mb-3"><?= htmlspecialchars($bDesc ?? '') ?></p>
+            <p id="paragraph-text" class="mb-3"><?= htmlspecialchars($bDesc ?? '') ?></p>
             <a href="<?= ROOT_DIR ?>public/moreinfo.php?bid=<?= htmlspecialchars($bID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                 More Info
             </a>
@@ -82,12 +82,12 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
     <?php endwhile; ?>
 </section>
 
-<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500">All Reviews</h1>
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+<h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Reviews</h1>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-review">
     <?php while ($testimonals->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <h2 class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
-            <p class="mb-3"><?= htmlspecialchars($tDesc ?? '') ?></p>
+            <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
+            <p id="paragraph-text" class="mb-3"><?= htmlspecialchars($tDesc ?? '') ?></p>
             <a href="<?= htmlspecialchars(ROOT_DIR . 'public/moreinfo.php?tid=' . $tID ?? '') ?>" class="text-white bg-blue-500 hover:bg-blue-600 font-medium py-1 px-3 rounded-md text-sm transition">
                 More Info
             </a>
@@ -96,8 +96,8 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 </section>
 
 <!-- Contact Section -->
-<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500">Contact</h2>
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center">
+<h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>
