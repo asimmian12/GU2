@@ -52,9 +52,10 @@ $users->bind_result($userID, $username, $email, $role, $isActive, $name, $releas
     carefully before making any changes, as your actions will directly affect user access on the website.
   </p>
 </section>
-
+  <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Users</h1>
 <!-- /* Users Grid Section */ -->
 <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-16">
+
     <?php while ($users->fetch()): ?>
         <!-- /* Individual User Card */ -->
         <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col space-y-2" id="div-users-info">

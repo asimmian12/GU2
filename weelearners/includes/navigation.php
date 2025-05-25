@@ -20,13 +20,11 @@
                 <?php if ($_SESSION['is_admin'] == 1) : ?>
                     <li><a href="<?= ROOT_DIR ?>admin" class="text-gray-600 hover:text-blue-500 transition duration-300">Admin Dash</a></li>
                     <li><a href="<?= ROOT_DIR ?>public/admin/pending.php" class="text-gray-600 hover:text-blue-500 transition duration-300">Pending Uploads</a></li>
-                    <li><a href="<?= ROOT_DIR ?>allUsers" class="text-gray-600 hover:text-blue-500 transition duration-300">Users</a></li>
                     <li><a href="<?= ROOT_DIR ?>public/contact/contact.php" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a></li>
                     <?php else : ?>
                         <li><a href="<?= ROOT_DIR ?>user" class="text-gray-600 hover:text-blue-500 transition duration-300">User Dash</a></li>
                         <li><a href="<?= ROOT_DIR ?>public/games/games.php" class="text-gray-600 hover:text-blue-500 transition duration-300">Games</a></li>
                         <li><a href="<?= ROOT_DIR ?>uploads" class="text-gray-600 hover:text-blue-500 transition duration-300">Upload Badge</a></li>
-                        <li><a href="<?= ROOT_DIR ?>account" class="text-gray-600 hover:text-blue-500 transition duration-300">Account Details</a></li>
                         <li><a href="<?= ROOT_DIR ?>public/contact/contact.php" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a></li>
             <?php endif; ?>
             <li><a href="<?= ROOT_DIR ?>logout" class="text-gray-600 hover:text-blue-500 transition duration-300">Logout</a></li>

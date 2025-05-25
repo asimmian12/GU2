@@ -1,8 +1,7 @@
-<!-- The PHP includes section of the page -->
 <?php 
-<!-- Include the configuration file for database and settings -->
+// <!-- Include the configuration file for database and settings -->
 include 'config/config.php';
-<!-- Include the header file containing HTML head and navigation -->
+// <!-- Include the header file containing HTML head and navigation -->
 include 'includes/header.php';
 ?>
 
@@ -54,7 +53,6 @@ include 'includes/header.php';
                 type="text" 
                 class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-pink-500" 
                 placeholder="Username"
-                <!-- Pre-fill username from cookie if available -->
                 value="<?= isset($_COOKIE["username"]) ? htmlspecialchars($_COOKIE["username"]) : '' ?>"
                 required
               >
