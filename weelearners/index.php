@@ -1,10 +1,10 @@
 <?php
 
-// Get the requested URL from the 'url' query parameter
+// To get the requested URL from the 'url' query parameter
 $url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '';
 
 
-// Define available routes (URL => corresponding PHP file)
+// To define the available routes (for URL that corresponds to the correct PHP file, and route)
 $routes = [
     '' => 'public/index.php',          // Home route
     'badge' => 'public/badge.php',          // badge route
@@ -27,14 +27,15 @@ $routes = [
    
 ];
 
-// Check if the URL matches a route
+// To check if the URL matches a route
 if (array_key_exists($url, $routes)) {
-    require $routes[$url];  // Load the appropriate file for the route
+    // To load the appropriate file for the route
+    require $routes[$url];  
 } else {
-    // If no route matches, show a 404 page
+    // If their is no route being matchef, then it shows a 404 page
     require '404.php';
 }
-// 
+
 ?>
 
 

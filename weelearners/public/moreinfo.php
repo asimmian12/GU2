@@ -1,21 +1,17 @@
-<!-- The PHP includes section of the page -->
 <?php 
-// <!-- Include the configuration file for database and settings -->
+// <!-- Include the config file -->
 include '../config/config.php';
-// <!-- Include the header file containing HTML head and navigation -->
+// <!-- Include the header file -->
 include '../includes/header.php';
-// <!-- End of PHP includes -->
 
-// <!-- Fetch IDs from URL parameters -->
-// Fetch IDs from URL parameters
+// By fetching IDs from URL parameters
 $photoID = $_GET['aid'] ?? null;
 $videoID = $_GET['vid'] ?? null;
 $badgeID = $_GET['bid'] ?? null;
 $testimonalsID = $_GET['tid'] ?? null;
-// <!-- End of URL parameter fetching -->
 
-// <!-- Fetch Main Content Items -->
-// Fetch Main Content Items
+
+// Fetch The Main Content Items
 if ($photoID) {
     $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE id = ? AND is_active = 1");
     $photo->bind_param("i", $photoID);
@@ -23,7 +19,7 @@ if ($photoID) {
     $photo->store_result();
     $photo->bind_result($pID, $pName, $pDesc, $pRelease, $pImage);
 }
-// <!-- End of photo query -->
+
 
 if ($videoID) {
     $video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE id = ? AND is_active = 1");
@@ -32,7 +28,7 @@ if ($videoID) {
     $video->store_result();
     $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 }
-// <!-- End of video query -->
+
 
 if ($badgeID) {
     $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE id = ?");
@@ -41,7 +37,7 @@ if ($badgeID) {
     $badge->store_result();
     $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 }
-// <!-- End of badge query -->
+
 
 if ($testimonalsID) {
     $testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE id = ?");
@@ -50,9 +46,6 @@ if ($testimonalsID) {
     $testimonals->store_result();
     $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 }
-// <!-- End of testimonial query -->
-
-// <!-- Fetch Suggested Content -->
 // Fetch Suggested Content
 if ($photoID) {
     $suggestedPhotos = $conn->prepare("SELECT id, albName, albDescription, image FROM photo WHERE id != ? AND is_active = 1 ORDER BY RAND() LIMIT 3");
@@ -60,7 +53,7 @@ if ($photoID) {
     $suggestedPhotos->execute();
     $suggestedPhotosResult = $suggestedPhotos->get_result();
 }
-// <!-- End of suggested photos query -->
+
 
 if ($videoID) {
     $suggestedVideos = $conn->prepare("SELECT id, title, description, image FROM videos WHERE id != ? AND is_active = 1 ORDER BY RAND() LIMIT 3");
@@ -68,7 +61,7 @@ if ($videoID) {
     $suggestedVideos->execute();
     $suggestedVideosResult = $suggestedVideos->get_result();
 }
-// <!-- End of suggested videos query -->
+
 
 if ($badgeID) {
     $suggestedBadges = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE id != ? ORDER BY RAND() LIMIT 3");
@@ -76,7 +69,7 @@ if ($badgeID) {
     $suggestedBadges->execute();
     $suggestedBadgesResult = $suggestedBadges->get_result();
 }
-// <!-- End of suggested badges query -->
+
 
 if ($testimonalsID) {
     $suggestedTestimonials = $conn->prepare("SELECT id, testimonals_name, description FROM testimonals WHERE id != ? ORDER BY RAND() LIMIT 3");
@@ -84,22 +77,23 @@ if ($testimonalsID) {
     $suggestedTestimonials->execute();
     $suggestedTestimonialsResult = $suggestedTestimonials->get_result();
 }
-// <!-- End of suggested testimonials query -->
 ?>
 
-<!-- Banner Section -->
+<!-- The main's banner Section -->
 <section class="section-banner flex flex-col items-center">
   <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">More Information Page</h1>
   <p class="paragraph-text" id="paragraph-text">
     Welcome to the More Information page. Here you can find detailed information about the specific content you are interested in. Whether it's a photo, video, badge, or testimonial, we provide comprehensive details to help you understand more about it. You can also find the release date and the user who uploaded it. If you have any questions or need further assistance, please feel free to contact us using the details at the bottom of this page. Thank you for visiting our More Information page.
   </p>
 </section>
-<!-- End of banner section -->
 
-<!-- Photo Section -->
+<!-- The photo Section -->
 <?php if ($photoID && $photo->num_rows > 0) : ?>
+    <!-- THe photo sectino with heading -->
     <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">More Photo Details</h1>
+    <!-- The photo section -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-photo">
+        <!-- Fetching photos -->
         <?php while ($photo->fetch()) : ?>
             <div class="bg-white p-4 rounded-lg shadow-md text-center">
                 <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? 'No Photo Name') ?></h2>
@@ -110,11 +104,13 @@ if ($testimonalsID) {
             </div>
         <?php endwhile ?>
     </section>
-    <!-- End of photo details section -->
+
 
     <!-- Suggested Photos -->
     <?php if (isset($suggestedPhotosResult) && $suggestedPhotosResult->num_rows > 0) : ?>
+        <!-- The suggested photos section with heading -->
         <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Suggested Photos</h1>
+        <!-- The section photo -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-photo">
             <?php while ($sp = $suggestedPhotosResult->fetch_assoc()) : ?>
                 <div class="bg-white p-4 rounded-lg shadow-md text-center">
@@ -125,14 +121,16 @@ if ($testimonalsID) {
                 </div>
             <?php endwhile ?>
         </section>
-        <!-- End of suggested photos section -->
     <?php endif; ?>
 <?php endif; ?>
 
-<!-- Video Section -->
+<!-- The Video Section -->
 <?php if ($videoID && $video->num_rows > 0) : ?>
+    <!-- The video sectino with heading -->
     <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">More Video Details</h1>
+    <!-- The video section -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-video">
+        <!-- Fetching videos -->
         <?php while ($video->fetch()) : ?>
             <div class="bg-white p-4 rounded-lg shadow-md text-center">
                 <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? 'No Video Title') ?></h2>
@@ -145,11 +143,12 @@ if ($testimonalsID) {
             </div>
         <?php endwhile ?>
     </section>
-    <!-- End of video details section -->
 
     <!-- Suggested Videos -->
     <?php if (isset($suggestedVideosResult) && $suggestedVideosResult->num_rows > 0) : ?>
+        <!-- The suggested videos section with heading -->
         <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Suggested Videos</h1>
+        <!-- The section video -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-video">
             <?php while ($sv = $suggestedVideosResult->fetch_assoc()) : ?>
                 <div class="bg-white p-4 rounded-lg shadow-md text-center">
@@ -162,14 +161,16 @@ if ($testimonalsID) {
                 </div>
             <?php endwhile ?>
         </section>
-        <!-- End of suggested videos section -->
     <?php endif; ?>
 <?php endif; ?>
 
-<!-- Badge Section -->
+<!-- The Badge Section -->
 <?php if ($badgeID && $badge->num_rows > 0) : ?>
+    <!-- The badge sectino with heading -->
     <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">More Badge Details</h1>
+    <!-- THe section-badge -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-badge">
+        <!-- Fetching badges -->
         <?php while ($badge->fetch()) : ?>
             <div class="bg-white p-4 rounded-lg shadow-md text-center">
                 <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? 'No Badge Name') ?></h2>
@@ -179,11 +180,13 @@ if ($testimonalsID) {
             </div>
         <?php endwhile ?>
     </section>
-    <!-- End of badge details section -->
+   
 
     <!-- Suggested Badges -->
     <?php if (isset($suggestedBadgesResult) && $suggestedBadgesResult->num_rows > 0) : ?>
+        <!-- The suggested badges section with heading -->
         <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Suggested Badges</h1>
+        <!-- The section badge -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-badge">
             <?php while ($sb = $suggestedBadgesResult->fetch_assoc()) : ?>
                 <div class="bg-white p-4 rounded-lg shadow-md text-center">
@@ -194,14 +197,16 @@ if ($testimonalsID) {
                 </div>
             <?php endwhile ?>
         </section>
-        <!-- End of suggested badges section -->
     <?php endif; ?>
 <?php endif; ?>
 
-<!-- Testimonials Section -->
+<!-- The testimonials Section -->
 <?php if ($testimonalsID && $testimonals->num_rows > 0) : ?>
+    <!-- The testimonials sectino with heading -->
     <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">More Testimonial Details</h1>
+    <!-- The testimonials section -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-review">
+        <!-- Fetching testimonials -->
         <?php while ($testimonals->fetch()) : ?>
             <div class="bg-white p-4 rounded-lg shadow-md text-center">
                 <div class="flex items-center justify-center mb-2">
@@ -215,11 +220,12 @@ if ($testimonalsID) {
             </div>
         <?php endwhile ?>
     </section>
-    <!-- End of testimonial details section -->
 
-    <!-- Suggested Testimonials -->
+    <!-- The section Testimonials -->
     <?php if (isset($suggestedTestimonialsResult) && $suggestedTestimonialsResult->num_rows > 0) : ?>
+        <!-- The suggested testimonials section with heading -->
         <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Suggested Testimonials</h1>
+        <!-- The section for testimonials -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-review">
             <?php while ($st = $suggestedTestimonialsResult->fetch_assoc()) : ?>
                 <div class="bg-white p-4 rounded-lg shadow-md text-center">
@@ -234,49 +240,44 @@ if ($testimonalsID) {
                 </div>
             <?php endwhile ?>
         </section>
-        <!-- End of suggested testimonials section -->
     <?php endif; ?>
 <?php endif; ?>
 
-<!-- Contact Section -->
+<!-- The contact Section -->
 <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
 <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
-    <!-- Emergency contact card -->
+    <!-- The emergency contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">EMERGENCY</h3>
         <p class="text-gray-700">0141 272 9000</p>
     </div>
-    <!-- End of emergency card -->
     
-    <!-- Location contact card -->
+    <!-- The location contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-location-dot text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">LOCATION</h3>
         <p class="text-gray-700">50 Prospecthill Road</p>
         <p class="text-gray-700">G42 9LB, Glasgow, UK</p>
     </div>
-    <!-- End of location card -->
+
     
-    <!-- Email contact card -->
+    <!-- The email contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-envelope text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">EMAIL</h3>
         <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
     </div>
-    <!-- End of email card -->
+
     
-    <!-- Hours contact card -->
+    <!-- The hours contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">WORKING HOURS</h3>
         <p class="text-gray-700">Mon–Sat: 09:00–20:00</p>
         <p class="text-gray-700">Sunday: Emergency only</p>
     </div>
-    <!-- End of hours card -->
 </section>
-<!-- End of contact section -->
 
-<!-- The footer section of the page -->
+<!-- Include the footer file -->
 <?php include '../includes/footer.php'; ?>
-<!-- End of footer section -->

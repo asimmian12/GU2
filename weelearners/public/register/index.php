@@ -4,12 +4,12 @@ include 'config/config.php';
 include 'includes/header.php';
 ?>
 
-<!-- /* Welcome Banner Section */ -->
+<!-- /* The welcome Banner Section */ -->
 <section class="section-banner flex flex-col items-center">
-  <!-- /* Page Heading */ -->
+  <!-- /* The page Heading */ -->
   <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Register Page</h1>
   
-  <!-- /* Welcome Message */ -->
+  <!-- /* The welcome Message */ -->
   <p class="paragraph-text" id="paragraph-text">
     Welcome to the registration page of Wee Learners. Here, you have the opportunity to create a new account and become a part of our vibrant community. 
     By registering, you gain access to a wide range of features, resources, and tools designed to enhance your learning experience. 
@@ -17,28 +17,28 @@ include 'includes/header.php';
   </p>
 </section>
 
-<!-- /* Spacer Div */ -->
+<!-- /* A spacer Div */ -->
 <div class="h-16"></div>
 
-<!-- /* Register Form Section */ -->
+<!-- /* The register Form Section */ -->
 <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id="section-register-form">
   <div class="relative py-3 w-full max-w-3xl mx-auto">
-    <!-- /* Decorative Background Element */ -->
+    <!-- /* A nice and recorative Background Element to the form*/ -->
     <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
     
-    <!-- /* Form Container */ -->
+    <!-- /* The form Container */ -->
     <div class="relative px-8 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-12">
       <div class="mx-auto">
-        <!-- /* Form Heading */ -->
+        <!-- /* The form Heading */ -->
         <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Create Your Account</h1>
         
-        <!-- /* Registration Form */ -->
+        <!-- /* The registration Form */ -->
         <form action="<?= ROOT_DIR ?>registerConfig" method="post" class="space-y-6">
-          <!-- /* Hidden Form Fields */ -->
+          <!-- /* The hidden Form Fields */ -->
           <input type="hidden" name="is_active" value="1">           
           <input type="hidden" name="is_admin" value="1">
           
-          <!-- /* Status Message Display */ -->
+          <!-- /* The status Message Display */ -->
           <?php if (isset($_SESSION['status_message'])): ?>
             <div class="status-message bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
               <?= $_SESSION['status_message'] ?>
@@ -46,7 +46,7 @@ include 'includes/header.php';
             </div>
           <?php endif; ?>
 
-          <!-- /* Username Input Field */ -->
+          <!-- /* The username Input Field */ -->
           <div class="relative">
             <input 
               id="username" 
@@ -61,7 +61,7 @@ include 'includes/header.php';
             </label>
           </div>
 
-          <!-- /* Email Input Field */ -->
+          <!-- /* Tbe email Input Field */ -->
           <div class="relative">
             <input 
               id="email" 
@@ -76,7 +76,7 @@ include 'includes/header.php';
             </label>
           </div>
 
-          <!-- /* Password Input Field */ -->
+          <!-- /* The password Input Field */ -->
           <div class="relative">
             <input 
               id="pswd" 
@@ -91,7 +91,7 @@ include 'includes/header.php';
             </label>
           </div>
 
-          <!-- /* Login Link */ -->
+          <!-- /* The login Link */ -->
           <div class="flex items-center justify-between">
             <div class="text-sm">
               <a href="login" class="font-medium text-indigo-600 hover:text-indigo-500">
@@ -100,7 +100,7 @@ include 'includes/header.php';
             </div>
           </div>
 
-          <!-- /* Submit Button */ -->
+          <!-- /* The submit Button */ -->
           <div>
             <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Register
@@ -108,7 +108,7 @@ include 'includes/header.php';
           </div>
         </form>
 
-        <!-- /* Social Login Section */ -->
+        <!-- /* The social Login Section */ -->
         <div class="mt-8">
           <!-- /* Divider */ -->
           <div class="relative">
@@ -122,9 +122,9 @@ include 'includes/header.php';
             </div>
           </div>
           
-          <!-- /* Social Login Buttons Grid */ -->
+          <!-- /* The social Login Buttons Grid */ -->
           <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <!-- /* Google Login Button */ -->
+            <!-- /* The google Login Button */ -->
             <div>
               <a href="https://www.google.com/" target="_blank" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
                 <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 0 48 48">
@@ -137,7 +137,7 @@ include 'includes/header.php';
               </a>
             </div>
 
-            <!-- /* Facebook Login Button */ -->
+            <!-- /* The facebook Login Button */ -->
             <div>
               <a href="https://www.facebook.com/" target="_blank" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
                 <svg class="w-8 h-8 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -147,7 +147,7 @@ include 'includes/header.php';
               </a>
             </div>
 
-            <!-- /* Microsoft Login Button */ -->
+            <!-- /* The microsoft Login Button */ -->
             <div>
               <a href="https://www.outlook.com/" target="_blank" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
                 <svg class="w-8 h-8 mr-3 text-blue-500" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +160,7 @@ include 'includes/header.php';
               </a>
             </div>
 
-            <!-- /* Apple Login Button */ -->
+            <!-- /* The apple Login Button */ -->
             <div>
               <a href="https://www.apple.com/" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
                 <svg class="w-8 h-8 mr-3 text-gray-900" viewBox="0 0 24 24" fill="currentColor">
@@ -171,7 +171,7 @@ include 'includes/header.php';
             </div>
           </div>
           
-          <!-- /* Terms and Privacy Notice */ -->
+          <!-- /* The terms and Privacy Notice for the user*/ -->
           <div class="mt-6 text-sm text-gray-500 text-center">
             <p>By registering, you agree to our <a href="/terms" class="font-medium text-pink-600 hover:text-pink-500">Terms of Service</a> and <a href="/privacy" class="font-medium text-pink-600 hover:text-pink-500">Privacy Policy</a>.</p>
           </div>
@@ -181,20 +181,20 @@ include 'includes/header.php';
   </div>
 </div>
 
-<!-- /* Spacer Div */ -->
+<!-- /* A spacer Div */ -->
 <div class="h-16"></div>
 
-<!-- /* Contact Information Section */ -->
+<!-- /* The contact Information Section */ -->
 <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
 <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
-  <!-- /* Emergency Contact Card */ -->
+  <!-- /* The emergency Contact Card */ -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>
     <p class="text-gray-700">0141 272 9000</p>
   </div>
   
-  <!-- /* Location Card */ -->
+  <!-- /* The location Card */ -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-location-dot text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">LOCATION</h3>
@@ -202,14 +202,14 @@ include 'includes/header.php';
     <p class="text-gray-700">G42 9LB, Glasgow, UK</p>
   </div>
   
-  <!-- /* Email Contact Card */ -->
+  <!-- /* The email Contact Card */ -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-envelope text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMAIL</h3>
     <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
   </div>
   
-  <!-- /* Working Hours Card */ -->
+  <!-- /* The working Hours Card */ -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">WORKING HOURS</h3>

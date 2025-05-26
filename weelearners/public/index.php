@@ -1,55 +1,57 @@
 <!-- The PHP includes section of the page -->
 <?php 
-// <!-- Include the configuration file for database and settings -->
+// <!-- Include the config file -->
 include 'config/config.php';
-// <!-- Include the header file containing HTML head and navigation -->
+// <!-- Include the header file -->
 include 'includes/header.php';
-// <!-- End of PHP includes -->
 
-// <!-- Database queries section -->
-// <!-- Query to fetch photo details -->
+
+// <!-- The database queries section -->
+// <!-- The query to fetch photo details -->
 // Bringing in photo details
 $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $photo->execute();
 $photo->store_result();
 $photo->bind_result($pID, $pName, $pDesc, $release, $pImage);
-// <!-- End of photo query -->
 
-// <!-- Query to fetch video details -->
+
+// <!-- The query to fetch video details -->
 // Bringing in video details
 $video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $video->execute();
 $video->store_result();
 $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
-// <!-- End of video query -->
 
-// <!-- Query to fetch badge details -->
+
+// <!-- The query to fetch badge details -->
 // Bringing in badge details
 $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
-// <!-- End of badge query -->
 
-// <!-- Query to fetch testimonial details -->
+
+// <!-- The query to fetch testimonial details -->
 // Bringing in testimonals details
 $testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $testimonals->execute();
 $testimonals->store_result();
 $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
-// <!-- End of testimonial query -->
+
 ?>
 
-<!-- Banner section -->
+<!-- The main's banner section -->
 <section class="section-banner flex flex-col items-center">
     <h1 class="text-3xl font-semibold text-center mt-6 mb-4 text-pink-500" id="h1-heading-center">Home Page</h1>
     <p id="paragraph-text" class="paragraph-text mx-2">Welcome to Wee Learner which has been the go-to platform, for parents, carers, and children all love coming to us. Our website connects all Parents and Carers of their kids, ranging from Special Needs Education through Mainstream Kids Education. Whether you're searching for a Nursary, for your kids, or want to apply for being a helper, WeeLearners can provide an easy-to-use website where parents and carers can explore a wide range of badge records, for their children, and apply for being a helper, etc.</p>
 </section>
-<!-- End of banner section -->
 
-<!-- Photos section -->
+
+<!-- The photos section heading-->
 <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Photos</h1>
+ <!-- The photos section -->
 <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-photo">
+    <!-- Fetching photo -->
     <?php while ($photo->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
             <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($pName ?? '') ?></h2>
@@ -60,11 +62,13 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
         </div>
     <?php endwhile ?>
 </section>
-<!-- End of photos section -->
 
-<!-- Videos section -->
+
+<!-- The videos section with heading-->
 <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Videos</h1>
+<!-- The videos section -->
 <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-video">
+    <!-- Fetching video -->
     <?php while ($video->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
             <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($vTitle ?? '') ?></h2>
@@ -75,11 +79,13 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
         </div>
     <?php endwhile ?>
 </section>
-<!-- End of videos section -->
 
-<!-- Badges section -->
+
+<!-- The badges section with heading-->
 <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Badges</h1>
+<!-- The badge section -->
 <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-badge">
+    <!-- Fetching badge -->
     <?php while ($badge->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
             <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($bName ?? '') ?></h2>
@@ -89,11 +95,13 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
         </div>
     <?php endwhile ?>
 </section>
-<!-- End of badges section -->
 
-<!-- Reviews section -->
+
+<!-- The review section with heading-->
 <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Reviews</h1>
+<!-- The review scetion -->
 <section class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4" id="section-review">
+    <!-- Fetching review -->
     <?php while ($testimonals->fetch()) : ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
             <h2 id="main-heading" class="text-xl font-bold mb-2"><?= htmlspecialchars($tName ?? '') ?></h2>
@@ -102,31 +110,30 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
         </div>
     <?php endwhile ?>
 </section>
-<!-- End of reviews section -->
 
-<!-- Contact Section -->
+<!-- The contact Section with heading-->
 <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
 <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
-    <!-- Emergency contact card -->
+    <!-- The emergency contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">EMERGENCY</h3>
         <p class="text-gray-700">0141 272 9000</p>
     </div>
-    <!-- Location contact card -->
+    <!-- The location contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-location-dot text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">LOCATION</h3>
         <p class="text-gray-700">50 Prospecthill Road</p>
         <p class="text-gray-700">G42 9LB, Glasgow, UK</p>
     </div>
-    <!-- Email contact card -->
+    <!-- The email contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-envelope text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">EMAIL</h3>
         <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
     </div>
-    <!-- Hours contact card -->
+    <!-- The hours contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>
         <h3 class="font-semibold text-lg">WORKING HOURS</h3>
@@ -134,8 +141,6 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
         <p class="text-gray-700">Sunday: Emergency only</p>
     </div>
 </section>
-<!-- End of contact section -->
 
-<!-- The footer section of the page -->
+<!-- Include the footer file -->
 <?php include 'includes/footer.php'; ?>
-<!-- End of footer section -->

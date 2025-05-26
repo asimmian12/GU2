@@ -7,9 +7,9 @@ include 'includes/header.php';
 
   <!-- The banner section of the login page -->
   <section class="section-banner flex flex-col items-center">
-  <!-- Main heading for the login page -->
+  <!-- The main heading for the login page -->
   <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Login Page</h1>
-  <!-- Descriptive paragraph about the login process -->
+  <!-- The descriptive paragraph about the login process -->
   <p class="paragraph-text" id="paragraph-text">
     Welcome to the Wee Learners login page. Please enter your username and password below to securely access your online account. 
     By logging in, you can view your account, view your badges, and access exclusive badges just for you. 
@@ -18,26 +18,25 @@ include 'includes/header.php';
   </p>
 </section>
 
-  <!-- Spacer div for visual separation -->
+  <!-- The spacer div for visual separation -->
   <div class="h-16"></div>
 
   <!-- Login Form Section -->
-  <!-- Container for the login form with responsive padding -->
+  <!-- The container for the login form with responsive padding -->
   <div class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id="section-login-form">
-    <!-- Relative container for the skewed background effect -->
+    <!-- The relative container for the skewed background effect -->
     <div class="relative py-3 w-full max-w-3xl mx-auto"> 
-      <!-- Absolute positioned decorative background element with gradient -->
+      <!-- The absolute positioned decorative background element with gradient -->
       <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-      <!-- Main content container positioned relative to parent -->
+      <!-- The main content container positioned relative to parent container-->
       <div class="relative px-8 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-12"> 
-        <!-- Centered content container -->
+        <!-- The centered content container -->
         <div class="mx-auto"> 
-          <!-- Form heading -->
+          <!-- The form heading -->
           <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Login to Your Account</h1>
-          
-          <!-- Login form that submits to authenticate endpoint -->
+          <!-- The login form that submits to the authenticate endpoint -->
           <form action="<?= ROOT_DIR ?>authenticate" method="post" class="space-y-6">
-            <!-- Status message display for errors -->
+            <!-- The status message display for errors -->
             <?php if (isset($_SESSION['status_message'])): ?>
               <div class="status-message bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
                 <?= $_SESSION['status_message'] ?>
@@ -45,7 +44,7 @@ include 'includes/header.php';
               </div>
             <?php endif; ?>
 
-            <!-- Username input field with floating label -->
+            <!-- The username input field with floating label -->
             <div class="relative">
               <input 
                 id="username" 
@@ -56,13 +55,13 @@ include 'includes/header.php';
                 value="<?= isset($_COOKIE["username"]) ? htmlspecialchars($_COOKIE["username"]) : '' ?>"
                 required
               >
-              <!-- Floating label for username input -->
+              <!-- The floating label for username input -->
               <label for="username" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                 Username
               </label>
             </div>
 
-            <!-- Password input field with floating label -->
+            <!-- THe password input field with floating label -->
             <div class="relative">
               <input 
                 id="pswd" 
@@ -72,13 +71,13 @@ include 'includes/header.php';
                 placeholder="Password"
                 required
               >
-              <!-- Floating label for password input -->
+              <!-- The floating label for password input -->
               <label for="pswd" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                 Password
               </label>
             </div>
 
-            <!-- Registration link for users without account -->
+            <!-- The registration link for users without account -->
             <div class="flex items-center justify-between">
               <div class="text-sm">
                 <a href="register" class="font-medium text-indigo-600 hover:text-indigo-500">
@@ -87,7 +86,7 @@ include 'includes/header.php';
               </div>
             </div>
 
-            <!-- Submit button for the form -->
+            <!-- The submit button for the form -->
             <div>
               <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Sign in
@@ -95,9 +94,9 @@ include 'includes/header.php';
             </div>
           </form>
 
-          <!-- Social login section -->
+          <!-- The social login section -->
           <div class="mt-8">
-            <!-- Divider with "Or" text -->
+            <!-- A divider with the "Or" text -->
             <div class="relative">
               <div class="absolute inset-0 flex items-center">
                 <div class="w-full border-t border-gray-300"></div>
@@ -109,12 +108,12 @@ include 'includes/header.php';
               </div>
             </div>
 
-            <!-- Grid of social login buttons -->
+            <!-- The grid of social login buttons -->
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <!-- Google login button -->
+             <!-- The google login button -->
               <div>
                 <a href="https://www.google.com/" target="_blank" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
-                  <!-- Google SVG icon -->
+                  <!-- The google SVG icon -->
                   <svg class="w-8 h-8 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 0 48 48">
                     <path d="M9.82727273,24 C9.82727273,22.4757333 10.0804318,21.0144 10.5322727,19.6437333 L2.62345455,13.6042667 C1.08206818,16.7338667 0.213636364,20.2602667 0.213636364,24 C0.213636364,27.7365333 1.081,31.2608 2.62025,34.3882667 L10.5247955,28.3370667 C10.0772273,26.9728 9.82727273,25.5168 9.82727273,24" fill="#FBBC05"></path>
                     <path d="M23.7136364,10.1333333 C27.025,10.1333333 30.0159091,11.3066667 32.3659091,13.2266667 L39.2022727,6.4 C35.0363636,2.77333333 29.6954545,0.533333333 23.7136364,0.533333333 C14.4268636,0.533333333 6.44540909,5.84426667 2.62345455,13.6042667 L10.5322727,19.6437333 C12.3545909,14.112 17.5491591,10.1333333 23.7136364,10.1333333" fill="#EB4335"></path>
@@ -125,10 +124,10 @@ include 'includes/header.php';
                 </a>
               </div>
 
-              <!-- Facebook login button -->
+              <!-- The facebook login button -->
               <div>
                 <a href="https://www.facebook.com/" target="_blank" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
-                  <!-- Facebook SVG icon -->
+                  <!-- The facebook SVG icon -->
                   <svg class="w-8 h-8 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
                   </svg>
@@ -136,10 +135,10 @@ include 'includes/header.php';
                 </a>
               </div>
 
-              <!-- Microsoft login button -->
+              <!-- The microsoft login button -->
               <div>
                 <a href="https://www.outlook.com/" target="_blank" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
-                  <!-- Microsoft SVG icon -->
+                  <!-- The microsoft SVG icon -->
                   <svg class="w-8 h-8 mr-3 text-blue-500" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1H10.5V10.5H1V1Z" fill="#F25022"></path>
                     <path d="M12.5 1H22V10.5H12.5V1Z" fill="#7FBA00"></path>
@@ -150,10 +149,10 @@ include 'includes/header.php';
                 </a>
               </div>
 
-              <!-- Apple login button -->
+              <!-- The apple login button -->
               <div>
                 <a href="https://www.apple.com/" class="w-full flex justify-center items-center px-6 py-4 border-2 border-gray-300 rounded-xl shadow-sm text-xl font-medium text-gray-700 bg-white hover:bg-gray-50 transition-all duration-200 hover:shadow-lg">
-                  <!-- Apple SVG icon -->
+                  <!-- The apple SVG icon -->
                   <svg class="w-8 h-8 mr-3 text-gray-900" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path>
                   </svg>
@@ -162,7 +161,7 @@ include 'includes/header.php';
               </div>
             </div>
 
-            <!-- Terms and conditions notice -->
+            <!-- The terms and conditions notice for the user-->
             <div class="mt-6 text-sm text-gray-500 text-center">
               <p>By continuing, you agree to our <a href="/terms" class="font-medium text-pink-600 hover:text-pink-500">Terms of Service</a> and <a href="/privacy" class="font-medium text-pink-600 hover:text-pink-500">Privacy Policy</a>.</p>
             </div>
@@ -172,34 +171,34 @@ include 'includes/header.php';
     </div>
   </div>
   
-  <!-- Spacer div for visual separation -->
+  <!-- A spacer div for visual separation -->
   <div class="h-16"></div>
  
-<!-- Contact Section -->
-<!-- Contact section heading -->
+<!-- The Contact Section -->
+<!-- The Contact section heading -->
 <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
-<!-- Grid layout for contact information -->
+<!-- The grid layout for contact information -->
 <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-16 text-center" id="section-contact">
-  <!-- Emergency contact card -->
+  <!-- The emergency contact card -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-phone text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMERGENCY</h3>
     <p class="text-gray-700">0141 272 9000</p>
   </div>
-  <!-- Location contact card -->
+  <!-- The location contact card -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-location-dot text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">LOCATION</h3>
     <p class="text-gray-700">50 Prospecthill Road</p>
     <p class="text-gray-700">G42 9LB, Glasgow, UK</p>
   </div>
-  <!-- Email contact card -->
+  <!-- The email contact card -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-envelope text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">EMAIL</h3>
     <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
   </div>
-  <!-- Hours contact card -->
+  <!-- The hours contact card -->
   <div class="bg-white p-6 rounded-lg shadow-md">
     <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>
     <h3 class="font-semibold text-lg">WORKING HOURS</h3>
@@ -208,5 +207,5 @@ include 'includes/header.php';
   </div>
 </section>
 
-<!-- The footer section of the page -->
+<!-- The includes footer -->
 <?php include 'includes/footer.php'; ?>
