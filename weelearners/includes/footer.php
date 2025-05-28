@@ -50,7 +50,9 @@
         
         <!-- /* The footer has a contact details heading */ -->
         <h3 class="text-lg font-semibold !text-black mb-6">Contact Details</h3>
-        
+        <!-- The footer has an iframe link -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1671.7367299526845!2d-4.262166177263698!3d55.827285554025266!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4888472b0e9b374d%3A0x3cf03c27eb6d2804!2sMary%20Stuart%20Building!5e0!3m2!1sen!2suk!4v1748454064837!5m2!1sen!2suk" width="230" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
         <!-- /* The footer has a contact list container */ -->
         <ul class="space-y-4">
           
@@ -195,10 +197,10 @@
   </div>
 </footer>
 
-<!-- /* Scroll reveal animation library */ -->
+<!-- /* The scroll reveal animation library */ -->
 <script src="https://unpkg.com/scrollreveal"></script>
 
-<!-- /* Swiper JS library for carousels */ -->
+<!-- /* The swiper JS library for carousels */ -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!-- /* The JavaScript file which is in assets */ -->
