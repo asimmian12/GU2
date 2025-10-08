@@ -8,7 +8,6 @@ include 'includes/header.php';
 <section class="section-banner flex flex-col items-center">
   <!-- /* The page Heading */ -->
   <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">Register Page</h1>
-  
   <!-- /* The welcome Message */ -->
   <p class="paragraph-text" id="paragraph-text">
     Welcome to the registration page of Wee Learners. Here, you have the opportunity to create a new account and become a part of our vibrant community. 

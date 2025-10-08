@@ -4,7 +4,6 @@ include 'config/config.php';
 // <!-- Include the header file containing HTML head and navigation -->
 include 'includes/header.php';
 ?>
-
   <!-- The banner section of the login page -->
   <section class="section-banner flex flex-col items-center">
   <!-- The main heading for the login page -->
@@ -174,7 +173,7 @@ include 'includes/header.php';
   <!-- A spacer div for visual separation -->
   <div class="h-16"></div>
  
-<!-- The Contact Section -->
+
 <!-- The Contact section heading -->
 <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>
 <!-- The grid layout for contact information -->

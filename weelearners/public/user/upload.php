@@ -12,7 +12,7 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 
-// <!-- The database query to fetch user's badges -->
+
 // Bringing in Uploads Details (Badges)
 $uploads = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE fk_user_id = ? ORDER BY RAND() LIMIT 3");
 $uploads->bind_param("i", $_SESSION['id']);

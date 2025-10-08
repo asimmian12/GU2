@@ -10,7 +10,6 @@ $search = $_POST['search'] ?? '';
 $searchResults = "%" . $search . "%";
 
 
-// <!-- The database queries are for the search results -->
 // Bringing In Photo Details
 $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE albName LIKE ? OR albDescription LIKE ?");
 $photo->bind_param("ss", $searchResults, $searchResults);
