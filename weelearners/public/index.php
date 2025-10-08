@@ -6,8 +6,6 @@ include 'config/config.php';
 include 'includes/header.php';
 
 
-// <!-- The database queries section -->
-// <!-- The query to fetch photo details -->
 // Bringing in photo details
 $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $photo->execute();
