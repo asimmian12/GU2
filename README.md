@@ -1,4 +1,4 @@
-This was a project that i made that was completely dynamic website with php and mysql.
+This was a project that i made that was completely dynamic website with php, html, css, and tailwind, js, json, and mysql.
 
 Useful information for nursery website
 https://woodlandoutdoorkindergartens.com/
