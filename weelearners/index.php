@@ -3,7 +3,6 @@
 // To get the requested URL from the 'url' query parameter
 $url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '';
 
-
 // To define the available routes (for URL that corresponds to the correct PHP file, and route)
 $routes = [
     '' => 'public/index.php',          // Home route
