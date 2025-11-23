@@ -11,8 +11,6 @@ if (!isset($_SESSION['loggedin'])) {
     exit();
 }
 
-
-
 // Bringing in Uploads Details (Badges)
 $uploads = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE fk_user_id = ? ORDER BY RAND() LIMIT 3");
 $uploads->bind_param("i", $_SESSION['id']);
@@ -22,15 +20,13 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
 
 ?>
 
-
- <!-- The main's banner section -->
+<!-- The main's banner section -->
 <section class="section-banner flex flex-col items-center">
     <h1 class="text-3xl font-semibold text-center mt-6 mb-4 text-pink-500" id="h1-heading-center">Upload Badge Page</h1>
     <p id="paragraph-text" class="paragraph-text mx-2 text-center">
         Hi <?= htmlspecialchars($_SESSION['name'] ?? ' ') ?>, Welcome to upload badge page in Wee Learners website. Here you can find all the badges related to your account. You can also upload your badge.
     </p>
 </section>
-
 
 <!-- A spacer div -->
 <div class="h-8"></div>
@@ -66,8 +62,7 @@ $uploads->bind_result($badgeID, $badgeName, $badgeDescription, $badgeImage);
                         </label>
                     </div>
        
-
-                     <!-- The badge Description Field -->
+                    <!-- The badge Description Field -->
                     <div class="relative pt-4">
                         <textarea 
                             id="badgeDescription" 

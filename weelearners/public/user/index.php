@@ -5,13 +5,11 @@ include 'includes/header.php';
 // Include the config file 
 include 'config/config.php';
 
-
 // To add in a session check to see if the user is logged in
 if (!isset($_SESSION['loggedin'])) {
     header("Location: login.php");
     exit();
 }
-
 
 // The file upload handling variables
 $message = "";
@@ -112,7 +110,6 @@ $user->store_result();
             </div>
         </section>
      
-
         <!-- To display the upload status message if exists -->
         <?php if (isset($message) && !empty($message)): ?>
             <p id="paragraph-text" class="text-center text-sm text-indigo-600"><?= htmlspecialchars($message ?? '') ?></p>
@@ -165,7 +162,6 @@ $user->store_result();
 
 <!-- A spacer div -->
 <div class="h-16"></div>
-
 
 <!-- The contact Information Section -->
 <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6 text-pink-500" id="section-contact">Contact</h2>

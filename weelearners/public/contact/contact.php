@@ -6,7 +6,6 @@ include '../../config/config.php';
 include '../../includes/header.php';
 ?>
 
-
 <section class="section-banner flex flex-col items-center">
     <!-- The heading for the Contact Us page -->
     <h1 class="text-3xl font-semibold text-center mt-6 mb-4 text-pink-500" id="h1-heading-center">Contact Us Page</h1>

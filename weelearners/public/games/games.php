@@ -4,8 +4,6 @@ include '../../config/config.php';
 // <!-- Include the header file  -->
 include '../../includes/header.php'; 
 
-
-
 // To define the path to the JSON file that contain's the game data
 $json_file = $_SERVER['DOCUMENT_ROOT'] . '/GU2/weelearners/assets/json/games.json';
 

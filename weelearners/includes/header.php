@@ -4,9 +4,6 @@
     // define("ROOT_DIR", "/Asim/GU2/weelearners/");
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +25,5 @@
     <title>Wee Learners AM</title>
 </head>
 <body>
-    
 
-    
-    <?php include "navigation.php" ?>
+<?php include "navigation.php" ?>

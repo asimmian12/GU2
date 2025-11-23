@@ -4,11 +4,9 @@ include 'config/config.php';
 // <!-- Include the header file c-->
 include 'includes/header.php';
 
-
 // <!-- The search query is being processed -->
 $search = $_POST['search'] ?? '';
 $searchResults = "%" . $search . "%";
-
 
 // Bringing In Photo Details
 $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE albName LIKE ? OR albDescription LIKE ?");
@@ -17,7 +15,6 @@ $photo->execute();
 $photo->store_result();
 $photo->bind_result($pID, $pName, $pDesc, $pRelease, $pImage);
 
-
 // Bringing In Video Details
 $videos = $conn->prepare("SELECT id, title, description, release_date, image FROM videos WHERE title LIKE ? OR description LIKE ?");
 $videos->bind_param("ss", $searchResults, $searchResults);
@@ -25,14 +22,12 @@ $videos->execute();
 $videos->store_result();
 $videos->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage);
 
-
 // Bringing In Badge Details
 $badge = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE badge_name LIKE ? OR description LIKE ?");
 $badge->bind_param("ss", $searchResults, $searchResults);
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bImage);
-
 
 // Bringing In Testimonals Details
 $testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE testimonals_name LIKE ? OR description LIKE ?");
@@ -91,7 +86,6 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
         </div>
     <?php endwhile; ?>
 </section>
-
 
 <!-- The badges Results Section with heading-->
 <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Badges</h1>

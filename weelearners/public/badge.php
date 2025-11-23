@@ -5,7 +5,6 @@ include 'config/config.php';
 /* Include Header File */
 include 'includes/header.php';
 
-
 // Bringing In Badge Details
 $badge = $conn->prepare("SELECT 
     id,

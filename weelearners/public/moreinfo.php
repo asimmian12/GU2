@@ -10,7 +10,6 @@ $videoID = $_GET['vid'] ?? null;
 $badgeID = $_GET['bid'] ?? null;
 $testimonalsID = $_GET['tid'] ?? null;
 
-
 // Fetch The Main Content Items
 if ($photoID) {
     $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE id = ? AND is_active = 1");
@@ -20,7 +19,6 @@ if ($photoID) {
     $photo->bind_result($pID, $pName, $pDesc, $pRelease, $pImage);
 }
 
-
 if ($videoID) {
     $video = $conn->prepare("SELECT id, title, description, release_date, image, video_url FROM videos WHERE id = ? AND is_active = 1");
     $video->bind_param("i", $videoID);
@@ -28,7 +26,6 @@ if ($videoID) {
     $video->store_result();
     $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 }
-
 
 if ($badgeID) {
     $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE id = ?");
@@ -38,7 +35,6 @@ if ($badgeID) {
     $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
 }
 
-
 if ($testimonalsID) {
     $testimonals = $conn->prepare("SELECT id, testimonals_name, description, fk_user_id FROM testimonals WHERE id = ?");
     $testimonals->bind_param("i", $testimonalsID);
@@ -46,6 +42,7 @@ if ($testimonalsID) {
     $testimonals->store_result();
     $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
 }
+
 // Fetch Suggested Content
 if ($photoID) {
     $suggestedPhotos = $conn->prepare("SELECT id, albName, albDescription, image FROM photo WHERE id != ? AND is_active = 1 ORDER BY RAND() LIMIT 3");
@@ -54,7 +51,6 @@ if ($photoID) {
     $suggestedPhotosResult = $suggestedPhotos->get_result();
 }
 
-
 if ($videoID) {
     $suggestedVideos = $conn->prepare("SELECT id, title, description, image FROM videos WHERE id != ? AND is_active = 1 ORDER BY RAND() LIMIT 3");
     $suggestedVideos->bind_param("i", $videoID);
@@ -62,14 +58,12 @@ if ($videoID) {
     $suggestedVideosResult = $suggestedVideos->get_result();
 }
 
-
 if ($badgeID) {
     $suggestedBadges = $conn->prepare("SELECT id, badge_name, description, badge_img FROM badge WHERE id != ? ORDER BY RAND() LIMIT 3");
     $suggestedBadges->bind_param("i", $badgeID);
     $suggestedBadges->execute();
     $suggestedBadgesResult = $suggestedBadges->get_result();
 }
-
 
 if ($testimonalsID) {
     $suggestedTestimonials = $conn->prepare("SELECT id, testimonals_name, description FROM testimonals WHERE id != ? ORDER BY RAND() LIMIT 3");
@@ -104,7 +98,6 @@ if ($testimonalsID) {
             </div>
         <?php endwhile ?>
     </section>
-
 
     <!-- Suggested Photos -->
     <?php if (isset($suggestedPhotosResult) && $suggestedPhotosResult->num_rows > 0) : ?>
@@ -268,8 +261,7 @@ if ($testimonalsID) {
         <h3 class="font-semibold text-lg">EMAIL</h3>
         <a href="mailto:info@weelearners.ac.uk" class="text-blue-600 hover:underline">info@weelearners.ac.uk</a>
     </div>
-
-    
+  
     <!-- The hours contact card -->
     <div class="bg-white p-6 rounded-lg shadow-md">
         <i class="fa-solid fa-clock text-indigo-600 text-2xl mb-2"></i>

@@ -17,11 +17,11 @@
     --second-font-size: 16px;
 }
 
-
 /* This can style the scrollbar to width 6px*/
 ::-webkit-scrollbar { 
   width: 5%; 
 }
+
 /* This can style the scrollbar to make the scrollbar track background transparent */
 ::-webkit-scrollbar-track { 
   background-color: transparent; 
@@ -54,6 +54,7 @@ img{
 ul > li{
     list-style-type: none;
 }
+
 .section-banner {
     position: relative;
     background-image: url('../images/banner_img.jpg');
@@ -200,6 +201,7 @@ button > a {
     left: 0;
     z-index: 2050;
 }
+
 .ul-nav-links.open {
     display: flex;
     align-items: center;
@@ -1129,4 +1131,3 @@ section > div > p {
     width: 100%;
     }
 }
-

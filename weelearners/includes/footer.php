@@ -1,4 +1,4 @@
-<!-- /* Fhe footer container with white background and black text */ -->
+<!-- /* The footer container with white background and black text */ -->
 <footer class="relative bg-white !text-black overflow-hidden" id="footer">
   
   <!-- /* To scroll to top button with arrow icon */ -->

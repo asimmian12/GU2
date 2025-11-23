@@ -5,13 +5,11 @@ include 'config/config.php';
 // <!-- Include the header file -->
 include 'includes/header.php';
 
-
 // Bringing in photo details
 $photo = $conn->prepare("SELECT id, albName, albDescription, release_date, image FROM photo WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $photo->execute();
 $photo->store_result();
 $photo->bind_result($pID, $pName, $pDesc, $release, $pImage);
-
 
 // <!-- The query to fetch video details -->
 // Bringing in video details
@@ -20,14 +18,12 @@ $video->execute();
 $video->store_result();
 $video->bind_result($vID, $vTitle, $vDesc, $vRelease, $vImage, $vVideoURL);
 
-
 // <!-- The query to fetch badge details -->
 // Bringing in badge details
 $badge = $conn->prepare("SELECT id, badge_name, description, fk_user_id, badge_img FROM badge WHERE is_active = 1 ORDER BY RAND() LIMIT 3");
 $badge->execute();
 $badge->store_result();
 $badge->bind_result($bID, $bName, $bDesc, $bUserID, $bImage);
-
 
 // <!-- The query to fetch testimonial details -->
 // Bringing in testimonals details
