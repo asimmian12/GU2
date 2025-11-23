@@ -46,7 +46,6 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
   </p>
 </section>
 
-
 <!-- The photos Results with heading -->
 <h1 class="text-3xl font-semibold text-center mt-12 mb-6 text-pink-500" id="h1-heading-center">All Photos</h1>
 <!-- The photo section -->
@@ -159,7 +158,6 @@ $testimonals->bind_result($tID, $tName, $tDesc, $tUserID);
       <p class="text-gray-700">Sunday: Emergency only</p>
     </div>
 </section>
-
 
 <!-- Include the footer file -->
 <?php include 'includes/footer.php'; ?>
